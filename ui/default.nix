@@ -33,10 +33,7 @@
       updateFocusedFile.enable = true;
       updateFocusedFile.updateRoot = true;
       git.ignore = false;
-      filters = {
-        custom = [ ".git" ];
-        exclude = [ ".gitignore" ".github" ];
-      };
+      filters.custom = [ "^\\.git$" ];
       renderer = {
         highlightGit = true;
         icons.gitPlacement = "after";
