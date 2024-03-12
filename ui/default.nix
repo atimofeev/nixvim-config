@@ -8,7 +8,14 @@
 
   plugins = {
 
-    which-key.enable = true;
+    which-key = {
+      enable = true;
+      registrations = {
+        "<leader>f" = { name = "+find"; };
+        "<leader>fg" = { name = "+git"; };
+        "<leader>t" = { name = "+tabs"; };
+      };
+    };
 
     lualine = {
       enable = true;
