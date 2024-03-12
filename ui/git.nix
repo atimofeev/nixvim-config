@@ -7,6 +7,7 @@
         auto_refresh = true;
         disable_hint = true;
         disable_signs = true;
+        status.recent_commit_count = 30;
         mappings = {
           commit_editor = {
             q = "Close";
