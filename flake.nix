@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     nixvim.url =
       "github:nix-community/nixvim?rev=bb64e79de67a212edf082fd330bc5a954aded0ba";
@@ -11,7 +12,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = { self, nixpkgs, nixvim, flake-parts, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-stable, nixvim, flake-parts, ... }@inputs:
     let config = import ./main.nix; # nixvim config file
     in flake-parts.lib.mkFlake { inherit inputs; } {
       systems =
@@ -23,8 +24,7 @@
             inherit pkgs;
             module = config;
           };
-        in
-        {
+        in {
           _module.args.pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
