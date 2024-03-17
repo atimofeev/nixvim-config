@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs-stable, ... }: {
   # TODO: Terraform package version pin
   # TODO: https://github.com/nvimtools/none-ls.nvim/issues/58
   plugins.lsp-format.enable = true;
@@ -60,8 +60,9 @@
         terraform_fmt.enable = true; # terraform
         # yaml, json
         # FIX: https://github.com/NixOS/nixpkgs/issues/294005
-        # yamlfix = { 
+        # yamlfix = {
         #   enable = true;
+        #   package = pkgs-stable.yamlfix;
         #   withArgs = ''
         #     {env = {
         #       YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 
@@ -75,7 +76,6 @@
         #     },}
         #   '';
         # };
-
         # fixjson.enable = true; # dropped as unmaintained
         # markdown, etc
         prettier = {
