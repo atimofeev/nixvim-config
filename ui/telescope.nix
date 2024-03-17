@@ -4,6 +4,7 @@
     extensions.project-nvim.enable = true;
   };
 
+  # nvchad config dump
   extraConfigLua = ''
     local telescope = require('telescope')
     telescope.setup{

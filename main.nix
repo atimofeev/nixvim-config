@@ -6,14 +6,16 @@
 
     options = {
 
+      cursorline = true;
+
       # indenting
-      shiftwidth = 2;
       expandtab = true;
+      shiftwidth = 2;
+      smartindent = true;
       tabstop = 2;
       softtabstop = 2;
-      smartindent = true;
 
-      fillchars = { eob = " "; };
+      fillchars.eob = " ";
       ignorecase = true;
       smartcase = true;
       mouse = "a";
@@ -22,11 +24,7 @@
       number = true;
       relativenumber = true;
       numberwidth = 2;
-      cursorline = true;
       ruler = false;
-
-      # disable nvim intro
-      # shortmess:append "sI";
 
       signcolumn = "yes";
       splitbelow = true;
@@ -37,28 +35,20 @@
 
       updatetime = 250;
 
-      # go to previous/next line with h,l,left arrow and right arrow
-      # when cursor reaches end/beginning of line
-      # opt.whichwrap:append "<>[]hl"
-
     };
+
+    extraConfigLua = ''
+      -- disable nvim intro
+      vim.opt.shortmess:append "sI";
+
+      -- go to previous/next line with h,l,left arrow and right arrow
+      -- when cursor reaches end/beginning of line
+      vim.opt.whichwrap:append "<>[]hl";
+    '';
 
     # extraPlugins = with pkgs.vimPlugins; [{
     #   plugin = comment-nvim;
     #   config = ''lua require("Comment").setup()'';
     # }];
   };
-
-  # autoCmd = [{
-  #   event = [ "BufEnter" "BufWinEnter" ];
-  #   pattern = [ "*.c" "*.h" ];
-  #   command = "echo 'Entering a C/C++ file'";
-  # }];
-
-  # highlight = {
-  #   Comment.fg = "#ff00ff";
-  #   Comment.bg = "#000000";
-  #   Comment.underline = true;
-  #   Comment.bold = true;
-  # };
 }
