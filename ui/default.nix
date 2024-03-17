@@ -2,8 +2,11 @@
   imports = [ ./git.nix ./tabs.nix ./telescope.nix ];
 
   colorschemes = {
-    catppuccin.enable = true;
-    catppuccin.flavour = "macchiato";
+    catppuccin = {
+      enable = true;
+      flavour = "macchiato";
+      dimInactive.enabled = true;
+    };
   };
 
   plugins = {
@@ -50,6 +53,7 @@
       #   height = 100000;
       # };
     };
+
     project-nvim = {
       enable = true;
       patterns = [ ".git" ];
