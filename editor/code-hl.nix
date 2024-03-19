@@ -44,7 +44,7 @@
       enable = true;
       nixvimInjections = true;
       languageRegister.hcl = [ "terraform-vars" ];
-      ensureInstalled = [ # not working
+      ensureInstalled = [ # FIX: not working
         "bash"
         "c"
         "commonlisp"

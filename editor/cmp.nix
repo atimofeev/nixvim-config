@@ -1,5 +1,4 @@
 { ... }: {
-  # TODO: add sources: https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
   plugins = {
 
     luasnip = {
@@ -19,7 +18,6 @@
       snippet.expand = "luasnip";
       autoEnableSources = true;
       sources = [
-        # { name = "dotenv"; } # TODO: add https://github.com/SergioRibera/cmp-dotenv plugin
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
         { name = "buffer"; }

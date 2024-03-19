@@ -40,24 +40,23 @@
 
   };
 
-  extraPlugins = with pkgs.vimPlugins; [{
-    plugin = vim-move;
-    # config = ''lua require("Comment").setup()'';
-  }];
-  # FIX:
-  # extraPlugins = [
-  #   (pkgs.vimUtils.buildVimPlugin {
-  #     name = "move.nvim";
-  #     src = pkgs.fetchFromGitHub {
-  #       owner = "fedepujol";
-  #       repo = "move.nvim";
-  #       rev = "cccbd4ea9049ca5f99f025ffaddb7392359c7d6a";
-  #       hash = "sha256-aJi7r9yPdQyH6i8EtQzKdRhEQ3SLz32oqcN0tf2qRZA=";
-  #     };
-  #   })
-  # ];
-  # extraConfigLua = ''
-  #   require('move').setup({})
-  # '';
-
+  extraPlugins = with pkgs.vimPlugins;
+    let
+      move-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "move.nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "fedepujol";
+          repo = "move.nvim";
+          rev = "cccbd4ea9049ca5f99f025ffaddb7392359c7d6a";
+          hash = "sha256-aJi7r9yPdQyH6i8EtQzKdRhEQ3SLz32oqcN0tf2qRZA=";
+        };
+      };
+    in [
+      {
+        # TODO: create mapping -> remove vim-move
+        plugin = move-nvim;
+        config = ''lua require("move").setup()'';
+      }
+      { plugin = vim-move; }
+    ];
 }
