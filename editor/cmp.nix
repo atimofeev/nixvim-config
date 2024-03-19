@@ -16,6 +16,7 @@
 
     nvim-cmp = {
       enable = true;
+      snippet.expand = "luasnip";
       autoEnableSources = true;
       sources = [
         # { name = "dotenv"; } # TODO: add https://github.com/SergioRibera/cmp-dotenv plugin
