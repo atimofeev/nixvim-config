@@ -37,6 +37,7 @@
         "<leader>f" = { name = "+find"; };
         "<leader>fg" = { name = "+git"; };
         "<leader>t" = { name = "+tabs"; };
+        "gz" = { name = "+surround"; };
       };
     };
 
