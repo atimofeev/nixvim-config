@@ -9,6 +9,13 @@
     };
   };
 
+  highlightOverride = { # Remove BG from diagnostic inline messages
+    DiagnosticVirtualTextError.link = "DiagnosticError";
+    DiagnosticVirtualTextWarn.link = "DiagnosticWarn";
+    DiagnosticVirtualTextInfo.link = "DiagnosticInfo";
+    DiagnosticVirtualTextHint.link = "DiagnosticHint";
+  };
+
   plugins = {
 
     which-key = {
