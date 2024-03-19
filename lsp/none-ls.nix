@@ -10,11 +10,8 @@
 
       diagnostics = {
         statix.enable = true; # nix
-        # luacheck.enable = true; # lua; dropped as unmaintained
         mypy.enable = true; # python
-        # ruff.enable = true; # dropped as unmaintained
         golangci_lint.enable = true; # go
-        # shellcheck.enable = true; # shell; dropped as unmaintained
         fish.enable = true;
         hadolint.enable = true; # docker
         # TODO: add tflint to none-ls
@@ -32,7 +29,6 @@
           withArgs = ''
             {extra_args = {"-d", "{extends: default, rules: {line-length: disable}}"},}'';
         };
-        # jsonlint.enable = true; # dropped as unmaintained
         # markdown, etc
         markdownlint = {
           enable =
@@ -49,7 +45,13 @@
         stylua = {
           enable = true;
           withArgs = ''
-            {extra_args = {"--column_width", "120", "--indent_type", "Spaces", "--indent_width", "2", "--quote_style", "AutoPreferDouble", "--call_parentheses", "None"},}
+            {extra_args = {
+                "--column_width", "120", 
+                "--indent_type", "Spaces", 
+                "--indent_width", "2", 
+                "--quote_style", "AutoPreferDouble", 
+                "--call_parentheses", "None"
+              },}
           '';
         };
         black.enable = true; # python
@@ -81,7 +83,6 @@
             },}
           '';
         };
-        # fixjson.enable = true; # dropped as unmaintained
         # markdown, etc
         prettier = {
           enable = true;

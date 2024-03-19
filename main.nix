@@ -1,7 +1,8 @@
-{ pkgs, ... }: {
+{ ... }: {
   imports = [ ./editor ./lsp ./mappings ./ui ];
 
   config = {
+
     clipboard.register = "unnamedplus";
 
     options = {
