@@ -1,4 +1,5 @@
 { ... }: {
+  # TODO: remove bg from DiagnosticUnderlineError and other related HL groups
   imports = [ ./none-ls.nix ];
 
   plugins.lsp = {

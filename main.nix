@@ -45,10 +45,5 @@
       -- when cursor reaches end/beginning of line
       vim.opt.whichwrap:append "<>[]hl";
     '';
-
-    # extraPlugins = with pkgs.vimPlugins; [{
-    #   plugin = comment-nvim;
-    #   config = ''lua require("Comment").setup()'';
-    # }];
   };
 }
