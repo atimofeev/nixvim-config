@@ -1,13 +1,20 @@
-{ ... }: {
+{ pkgs, ... }: {
   imports = [ ./cmp.nix ./code-hl.nix ];
 
   plugins = {
 
+    # TODO: upgrade when https://github.com/max397574/better-escape.nvim/pull/59 is merged
     better-escape.enable = true;
 
-    autoclose.enable = true;
+    nvim-autopairs.enable = true;
 
     comment-nvim.enable = true;
+
+    # TODO: upgrade when https://github.com/yamatsum/nvim-cursorline/issues/10 is resolved
+    cursorline = {
+      enable = true;
+      cursorline.enable = false;
+    };
 
     mini = {
       enable = true;
