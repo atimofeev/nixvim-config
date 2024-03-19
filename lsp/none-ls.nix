@@ -59,23 +59,28 @@
         fish_indent.enable = true;
         terraform_fmt.enable = true; # terraform
         # yaml, json
-        # FIX: https://github.com/NixOS/nixpkgs/issues/294005
-        # yamlfix = {
-        #   enable = true;
-        #   package = pkgs-stable.yamlfix;
-        #   withArgs = ''
-        #     {env = {
-        #       YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 
-        #       YAMLFIX_COMMENTS_REQUIRE_STARTING_SPACE="true",
-        #       YAMLFIX_WHITELINES="1",
-        #       YAMLFIX_SECTION_WHITELINES="1", 
-        #       YAMLFIX_SEQUENCE_STYLE="keep_style",
-        #       YAMLFIX_quote_representation='"', -- not working
-        #       YAMLFIX_preserve_quotes="true",
-        #       YAMLFIX_LINE_LENGTH="999", -- disable line wrap
-        #     },}
-        #   '';
-        # };
+        yamlfix = {
+          enable = true;
+          # FIX: nixpkgs-unstable https://github.com/NixOS/nixpkgs/issues/294005
+          # OR
+          # FIX: implement second pkgs channel
+          # https://discord.com/channels/568306982717751326/1061656643189878874/threads/1219035364337909891
+          # https://github.com/hercules-ci/flake-parts/discussions/217
+          # package = pkgs-stable.yamlfix;
+          package = null; # HACK: using host yamlfix-23.11 package
+          withArgs = ''
+            {env = {
+              YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 
+              YAMLFIX_COMMENTS_REQUIRE_STARTING_SPACE="true",
+              YAMLFIX_WHITELINES="1",
+              YAMLFIX_SECTION_WHITELINES="1", 
+              YAMLFIX_SEQUENCE_STYLE="keep_style",
+              YAMLFIX_quote_representation='"', -- not working
+              YAMLFIX_preserve_quotes="true",
+              YAMLFIX_LINE_LENGTH="999", -- disable line wrap
+            },}
+          '';
+        };
         # fixjson.enable = true; # dropped as unmaintained
         # markdown, etc
         prettier = {
@@ -86,5 +91,3 @@
     };
   };
 }
-# local config_path = vim.fn.expand "~/.config/nvim/lua/custom/configs/lint-fmt/"
-# -- Builtin sources list: https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
