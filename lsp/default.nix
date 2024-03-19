@@ -8,6 +8,7 @@
       # langs
       lua-ls.enable = true;
       pylsp.enable = true;
+      ruff-lsp.enable = true;
       gopls.enable = true;
       bashls.enable = true;
       # nil_ls.enable = true;
