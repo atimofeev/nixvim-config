@@ -18,6 +18,7 @@
       enable = true;
       autoEnableSources = true;
       sources = [
+        # { name = "dotenv"; } # TODO: add https://github.com/SergioRibera/cmp-dotenv plugin
         { name = "nvim_lsp"; }
         { name = "luasnip"; }
         { name = "buffer"; }
