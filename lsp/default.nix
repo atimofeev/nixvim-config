@@ -25,11 +25,4 @@
       yamlls.enable = true;
     };
   };
-
-  extraConfigLua = ''
-    vim.diagnostic.config {
-      virtual_text = { prefix = "", },
-    }
-  '';
-
 }
