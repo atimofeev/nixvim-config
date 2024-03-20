@@ -23,7 +23,10 @@
 
   plugins = {
 
-    todo-comments.enable = true;
+    todo-comments = {
+      enable = true;
+      keywords.NOTE.icon = "";
+    };
 
     nvim-colorizer.enable = true;
 
