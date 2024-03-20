@@ -57,7 +57,7 @@
       updateFocusedFile.enable = true;
       updateFocusedFile.updateRoot = true;
       git.ignore = false;
-      filters.custom = [ "^\\.git$" ];
+      filters.custom = [ "^\\.git$" "^\\.mypy_cache$" ];
       renderer = {
         highlightGit = true;
         icons.gitPlacement = "after";
