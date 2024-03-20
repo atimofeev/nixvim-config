@@ -25,7 +25,7 @@
 
     todo-comments = {
       enable = true;
-      keywords.NOTE.icon = "";
+      keywords.NOTE.icon = "";
     };
 
     nvim-colorizer.enable = true;
