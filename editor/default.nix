@@ -40,6 +40,14 @@
 
   };
 
+  autoCmd = [{
+    event = "TextYankPost"; # highlight yanked text
+    group = "highlight_yank";
+    command =
+      "silent! lua vim.highlight.on_yank{higroup='Search', timeout=300}";
+  }];
+  autoGroups.highlight_yank.clear = true;
+
   extraPlugins = with pkgs.vimPlugins;
     let
       move-nvim = pkgs.vimUtils.buildVimPlugin {
