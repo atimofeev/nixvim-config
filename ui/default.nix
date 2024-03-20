@@ -17,7 +17,7 @@
   };
 
   extraConfigLua = ''
-    local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+    local signs = { Error = "", Warn = "", Hint = "", Info = "" }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -44,6 +44,28 @@
     lualine = {
       enable = true;
       globalstatus = true;
+      componentSeparators = {
+        left = "󰿟";
+        right = "";
+      };
+      sectionSeparators = {
+        left = "";
+        right = "";
+      };
+      # sections.lualine_b = [{
+      #   name = "diagnostics";
+      #   extraConfig = {
+      #     symbols = {
+      #       error = "";
+      #       warn = "";
+      #       info = "";
+      #       hint = "";
+      #     };
+      #   };
+      # }];
+      # git branch symbol = 
+      # git branch name limit = 25
+      # git changes:   󰟃
     };
 
     # TODO: setup this plugin

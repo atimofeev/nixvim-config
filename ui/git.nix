@@ -25,6 +25,11 @@
     gitsigns = {
       enable = true;
       currentLineBlame = true;
+      signs = {
+        changedelete.text = "󰜥";
+        delete.text = "";
+      };
+
     };
   };
 }
