@@ -96,5 +96,17 @@
       action = "<C-w>l";
       options.desc = "Window right";
     }
+
+    # go through wrapped lines
+    {
+      mode = [ "n" "v" ];
+      key = "j";
+      action = "gj";
+    }
+    {
+      mode = [ "n" "v" ];
+      key = "k";
+      action = "gk";
+    }
   ];
 }
