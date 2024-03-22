@@ -14,7 +14,6 @@
       action = "<Nop>";
       options = {
         silent = true;
-        noremap = true;
         desc = "Disable Up arrow key";
       };
     }
@@ -24,7 +23,6 @@
       action = "<Nop>";
       options = {
         silent = true;
-        noremap = true;
         desc = "Disable Down arrow key";
       };
     }
@@ -34,7 +32,6 @@
       action = "<Nop>";
       options = {
         silent = true;
-        noremap = true;
         desc = "Disable Right arrow key";
       };
     }
@@ -44,7 +41,6 @@
       action = "<Nop>";
       options = {
         silent = true;
-        noremap = true;
         desc = "Disable Left arrow key";
       };
     }
