@@ -26,7 +26,7 @@
       enable = true;
       currentLineBlame = true;
       signs = {
-        changedelete.text = "󰜥";
+        changedelete.text = "󰇘";
         delete.text = "";
       };
 
