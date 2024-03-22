@@ -43,8 +43,13 @@
       };
     };
 
+    # TODO: setup keymaps for actions
+    treesitter-refactor.enable = true;
+    treesitter-textobjects.enable = true;
+
     treesitter = {
       enable = true;
+      indent = true;
       nixvimInjections = true;
       languageRegister.hcl = [ "terraform-vars" ];
       ensureInstalled = [ # FIX: not working
