@@ -1,5 +1,12 @@
 { pkgs, ... }: {
-  imports = [ ./git.nix ./tabs.nix ./telescope.nix ];
+  imports = [
+    ./filetree.nix
+    ./git.nix
+    ./statusline.nix
+    ./tabs.nix
+    ./telescope.nix
+    ./term.nix
+  ];
 
   colorschemes = {
     catppuccin = {
@@ -30,7 +37,8 @@
 
   plugins = {
 
-    lspkind = { enable = true; };
+    lspkind.enable = true;
+
     which-key = {
       enable = true;
       registrations = {
@@ -41,61 +49,8 @@
       };
     };
 
-    lualine = {
-      enable = true;
-      globalstatus = true;
-      componentSeparators = {
-        left = "󰿟";
-        right = "";
-      };
-      sectionSeparators = {
-        left = "";
-        right = "";
-      };
-      # sections.lualine_b = [{
-      #   name = "diagnostics";
-      #   extraConfig = {
-      #     symbols = {
-      #       error = "";
-      #       warn = "";
-      #       info = "";
-      #       hint = "";
-      #     };
-      #   };
-      # }];
-      # git branch symbol = 
-      # git branch name limit = 25
-      # git changes:   󰟃
-    };
-
     # TODO: setup this plugin
     oil.enable = true;
-
-    nvim-tree = {
-      enable = true;
-      autoClose = true;
-      syncRootWithCwd = true;
-      respectBufCwd = true;
-      updateFocusedFile.enable = true;
-      updateFocusedFile.updateRoot = true;
-      git.ignore = false;
-      filters.custom = [ "^\\.git$" "^\\.mypy_cache$" ];
-      renderer = {
-        highlightGit = true;
-        icons.gitPlacement = "after";
-        icons.glyphs.git.unstaged = "•";
-      };
-      # TODO: implement dynamic sizing of float window
-      # https://www.reddit.com/r/neovim/comments/13u9okq/nvimtree_vs_neotree/
-      # https://github.com/MarioCarrion/videos/blob/269956e913b76e6bb4ed790e4b5d25255cb1db4f/2023/01/nvim/lua/plugins/nvim-tree.lua
-      # view.float.enable = true;
-      # view.float.openWinConfig = {
-      #   relative = "editor";
-      #   border = "rounded";
-      #   width = 40;
-      #   height = 100000;
-      # };
-    };
 
     project-nvim = {
       enable = true;
