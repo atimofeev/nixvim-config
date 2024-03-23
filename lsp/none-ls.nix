@@ -1,5 +1,4 @@
 { pkgs-stable, ... }: {
-  # TODO: Terraform package version pin
   # TODO: https://github.com/nvimtools/none-ls.nvim/issues/58
   plugins.lsp-format.enable = true;
 
@@ -16,7 +15,10 @@
         hadolint.enable = true; # docker
         # TODO: add tflint to none-ls
         # tflint.enable = true; # terraform
-        terraform_validate.enable = true;
+        terraform_validate = {
+          enable = true;
+          package = null; # NOTE: use host terraform version
+        };
         tfsec.enable = true;
         # yaml
         actionlint = {
@@ -59,7 +61,10 @@
         golines.enable = true;
         shfmt.enable = true; # shell
         fish_indent.enable = true;
-        terraform_fmt.enable = true; # terraform
+        terraform_fmt = { # terraform
+          enable = true;
+          package = null; # NOTE: use host terraform version
+        };
         # yaml, json
         yamlfix = {
           enable = true;
