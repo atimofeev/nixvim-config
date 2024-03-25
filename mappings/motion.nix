@@ -7,44 +7,6 @@
   '';
 
   keymaps = [
-    # Disable arrow keys
-    {
-      mode = [ "n" "i" ];
-      key = "<Up>";
-      action = "<Nop>";
-      options = {
-        silent = true;
-        desc = "Disable Up arrow key";
-      };
-    }
-    {
-      mode = [ "n" "i" ];
-      key = "<Down>";
-      action = "<Nop>";
-      options = {
-        silent = true;
-        desc = "Disable Down arrow key";
-      };
-    }
-    {
-      mode = [ "n" "i" ];
-      key = "<Right>";
-      action = "<Nop>";
-      options = {
-        silent = true;
-        desc = "Disable Right arrow key";
-      };
-    }
-    {
-      mode = [ "n" "i" ];
-      key = "<Left>";
-      action = "<Nop>";
-      options = {
-        silent = true;
-        desc = "Disable Left arrow key";
-      };
-    }
-
     # navigate within insert mode
     {
       mode = "i";
@@ -90,6 +52,32 @@
       mode = "n";
       key = "<C-l>";
       action = "<C-w>l";
+      options.desc = "Window right";
+    }
+
+    # naviagte windows in terminal mode
+    {
+      mode = "t";
+      key = "<C-h>";
+      action = "<cmd> wincmd h <cr>";
+      options.desc = "Window left";
+    }
+    {
+      mode = "t";
+      key = "<C-j>";
+      action = "<cmd> wincmd j <cr>";
+      options.desc = "Window down";
+    }
+    {
+      mode = "t";
+      key = "<C-k>";
+      action = "<cmd> wincmd k <cr>";
+      options.desc = "Window up";
+    }
+    {
+      mode = "t";
+      key = "<C-l>";
+      action = "<cmd> wincmd l <cr>";
       options.desc = "Window right";
     }
 
