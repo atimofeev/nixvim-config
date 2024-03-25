@@ -15,8 +15,10 @@
       ".*/roles/.*%.ya?ml" = "yaml.ansible";
       ".*/group_vars/.*" = "yaml.ansible";
       ".*/host_vars/.*" = "yaml.ansible";
+      ".*/templates/.*%.ya?ml.j2" = "yaml.ansible";
       ".*/.github/workflows/.*%.ya?ml" = "yaml.gh_actions";
       ".*%.conf" = "conf";
+      ".*%.conf.j2" = "conf";
     };
 
   };
@@ -51,8 +53,11 @@
       enable = true;
       indent = true;
       nixvimInjections = true;
-      languageRegister.hcl = [ "terraform-vars" ];
-      ensureInstalled = [ # FIX: not working
+      languageRegister = {
+        hcl = [ "terraform-vars" ];
+        bash = [ "conf" ];
+      };
+      ensureInstalled = [ # FIX: not working?
         "bash"
         "c"
         "commonlisp"
