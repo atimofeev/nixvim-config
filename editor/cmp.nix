@@ -27,6 +27,13 @@
         { name = "emoji"; }
       ];
 
+      window.completion = {
+        scrollbar = false;
+        border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
+        winhighlight =
+          "Normal:Normal,FloatBorder:Normal,CursorLine:IncSearch,Search:None";
+      };
+
       mapping = {
         "<C-Space>" = "cmp.mapping.complete()";
         "<C-e>" = "cmp.mapping.close()";
