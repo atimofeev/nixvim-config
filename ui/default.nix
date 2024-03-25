@@ -37,7 +37,14 @@
 
   plugins = {
 
-    lspkind.enable = true;
+    fidget.enable = true; # lsp status notifications
+
+    lspkind.enable = true; # lsp cmp icons
+
+    markdown-preview.enable = true;
+
+    # TODO: setup this plugin
+    oil.enable = true; # file browser (and editor)
 
     which-key = {
       enable = true;
@@ -49,15 +56,11 @@
       };
     };
 
-    # TODO: setup this plugin
-    oil.enable = true;
-
     project-nvim = {
       enable = true;
       patterns = [ ".git" ];
       ignoreLsp = [ "null-ls" ];
     };
 
-    markdown-preview.enable = true;
   };
 }
