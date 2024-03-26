@@ -1,5 +1,6 @@
 { ... }: {
-  imports = [ ./motion.nix ];
+  imports = [ ./motion.nix ./movetext.nix ];
+  # TODO: find solution to smartindent and #
 
   globals.mapleader = " ";
 
@@ -9,26 +10,6 @@
       key = ";";
       action = ":";
       options.desc = "Command mode";
-    }
-    # FIX: trying to avoid indent reset with '#'
-    # breaks most interactions with #
-    # {
-    #   mode = "i";
-    #   key = "#";
-    #   action = "X<C-h>#<space>";
-    #   options.desc = "Fix # with smartindent";
-    # }
-    {
-      mode = "v";
-      key = ">";
-      action = ">gv";
-      options.desc = "Indent lines";
-    }
-    {
-      mode = "v";
-      key = "<";
-      action = "<gv";
-      options.desc = "Indent lines";
     }
     {
       mode = "n";
@@ -48,20 +29,29 @@
       action = "<cmd> Neogit <cr>";
       options.desc = "Open Neogit";
     }
-    {
-      mode = [ "n" "i" ];
-      key = "<M-j>";
-      action = "<cmd> m +1 <cr>";
-      options.desc = "Move line down";
-    }
-    {
-      mode = [ "n" "i" ];
-      key = "<M-k>";
-      action = "<cmd> m -2 <cr>";
-      options.desc = "Move line up";
-    }
 
-    #
+    # resize windows
+    # FIX: static resizing, not based on window position
+    {
+      mode = [ "n" "t" ];
+      key = "<C-Up>";
+      action = "<cmd> resize -2 <cr>";
+    }
+    {
+      mode = [ "n" "t" ];
+      key = "<C-Down>";
+      action = "<cmd> resize +2 <cr>";
+    }
+    {
+      mode = [ "n" "t" ];
+      key = "<C-Left>";
+      action = "<cmd> vertical resize -2 <cr>";
+    }
+    {
+      mode = [ "n" "t" ];
+      key = "<C-Right>";
+      action = "<cmd> vertical resize +2 <cr>";
+    }
     # x = {
     #   -- Don't copy the replaced text after pasting in visual mode
     #   -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
