@@ -12,7 +12,6 @@
         ruff-lsp.enable = true;
         gopls.enable = true;
         bashls.enable = true;
-        # nil_ls.enable = true;
         nixd.enable = true;
         # devops
         ansiblels.enable = true;
@@ -34,10 +33,37 @@
     };
   };
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>d";
-    action = "<cmd> TroubleToggle <cr>";
-    options.desc = "Diagnostics";
-  }];
+  keymaps = [
+    {
+      mode = "n";
+      key = "<leader>ld";
+      action = "<cmd> TroubleToggle <cr>";
+      options.desc = "LSP diagnostics";
+    }
+    {
+      mode = "n";
+      key = "<leader>lr";
+      action = "<cmd> lua vim.lsp.buf.rename() <cr>";
+      options.desc = "LSP rename";
+    }
+    {
+      mode = "n";
+      key = "<leader>lR";
+      action = "<cmd> lua vim.lsp.buf.references() <cr>";
+      options.desc = "LSP references";
+    }
+    {
+      mode = "n";
+      key = "<leader>lD";
+      action = "<cmd> lua vim.lsp.buf.definition() <cr>";
+      options.desc = "LSP definition";
+    }
+    {
+      mode = "n";
+      key = "<leader>li";
+      action = "<cmd> lua vim.lsp.buf.implementation() <cr>";
+      options.desc = "LSP implementation";
+    }
+    # Map("n", "K", ":lua vim.lsp.buf.hover()<CR>")
+  ];
 }

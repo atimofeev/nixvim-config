@@ -49,6 +49,7 @@
     which-key = {
       enable = true;
       registrations = {
+        "<leader>l".name = "+lsp";
         "<leader>f" = { name = "+find"; };
         "<leader>fg" = { name = "+git"; };
         "<leader>t" = { name = "+tabs"; };
