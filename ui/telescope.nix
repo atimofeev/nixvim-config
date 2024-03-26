@@ -4,7 +4,12 @@
   # NOTE: Use (C-/) to see keys for current telescope view
   plugins.telescope = {
     enable = true;
-    extensions.project-nvim.enable = true;
+    extensions = {
+      project-nvim.enable = true;
+
+      # TODO: setup:
+      file_browser.enable = true;
+    };
   };
 
   # nvchad config dump
@@ -87,6 +92,12 @@
   '';
 
   keymaps = [
+    {
+      mode = "n";
+      key = "<leader>fe";
+      action = "<cmd> Telescope file_browser <cr>";
+      options.desc = "File browser";
+    }
     {
       mode = "n";
       key = "<leader>ff";
