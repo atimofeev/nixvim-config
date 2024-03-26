@@ -49,22 +49,42 @@
   autoGroups.highlight_yank.clear = true;
 
   extraPlugins = with pkgs.vimPlugins;
-    let
-      move-nvim = pkgs.vimUtils.buildVimPlugin {
-        name = "move.nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "fedepujol";
-          repo = "move.nvim";
-          rev = "cccbd4ea9049ca5f99f025ffaddb7392359c7d6a";
-          hash = "sha256-aJi7r9yPdQyH6i8EtQzKdRhEQ3SLz32oqcN0tf2qRZA=";
-        };
-      };
-    in [
-      {
-        # TODO: create mapping -> remove vim-move
-        plugin = move-nvim;
-        config = ''lua require("move").setup()'';
-      }
+  #   let
+  #     move-nvim = pkgs.vimUtils.buildVimPlugin {
+  #       name = "move.nvim";
+  #       src = pkgs.fetchFromGitHub {
+  #         owner = "fedepujol";
+  #         repo = "move.nvim";
+  #         rev = "cccbd4ea9049ca5f99f025ffaddb7392359c7d6a";
+  #         hash = "sha256-aJi7r9yPdQyH6i8EtQzKdRhEQ3SLz32oqcN0tf2qRZA=";
+  #       };
+  #     };
+  #   in 
+    [
+      # {
+      #   plugin = move-nvim;
+      #   config = ''lua require("move").setup()'';
+      # }
       { plugin = vim-move; }
     ];
+
+  # FIX: remap has no effect
+  # https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim
+  keymaps = [
+    {
+      mode = [ "v" ];
+      key = "<M-h>";
+      action = "<gv";
+      options = {
+        desc = "Move block left";
+
+      };
+    }
+    {
+      mode = [ "v" ];
+      key = "<M-l>";
+      action = ">gv";
+      options.desc = "Move block right";
+    }
+  ];
 }
