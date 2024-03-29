@@ -84,7 +84,20 @@
         -- Developer configurations: Not meant for general override
         buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
         mappings = {
-          n = { ["q"] = require("telescope.actions").close },
+          n = {
+            ["q"] = require("telescope.actions").close,
+            ["<esc>"] = require("telescope.actions").close,
+            ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+            ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+            ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+            ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
+          },
+          i = {
+            ["<C-h>"] = require("telescope.actions").preview_scrolling_left,
+            ["<C-j>"] = require("telescope.actions").preview_scrolling_down,
+            ["<C-k>"] = require("telescope.actions").preview_scrolling_up,
+            ["<C-l>"] = require("telescope.actions").preview_scrolling_right,
+          },
         },
       },
       extensions_list = { "themes", "terms" },
