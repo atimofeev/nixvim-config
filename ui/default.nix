@@ -60,7 +60,7 @@
     project-nvim = {
       enable = true;
       patterns = [ ".git" ];
-      ignoreLsp = [ "null-ls" ];
+      ignoreLsp = [ "null-ls" "dockerls" ];
     };
 
   };
