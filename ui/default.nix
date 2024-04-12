@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   imports = [
+    ./dashboard.nix
     ./filetree.nix
     ./git.nix
+    ./spectre.nix
     ./statusline.nix
     ./tabs.nix
     ./telescope.nix
