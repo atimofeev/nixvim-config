@@ -12,7 +12,7 @@
     catppuccin = {
       enable = true;
       flavour = "macchiato";
-      dimInactive.enabled = true;
+      # dimInactive.enabled = true;
     };
   };
 
