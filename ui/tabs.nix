@@ -33,13 +33,13 @@
     }
     {
       mode = "n";
-      key = "<leader>tp";
+      key = "<leader>Tp";
       action = "<cmd> BufferPin <cr>";
       options.desc = "Tab pin toggle";
     }
     {
       mode = "n";
-      key = "<leader>ts";
+      key = "<leader>Ts";
       action = "<cmd> BufferPick <cr>";
       options.desc = "Tab select";
     }

@@ -52,7 +52,8 @@
         "<leader>l".name = "+lsp";
         "<leader>f" = { name = "+find"; };
         "<leader>fg" = { name = "+git"; };
-        "<leader>t" = { name = "+tabs"; };
+        "<leader>t" = { name = "+term"; };
+        "<leader>T" = { name = "+tabs"; };
         "gz" = { name = "+surround"; };
       };
     };
