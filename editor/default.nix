@@ -10,6 +10,8 @@
 
     comment-nvim.enable = true;
 
+    undotree.enable = true;
+
     # TODO: upgrade when https://github.com/yamatsum/nvim-cursorline/issues/10 is resolved
     cursorline = {
       enable = true;
