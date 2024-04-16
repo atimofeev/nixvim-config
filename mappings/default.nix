@@ -1,5 +1,5 @@
 { ... }: {
-  imports = [ ./motion.nix ./movetext.nix ];
+  imports = [ ./motion.nix ./movetext.nix ./treesitter.nix ];
   # TODO: find solution to smartindent and #
 
   globals.mapleader = " ";

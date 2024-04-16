@@ -47,7 +47,6 @@
 
     # TODO: setup keymaps for actions
     treesitter-refactor.enable = true;
-    treesitter-textobjects.enable = true;
 
     treesitter = {
       enable = true;
