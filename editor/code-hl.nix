@@ -19,6 +19,8 @@
       ".*/.github/workflows/.*%.ya?ml" = "yaml.gh_actions";
       ".*%.conf" = "conf";
       ".*%.conf.j2" = "conf";
+      ".*%.service" = "conf";
+      ".*%.service.j2" = "conf";
     };
 
   };
