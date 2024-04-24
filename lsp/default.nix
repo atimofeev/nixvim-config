@@ -16,6 +16,7 @@
         # devops
         ansiblels.enable = true;
         dockerls.enable = true;
+        # https://github.com/nix-community/nixvim/issues/1426
         # docker_compose_language_service.enable = true;
         # groovyls.enable = true;
         helm-ls.enable = true;
