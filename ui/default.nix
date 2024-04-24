@@ -46,6 +46,8 @@
     markdown-preview.enable = true;
 
     # TODO: setup this plugin
+    # https://www.youtube.com/watch?v=EEoJQWgpWqE
+    # https://github.com/chrishrb/gx.nvim
     oil.enable = true; # file browser (and editor)
 
     which-key = {

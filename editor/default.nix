@@ -77,10 +77,7 @@
       mode = [ "v" ];
       key = "<M-h>";
       action = "<gv";
-      options = {
-        desc = "Move block left";
-
-      };
+      options.desc = "Move block left";
     }
     {
       mode = [ "v" ];
