@@ -7,7 +7,8 @@
     updateFocusedFile.enable = true;
     updateFocusedFile.updateRoot = true;
     git.ignore = false;
-    filters.custom = [ "^\\.git$" "^\\.mypy_cache$" "^\\.terraform$" ];
+    filters.custom =
+      [ "^\\.git$" "^\\.mypy_cache$" "^\\.terraform$" "^\\.null-ls_" ];
     renderer = {
       highlightGit = true;
       icons.gitPlacement = "after";
