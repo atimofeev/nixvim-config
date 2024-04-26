@@ -1,5 +1,5 @@
-{ ... }: {
-  imports = [ ./none-ls.nix ];
+_: {
+  imports = [ ./none-ls.nix ./yaml.nix ];
 
   plugins = {
 
