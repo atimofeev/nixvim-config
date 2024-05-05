@@ -18,14 +18,20 @@
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-      perSystem = { pkgs, system, ... }:
+      perSystem = { pkgs, pkgs-stable, system, ... }:
         let
           nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
-            inherit pkgs;
+            inherit pkgs # pkgs-stable
+            ;
             module = config;
           };
         in {
           _module.args.pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          # FIX:
+          _module.args.pkgs-stable = import nixpkgs-stable {
             inherit system;
             config.allowUnfree = true;
           };
