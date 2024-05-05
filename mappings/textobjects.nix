@@ -42,16 +42,15 @@
       };
     };
 
-    # TODO: figure out sane KBs
     swap = {
       enable = true;
       swapNext = {
-        "<leader>a" = "@parameters.inner";
-        "<leader>F" = "@function.outer";
+        "gwa" = "@parameters.inner";
+        "gwf" = "@function.outer";
       };
       swapPrevious = {
-        "<leader>A" = "@parameter.outer";
-        "<leader>fF" = "@function.outer";
+        "gwA" = "@parameter.outer";
+        "gwF" = "@function.outer";
       };
     };
   };
