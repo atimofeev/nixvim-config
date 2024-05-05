@@ -58,6 +58,14 @@
         hcl = [ "terraform-vars" ];
         bash = [ "conf" ];
       };
+      incrementalSelection = {
+        enable = true;
+        keymaps = {
+          initSelection = "<C-space>";
+          nodeIncremental = "<C-space>";
+          nodeDecremental = "<bs>";
+        };
+      };
       ensureInstalled = [ # FIX: not working?
         "bash"
         "c"
