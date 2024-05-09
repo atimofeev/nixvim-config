@@ -34,9 +34,9 @@
         # markdown, etc
         markdownlint = {
           enable =
-            true; # ignore line-length, no-inline-html, no-bare-urls, first-line-heading
+            true; # ignore no-multiple-blanks, line-length, no-inline-html, no-bare-urls, first-line-heading
           withArgs = ''
-            {extra_args = {"--disable", "MD013", "MD033", "MD034", "MD041"},}
+            {extra_args = {"--disable", "MD012", "MD013", "MD033", "MD034", "MD041"},}
           '';
         };
       };
