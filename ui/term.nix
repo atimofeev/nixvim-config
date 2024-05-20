@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   plugins.toggleterm = {
     enable = true;
     openMapping = "<C-\\>";
@@ -16,7 +16,6 @@
   };
 
   keymaps = [
-    # TODO: keymap to kill terminal
     {
       mode = "t";
       key = "<C-x>";

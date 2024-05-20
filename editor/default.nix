@@ -3,7 +3,6 @@
 
   plugins = {
 
-    # TODO: upgrade when https://github.com/max397574/better-escape.nvim/pull/59 is merged
     better-escape.enable = true;
 
     nvim-autopairs.enable = true;
@@ -12,7 +11,6 @@
 
     undotree.enable = true;
 
-    # TODO: upgrade when https://github.com/yamatsum/nvim-cursorline/issues/10 is resolved
     cursorline = {
       enable = true;
       cursorline.enable = false;
@@ -33,7 +31,6 @@
       };
     };
 
-    # TODO: setup these plugins
     leap.enable = true;
     harpoon = {
       enable = true;
@@ -52,8 +49,6 @@
 
   extraPlugins = with pkgs.vimPlugins; [{ plugin = vim-move; }];
 
-  # FIX: remap has no effect
-  # https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim
   keymaps = [
     {
       mode = [ "v" ];

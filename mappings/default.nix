@@ -1,6 +1,5 @@
-{ ... }: {
+_: {
   imports = [ ./motion.nix ./movetext.nix ./textobjects.nix ];
-  # TODO: find solution to smartindent and #
 
   globals.mapleader = " ";
 
@@ -31,7 +30,6 @@
     }
 
     # resize windows
-    # FIX: static resizing, not based on window position
     {
       mode = [ "n" "t" ];
       key = "<C-Up>";

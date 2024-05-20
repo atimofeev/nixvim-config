@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
 
   extraConfigLua = ''
     -- go to previous/next line with h,l,left arrow and right arrow

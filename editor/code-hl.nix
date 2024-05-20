@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   filetype = {
 
     filename = {
@@ -47,7 +47,6 @@
       };
     };
 
-    # TODO: setup keymaps for actions
     treesitter-refactor.enable = true;
 
     treesitter = {
@@ -66,7 +65,7 @@
           nodeDecremental = "<bs>";
         };
       };
-      ensureInstalled = [ # FIX: not working?
+      ensureInstalled = [
         "bash"
         "c"
         "commonlisp"

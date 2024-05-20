@@ -1,8 +1,5 @@
-{ ... }: {
+_: {
   imports = [ ./editor ./lsp ./mappings ./ui ];
-
-  # TODO: buffer refresh on file update
-  # https://www.reddit.com/r/neovim/comments/f0qx2y/automatically_reload_file_if_contents_changed/
 
   config = {
 
