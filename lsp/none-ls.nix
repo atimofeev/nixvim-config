@@ -1,5 +1,4 @@
-{ pkgs-stable, ... }: {
-  # TODO: https://github.com/nvimtools/none-ls.nvim/issues/58
+_: {
   plugins.lsp-format.enable = true;
 
   plugins.none-ls = {
@@ -13,8 +12,6 @@
         golangci_lint.enable = true; # go
         fish.enable = true;
         hadolint.enable = true; # docker
-        # TODO: add tflint to none-ls
-        # tflint.enable = true; # terraform
         terraform_validate = {
           enable = true;
           package = null; # NOTE: use host terraform version
@@ -68,13 +65,8 @@
         # yaml, json
         yamlfix = {
           enable = true;
-          # FIX: nixpkgs-unstable https://github.com/NixOS/nixpkgs/issues/294005
-          # OR
-          # FIX: implement second pkgs channel
-          # https://discord.com/channels/568306982717751326/1061656643189878874/threads/1219035364337909891
-          # https://github.com/hercules-ci/flake-parts/discussions/217
           # package = pkgs-stable.yamlfix;
-          package = null; # HACK: using host yamlfix-23.11 package
+          package = null; # NOTE: using host yamlfix-23.11 package
           withArgs = ''
             {env = {
               YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 

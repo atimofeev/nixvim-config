@@ -1,6 +1,4 @@
 { pkgs, ... }: {
-  # TODO: kb to show current schema
-  # integrate actual k8s schemas: https://github.com/yannh/kubernetes-json-schema
   extraPlugins = with pkgs.vimPlugins;
     let
       yaml-companion = pkgs.vimUtils.buildVimPlugin {

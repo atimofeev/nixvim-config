@@ -1,14 +1,10 @@
-{ ... }: {
-  # TODO: redo preview_scrolling_* keymaps (C-hjkl)
+_: {
 
-  # NOTE: Use (C-/) to see keys for current telescope view
   plugins.telescope = {
     enable = true;
     extensions = {
       project-nvim.enable = true;
 
-      # TODO: setup:
-      file_browser.enable = true;
     };
   };
 
