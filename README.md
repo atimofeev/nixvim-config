@@ -49,6 +49,7 @@
 - `none-ls` add tflint
 - `none-ls` migrate from unmaintained builtins. [issue](https://github.com/nvimtools/none-ls.nvim/issues/58)
 - `toggleterm` add keymap to kill term OR exit from :TermExec app
+- `toggleterm` add keymaps to open term in tab and splits (h/v)
 - `telescope` preview scrolling keymaps
 - `telescope` current view KB help keymap (example: g?(n))
 - `telescope` file_browser setup?
@@ -59,11 +60,16 @@
 - `nvim-tree` implement dynamic size of float window. examples: [1](https://www.reddit.com/r/neovim/comments/13u9okq/nvimtree_vs_neotree/), [2](https://github.com/MarioCarrion/videos/blob/269956e913b76e6bb4ed790e4b5d25255cb1db4f/2023/01/nvim/lua/plugins/nvim-tree.lua)
 - `mini.surround` avoid additional spaces in new [] and () pairs
 - `vim-move` figure out keymaps. [source code](https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim)
+- `hover.nvim` try out (nvim 0.10.0+)
 
 #### Upgrade
 
 - `better-escape` [Pull](https://github.com/max397574/better-escape.nvim/pull/59)
 - `cursorline` [Issue](https://github.com/yamatsum/nvim-cursorline/issues/10)
+
+#### Misc
+
+- Learn best practices from [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file#%EF%B8%8F--features)
 
 ## Issues
 
@@ -71,6 +77,7 @@
   All langs are installed anyway (at least according to :TSInstallInfo)
 - `yamlfix` broken in nixpkgs-unstable
 - `terminal (builtin)` does not support reflow. [merged into 0.10](https://github.com/neovim/neovim/pull/21124)
+- `spider` is not working
 
 ## Notes
 
