@@ -7,28 +7,6 @@ _: {
   '';
 
   keymaps = [
-    # navigate within insert mode
-    {
-      mode = "i";
-      key = "<C-h>";
-      action = "<Left>";
-    }
-    {
-      mode = "i";
-      key = "<C-j>";
-      action = "<Down>";
-    }
-    {
-      mode = "i";
-      key = "<C-k>";
-      action = "<Up>";
-    }
-    {
-      mode = "i";
-      key = "<C-l>";
-      action = "<Right>";
-    }
-
     # navigate windows
     {
       mode = "n";
