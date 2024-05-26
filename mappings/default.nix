@@ -11,6 +11,18 @@ _: {
       options.desc = "Command mode";
     }
     {
+      mode = "x";
+      key = "p";
+      action = "P";
+      options.desc = "Paste without copy";
+    }
+    {
+      mode = "x";
+      key = "P";
+      action = "p";
+      options.desc = "Paste and copy replaced text";
+    }
+    {
       mode = "n";
       key = "<Esc>";
       action = "<cmd> noh <cr>";
