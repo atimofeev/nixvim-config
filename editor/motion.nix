@@ -8,7 +8,13 @@ _: {
 
     # leap.enable = true;
 
-    flash.enable = true;
+    flash = {
+      enable = true;
+      modes = {
+        search.enabled = false;
+        # char.enabled = false;
+      };
+    };
   };
 
   keymaps = [
@@ -64,7 +70,7 @@ _: {
       action = "gk";
     }
   ];
-  
+
   extraConfigLua = ''
     -- go to previous/next line with h,l,left arrow and right arrow
     -- when cursor reaches end/beginning of line
