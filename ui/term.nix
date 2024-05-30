@@ -51,6 +51,12 @@
     }
     {
       mode = "n";
+      key = "<leader>tt";
+      action = "<cmd> ToggleTerm direction=tab <cr>";
+      options.desc = "Terminal tab";
+    }
+    {
+      mode = "n";
       key = "<leader>th";
       action = "<cmd> TermExec cmd=htop name=htop direction=float <cr>";
       options.desc = "Terminal htop";
