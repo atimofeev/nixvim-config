@@ -15,4 +15,11 @@ _: {
       icons.glyphs.git.unstaged = "•";
     };
   };
+
+  keymaps = [{
+    mode = "n";
+    key = "<leader>e";
+    action = "<cmd> NvimTreeFocus <cr>";
+    options.desc = "Focus nvimtree";
+  }];
 }

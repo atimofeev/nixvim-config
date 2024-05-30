@@ -28,12 +28,6 @@ _: {
       action = "<cmd> noh <cr>";
       options.desc = "Clear highlights";
     }
-    {
-      mode = "n";
-      key = "<leader>e";
-      action = "<cmd> NvimTreeFocus <cr>";
-      options.desc = "Focus nvimtree";
-    }
 
     # resize windows
     {
