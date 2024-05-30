@@ -1,5 +1,4 @@
 _: {
-  imports = [ ./motion.nix ./movetext.nix ./textobjects.nix ];
 
   globals.mapleader = " ";
 
