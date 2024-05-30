@@ -32,4 +32,11 @@ _: {
 
     };
   };
+
+  keymaps = [{
+    mode = "n";
+    key = "<leader>g";
+    action = "<cmd> Neogit <cr>";
+    options.desc = "Open Neogit";
+  }];
 }

@@ -34,12 +34,6 @@ _: {
       action = "<cmd> NvimTreeFocus <cr>";
       options.desc = "Focus nvimtree";
     }
-    {
-      mode = "n";
-      key = "<leader>g";
-      action = "<cmd> Neogit <cr>";
-      options.desc = "Open Neogit";
-    }
 
     # resize windows
     {
