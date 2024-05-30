@@ -95,6 +95,7 @@
 ### Replace
 
 - `:%s/foo/bar/gc` %: in whole buffer, s: replace foo with bar, g: global (several times per line), c: confirm
+- `* -> :%s//replacement/g` \*: select word and all matches in buffer
 - `Telescope results -> C-q -> :cdo {{cmd}} -> :wa` refactor via quickfix list and bulk actions
 
 ### Macros
