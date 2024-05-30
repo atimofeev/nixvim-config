@@ -1,12 +1,31 @@
 _: {
+  plugins = {
 
-  extraConfigLua = ''
-    -- go to previous/next line with h,l,left arrow and right arrow
-    -- when cursor reaches end/beginning of line
-    vim.opt.whichwrap:append "<>[]hl";
-  '';
+    harpoon = {
+      enable = true;
+      enableTelescope = true;
+    };
+
+    # leap.enable = true;
+
+    flash.enable = true;
+  };
 
   keymaps = [
+    # flash.nvim
+    {
+      mode = [ "n" "x" "o" ];
+      key = "s";
+      action = "<cmd>lua require('flash').jump()<cr>";
+      options.desc = "Flash jump";
+    }
+    {
+      mode = [ "n" "x" "o" ];
+      key = "S";
+      action = "<cmd>lua require('flash').treesitter()<cr>";
+      options.desc = "Flash treesitter";
+    }
+
     # navigate windows
     {
       mode = "n";
@@ -45,4 +64,11 @@ _: {
       action = "gk";
     }
   ];
+  
+  extraConfigLua = ''
+    -- go to previous/next line with h,l,left arrow and right arrow
+    -- when cursor reaches end/beginning of line
+    vim.opt.whichwrap:append "<>[]hl";
+  '';
+
 }

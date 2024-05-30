@@ -1,5 +1,12 @@
 { pkgs, ... }: {
-  imports = [ ./cmp.nix ./code-hl.nix ];
+  imports = [
+    ./cmp.nix
+    ./code-hl.nix
+    ./maps.nix
+    ./motion.nix
+    ./movetext.nix
+    ./textobjects.nix
+  ];
 
   plugins = {
 
@@ -31,12 +38,6 @@
       };
     };
 
-    leap.enable = true;
-    harpoon = {
-      enable = true;
-      enableTelescope = true;
-    };
-
   };
 
   autoCmd = [{
@@ -47,20 +48,4 @@
   }];
   autoGroups.highlight_yank.clear = true;
 
-  extraPlugins = with pkgs.vimPlugins; [{ plugin = vim-move; }];
-
-  keymaps = [
-    {
-      mode = [ "v" ];
-      key = "<M-h>";
-      action = "<gv";
-      options.desc = "Move block left";
-    }
-    {
-      mode = [ "v" ];
-      key = "<M-l>";
-      action = ">gv";
-      options.desc = "Move block right";
-    }
-  ];
 }
