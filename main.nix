@@ -1,5 +1,5 @@
 _: {
-  imports = [ ./editor ./lsp ./mappings ./ui ];
+  imports = [ ./editor ./lsp ./ui ];
 
   config = {
 
