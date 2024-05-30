@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   plugins.toggleterm = {
     enable = true;
     openMapping = "<C-\\>";
@@ -14,6 +14,21 @@ _: {
       end
     '';
   };
+
+  # integration with Telescope
+  extraPlugins = with pkgs.vimPlugins;
+    let
+      telescope-toggleterm = pkgs.vimUtils.buildVimPlugin {
+        name = "telescope-toggleterm.nvim";
+        src = pkgs.fetchFromSourcehut {
+          owner = "~havi";
+          repo = "telescope-toggleterm.nvim";
+          rev = "5c1402507f0ad01711196e5d27e9f0606f78b7d0";
+          hash = "sha256-3LbOrix1sTadZh7z5wtwuNKsllqyl3IVhArWdwBCdhM=";
+        };
+      };
+    in [{ plugin = telescope-toggleterm; }];
+  extraConfigLua = ''require("telescope").load_extension("toggleterm")'';
 
   keymaps = [
     {
@@ -37,8 +52,16 @@ _: {
     {
       mode = "n";
       key = "<leader>th";
-      action = "<cmd> TermExec cmd=htop direction=float <cr>";
+      action = "<cmd> TermExec cmd=htop name=htop direction=float <cr>";
       options.desc = "Terminal htop";
+    }
+
+    # integration with Telescope
+    {
+      mode = "n";
+      key = "<leader>fT";
+      action = "<cmd> Telescope toggleterm <cr>";
+      options.desc = "Find terminals";
     }
 
     # naviagte windows in terminal mode

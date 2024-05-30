@@ -2,10 +2,7 @@ _: {
 
   plugins.telescope = {
     enable = true;
-    extensions = {
-      project-nvim.enable = true;
-
-    };
+    extensions = { project-nvim.enable = true; };
   };
 
   # nvchad config dump
