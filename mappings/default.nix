@@ -62,10 +62,5 @@ _: {
       key = "<C-Right>";
       action = "<cmd> vertical resize +2 <cr>";
     }
-    # x = {
-    #   -- Don't copy the replaced text after pasting in visual mode
-    #   -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
-    #   ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
-    # },
   ];
 }
