@@ -49,7 +49,8 @@
 - `none-ls` add tflint
 - `none-ls` migrate from unmaintained builtins. [issue](https://github.com/nvimtools/none-ls.nvim/issues/58)
 - `toggleterm` add keymap to kill term OR exit from :TermExec app
-- `toggleterm` add keymaps to open term in tab and splits (h/v)
+- `toggleterm` add keymaps to open term in barbar tab
+- `toggleterm` more useful terminal name template (as seen in `:Telescope toggleterm`)
 - `telescope` preview scrolling keymaps
 - `telescope` current view KB help keymap (example: g?(n))
 - `telescope` file_browser setup?
