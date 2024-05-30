@@ -40,6 +40,32 @@ _: {
       action = "<cmd> TermExec cmd=htop direction=float <cr>";
       options.desc = "Terminal htop";
     }
+
+    # naviagte windows in terminal mode
+    {
+      mode = "t";
+      key = "<C-h>";
+      action = "<cmd> wincmd h <cr>";
+      options.desc = "Window left";
+    }
+    {
+      mode = "t";
+      key = "<C-j>";
+      action = "<cmd> wincmd j <cr>";
+      options.desc = "Window down";
+    }
+    {
+      mode = "t";
+      key = "<C-k>";
+      action = "<cmd> wincmd k <cr>";
+      options.desc = "Window up";
+    }
+    {
+      mode = "t";
+      key = "<C-l>";
+      action = "<cmd> wincmd l <cr>";
+      options.desc = "Window right";
+    }
   ];
 
 }
