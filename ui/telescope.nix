@@ -180,5 +180,11 @@ _: {
       action = "<cmd> TodoTelescope <cr>";
       options.desc = "Find TODOs";
     }
+    {
+      mode = "n";
+      key = "<leader>fk";
+      action = "<cmd> Telescope keymaps <cr>";
+      options.desc = "Find keymaps";
+    }
   ];
 }
