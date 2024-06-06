@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
   filetype = {
 
     filename = {
@@ -15,12 +15,10 @@ _: {
       ".*/roles/.*%.ya?ml" = "yaml.ansible";
       ".*/group_vars/.*" = "yaml.ansible";
       ".*/host_vars/.*" = "yaml.ansible";
-      ".*/templates/.*%.ya?ml.j2" = "yaml.ansible";
       ".*/.github/workflows/.*%.ya?ml" = "yaml.gh_actions";
+      ".*%.cfg" = "conf";
       ".*%.conf" = "conf";
-      ".*%.conf.j2" = "conf";
       ".*%.service" = "conf";
-      ".*%.service.j2" = "conf";
     };
 
   };
@@ -98,6 +96,23 @@ _: {
         "yaml"
       ];
     };
-
   };
+
+  extraPlugins = with pkgs.vimPlugins;
+    let
+      jinja.vim = pkgs.vimUtils.buildVimPlugin {
+        name = "jinja.vim";
+        src = pkgs.fetchFromGitHub {
+          owner = "HiPhish";
+          repo = "jinja.vim";
+          rev = "51b8a2a504416c4959127c82eac26f14f3508975";
+          hash = "sha256-9s0P1JxGZow/MpLorKeuLd2AE91XVow1Ufm3zMw+XZU=";
+        };
+      };
+    in [{ plugin = jinja.vim; }];
+  autoCmd = [{
+    event = [ "BufEnter" ];
+    pattern = [ "*.j2" ];
+    command = "TSBufDisable highlight";
+  }];
 }

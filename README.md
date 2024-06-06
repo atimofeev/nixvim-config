@@ -54,6 +54,7 @@
 - `telescope` preview scrolling keymaps
 - `telescope` current view KB help keymap (example: g?(n))
 - `telescope` file_browser setup?
+- `treesitter` add [jinja2](https://github.com/varpeti/tree-sitter-jinja2) support; enable multiple grammars for .j2 files\
 - `treesitter-refactor` keymaps for actions
 - `dashboard` recent projects and files. [example](https://github.com/jakehamilton/neovim/blob/cdc0749394ed0645bd9516977514108c410cec15/modules/nixvim/dashboard/default.nix#L57)
 - `yaml-companion` KB to show current yaml schema
