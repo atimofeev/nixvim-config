@@ -14,7 +14,8 @@ _: {
         hadolint.enable = true; # docker
         terraform_validate = {
           enable = true;
-          package = null; # NOTE: use host terraform version
+          package = null; # NOTE: use host tofu executable
+          withArgs = ''{command = "tofu"}'';
         };
         tfsec.enable = true;
         # yaml
@@ -60,7 +61,8 @@ _: {
         fish_indent.enable = true;
         terraform_fmt = { # terraform
           enable = true;
-          package = null; # NOTE: use host terraform version
+          package = null; # NOTE: use host tofu executable
+          withArgs = ''{command = "tofu"}'';
         };
         # yaml, json
         yamlfix = {
