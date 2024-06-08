@@ -42,10 +42,8 @@
 
 #### Configure
 
-- `leap` setup
 - `harpoon` setup
-- `oil` setup
-- `oil` install [gx.nvim](https://github.com/chrishrb/gx.nvim) to fix `gx` action. [video guide](https://www.youtube.com/watch?v=EEoJQWgpWqE)
+- `oil` setup; install [gx.nvim](https://github.com/chrishrb/gx.nvim) to fix `gx` action. [video guide](https://www.youtube.com/watch?v=EEoJQWgpWqE)
 - `none-ls` add tflint
 - `none-ls` migrate from unmaintained builtins. [issue](https://github.com/nvimtools/none-ls.nvim/issues/58)
 - `toggleterm` add keymap to kill term OR exit from :TermExec app
@@ -77,7 +75,6 @@
 
 - `treesitter` ensureInstalled list has no effect\
   All langs are installed anyway (at least according to :TSInstallInfo)
-- `yamlfix` broken in nixpkgs-unstable
 - `terminal (builtin)` does not support reflow. [merged into 0.10](https://github.com/neovim/neovim/pull/21124)
 - `spider` is not working
 

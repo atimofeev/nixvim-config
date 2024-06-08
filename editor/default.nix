@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+_: {
   imports = [
     ./cmp.nix
     ./code-hl.nix
@@ -14,7 +14,7 @@
 
     nvim-autopairs.enable = true;
 
-    comment-nvim.enable = true;
+    comment.enable = true;
 
     undotree.enable = true;
 

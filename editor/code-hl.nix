@@ -34,7 +34,7 @@
 
     indent-blankline = {
       enable = true;
-      scope.showStart = false;
+      settings.scope.show_start = false;
     };
 
     rainbow-delimiters = {
@@ -98,18 +98,17 @@
     };
   };
 
-  extraPlugins = with pkgs.vimPlugins;
-    let
-      jinja.vim = pkgs.vimUtils.buildVimPlugin {
-        name = "jinja.vim";
-        src = pkgs.fetchFromGitHub {
-          owner = "HiPhish";
-          repo = "jinja.vim";
-          rev = "51b8a2a504416c4959127c82eac26f14f3508975";
-          hash = "sha256-9s0P1JxGZow/MpLorKeuLd2AE91XVow1Ufm3zMw+XZU=";
-        };
+  extraPlugins = let
+    jinja.vim = pkgs.vimUtils.buildVimPlugin {
+      name = "jinja.vim";
+      src = pkgs.fetchFromGitHub {
+        owner = "HiPhish";
+        repo = "jinja.vim";
+        rev = "51b8a2a504416c4959127c82eac26f14f3508975";
+        hash = "sha256-9s0P1JxGZow/MpLorKeuLd2AE91XVow1Ufm3zMw+XZU=";
       };
-    in [{ plugin = jinja.vim; }];
+    };
+  in [{ plugin = jinja.vim; }];
   autoCmd = [{
     event = [ "BufEnter" ];
     pattern = [ "*.j2" ];

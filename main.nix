@@ -5,7 +5,7 @@ _: {
 
     clipboard.register = "unnamedplus";
 
-    options = {
+    opts = {
 
       cursorline = true;
 

@@ -1,33 +1,34 @@
 { pkgs, ... }: {
   plugins.toggleterm = {
     enable = true;
-    openMapping = "<C-\\>";
-    direction = "float";
-    floatOpts.border = "curved";
-    size = ''
-      function(term)
-        if term.direction == "horizontal" then
-          return 20
-        elseif term.direction == "vertical" then
-          return vim.o.columns * 0.4
+    settings = {
+      direction = "float";
+      float_opts.border = "curved";
+      open_mapping = "[[<c-\\>]]";
+      size = ''
+        function(term)
+          if term.direction == "horizontal" then
+            return 20
+          elseif term.direction == "vertical" then
+            return vim.o.columns * 0.4
+          end
         end
-      end
-    '';
+      '';
+    };
   };
 
   # integration with Telescope
-  extraPlugins = with pkgs.vimPlugins;
-    let
-      telescope-toggleterm = pkgs.vimUtils.buildVimPlugin {
-        name = "telescope-toggleterm.nvim";
-        src = pkgs.fetchFromSourcehut {
-          owner = "~havi";
-          repo = "telescope-toggleterm.nvim";
-          rev = "5c1402507f0ad01711196e5d27e9f0606f78b7d0";
-          hash = "sha256-3LbOrix1sTadZh7z5wtwuNKsllqyl3IVhArWdwBCdhM=";
-        };
+  extraPlugins = let
+    telescope-toggleterm = pkgs.vimUtils.buildVimPlugin {
+      name = "telescope-toggleterm.nvim";
+      src = pkgs.fetchFromSourcehut {
+        owner = "~havi";
+        repo = "telescope-toggleterm.nvim";
+        rev = "5c1402507f0ad01711196e5d27e9f0606f78b7d0";
+        hash = "sha256-3LbOrix1sTadZh7z5wtwuNKsllqyl3IVhArWdwBCdhM=";
       };
-    in [{ plugin = telescope-toggleterm; }];
+    };
+  in [{ plugin = telescope-toggleterm; }];
   extraConfigLua = ''require("telescope").load_extension("toggleterm")'';
 
   keymaps = [

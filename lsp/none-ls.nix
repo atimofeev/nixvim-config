@@ -67,8 +67,6 @@ _: {
         # yaml, json
         yamlfix = {
           enable = true;
-          # package = pkgs-stable.yamlfix;
-          package = null; # NOTE: using host yamlfix-23.11 package
           withArgs = ''
             {env = {
               YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 

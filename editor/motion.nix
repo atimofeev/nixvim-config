@@ -6,8 +6,6 @@ _: {
       enableTelescope = true;
     };
 
-    # leap.enable = true;
-
     flash = {
       enable = true;
       modes = {
