@@ -1,9 +1,6 @@
 _: {
 
-  plugins.telescope = {
-    enable = true;
-    extensions = { project-nvim.enable = true; };
-  };
+  plugins.telescope.enable = true;
 
   # nvchad config dump
   extraConfigLua = ''

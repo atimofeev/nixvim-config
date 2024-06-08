@@ -1,16 +1,15 @@
 { pkgs, ... }: {
-  extraPlugins = with pkgs.vimPlugins;
-    let
-      yaml-companion = pkgs.vimUtils.buildVimPlugin {
-        name = "yaml-companion.nvim";
-        src = pkgs.fetchFromGitHub {
-          owner = "someone-stole-my-name";
-          repo = "yaml-companion.nvim";
-          rev = "4de1e1546abc461f62dee02fcac6a02debd6eb9e";
-          hash = "sha256-BmX7hyiIMQfcoUl09Y794HrSDq+cj93T+Z5u3e5wqLc=";
-        };
+  extraPlugins = let
+    yaml-companion = pkgs.vimUtils.buildVimPlugin {
+      name = "yaml-companion.nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "someone-stole-my-name";
+        repo = "yaml-companion.nvim";
+        rev = "4de1e1546abc461f62dee02fcac6a02debd6eb9e";
+        hash = "sha256-BmX7hyiIMQfcoUl09Y794HrSDq+cj93T+Z5u3e5wqLc=";
       };
-    in [{ plugin = yaml-companion; }];
+    };
+  in [{ plugin = yaml-companion; }];
   extraConfigLua = ''
     local cfg = require("yaml-companion").setup(opts)
     require("lspconfig")["yamlls"].setup(cfg)

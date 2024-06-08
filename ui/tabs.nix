@@ -2,8 +2,7 @@ _: {
 
   plugins.barbar = {
     enable = true;
-    # autoHide = true;
-    excludeFileTypes = [ "NeogitStatus" ];
+    settings.exclude_ft = [ "NeogitStatus" ];
   };
 
   keymaps = [

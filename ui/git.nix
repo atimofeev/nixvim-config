@@ -24,13 +24,15 @@ _: {
 
     gitsigns = {
       enable = true;
-      currentLineBlame = true;
-      signs = {
-        changedelete.text = "󰇘";
-        delete.text = "";
+      settings = {
+        current_line_blame = true;
+        signs = {
+          changedelete.text = "󰇘";
+          delete.text = "";
+        };
       };
-
     };
+
   };
 
   keymaps = [{

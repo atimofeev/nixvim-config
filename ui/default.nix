@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+_: {
   imports = [
     ./dashboard.nix
     ./filetree.nix
@@ -13,8 +13,7 @@
   colorschemes = {
     catppuccin = {
       enable = true;
-      flavour = "macchiato";
-      # dimInactive.enabled = true;
+      settings.flavour = "macchiato";
     };
   };
 
@@ -59,6 +58,7 @@
 
     project-nvim = {
       enable = true;
+      enableTelescope = true;
       patterns = [ ".git" ];
       ignoreLsp = [ "null-ls" "dockerls" ];
     };
