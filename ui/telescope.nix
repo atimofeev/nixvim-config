@@ -10,7 +10,6 @@ _: {
       local TelescopeColor = {
         TelescopeMatching = { fg = colors.flamingo },
         TelescopeSelection = { fg = colors.text, bg = colors.surface0, bold = true },
-
         TelescopePromptPrefix = { bg = colors.surface0 },
         TelescopePromptNormal = { bg = colors.surface0 },
         TelescopeResultsNormal = { bg = colors.mantle },
@@ -32,13 +31,15 @@ _: {
         defaults = {   
           vimgrep_arguments = {
             "rg",
-            "-L",
+            "--hidden",
+            "--follow",
             "--color=never",
             "--no-heading",
             "--with-filename",
             "--line-number",
             "--column",
             "--smart-case",
+            "--sortr=modified",
           },
           prompt_prefix = "   ",
           selection_caret = "  ",
@@ -46,22 +47,19 @@ _: {
           initial_mode = "insert",
           selection_strategy = "reset",
           sorting_strategy = "ascending",
-          layout_strategy = "horizontal",
+          layout_strategy = "flex",
           layout_config = {
             horizontal = {
               prompt_position = "top",
-              preview_width = 0.55,
-              results_width = 0.8,
             },
             vertical = {
-              mirror = false,
+              prompt_position = "top",
+              mirror = true;
             },
-            width = 0.87,
-            height = 0.80,
-            preview_cutoff = 120,
+            width = 0.90,
           },
           file_sorter = require("telescope.sorters").get_fuzzy_file,
-          file_ignore_patterns = { "node_modules" },
+          file_ignore_patterns = { "node_modules", ".git/", ".mypy_cache" },
           generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
           path_display = { "truncate" },
           winblend = 0,
@@ -92,6 +90,7 @@ _: {
           },
         },
         extensions_list = { "themes", "terms" },
+        pickers = { find_files = { hidden = true, }, },
       }
     '';
 

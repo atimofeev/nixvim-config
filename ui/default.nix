@@ -60,6 +60,7 @@ _: {
     project-nvim = {
       enable = true;
       enableTelescope = true;
+      showHidden = true;
       patterns = [ ".git" ];
       ignoreLsp = [ "null-ls" "dockerls" ];
     };
