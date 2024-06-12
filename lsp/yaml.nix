@@ -10,8 +10,9 @@
       };
     };
   in [{ plugin = yaml-companion; }];
-  extraConfigLua = ''
-    local cfg = require("yaml-companion").setup(opts)
-    require("lspconfig")["yamlls"].setup(cfg)
-    require("telescope").load_extension("yaml_schema")'';
+  extraConfigLua = # lua
+    ''
+      local cfg = require("yaml-companion").setup(opts)
+      require("lspconfig")["yamlls"].setup(cfg)
+      require("telescope").load_extension("yaml_schema")'';
 }

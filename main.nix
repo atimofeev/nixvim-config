@@ -38,10 +38,11 @@ _: {
 
     };
 
-    extraConfigLua = ''
-      -- disable nvim intro
-      vim.opt.shortmess:append "sI";
-    '';
+    extraConfigLua = # lua
+      ''
+        -- disable nvim intro
+        vim.opt.shortmess:append "sI";
+      '';
 
   };
 }
