@@ -16,12 +16,9 @@ _: {
         # devops
         ansiblels.enable = true;
         dockerls.enable = true;
-        # https://github.com/nix-community/nixvim/issues/1426
-        # docker_compose_language_service.enable = true;
-        # groovyls.enable = true;
+        docker-compose-language-service.enable = true;
         helm-ls.enable = true;
         jsonls.enable = true;
-        # powershell_es.enable = true;
         terraformls.enable = true;
         yamlls.enable = true;
       };
