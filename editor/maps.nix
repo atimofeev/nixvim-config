@@ -30,22 +30,22 @@ _: {
 
     # resize windows
     {
-      mode = [ "n" "t" ];
+      mode = [ "n" ];
       key = "<C-Up>";
       action = "<cmd> resize -2 <cr>";
     }
     {
-      mode = [ "n" "t" ];
+      mode = [ "n" ];
       key = "<C-Down>";
       action = "<cmd> resize +2 <cr>";
     }
     {
-      mode = [ "n" "t" ];
+      mode = [ "n" ];
       key = "<C-Left>";
       action = "<cmd> vertical resize -2 <cr>";
     }
     {
-      mode = [ "n" "t" ];
+      mode = [ "n" ];
       key = "<C-Right>";
       action = "<cmd> vertical resize +2 <cr>";
     }

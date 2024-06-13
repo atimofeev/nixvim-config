@@ -91,12 +91,13 @@
       action = "<cmd> wincmd k <cr>";
       options.desc = "Window up";
     }
-    {
-      mode = "t";
-      key = "<C-l>";
-      action = "<cmd> wincmd l <cr>";
-      options.desc = "Window right";
-    }
+    # interference with <C-l> for `clear`
+    # {
+    #   mode = "t";
+    #   key = "<C-l>";
+    #   action = "<cmd> wincmd l <cr>";
+    #   options.desc = "Window right";
+    # }
   ];
 
 }
