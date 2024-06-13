@@ -53,6 +53,24 @@
     }
     {
       mode = "n";
+      key = "<leader>B";
+      action = "<cmd> enew | setlocal nonumber norelativenumber | term <cr>i";
+      options.desc = "Terminal buffer";
+    }
+    {
+      mode = "n";
+      key = "<C-w>S";
+      action = "<cmd> 20new | setlocal nonumber norelativenumber | term <cr>i";
+      options.desc = "Terminal split";
+    }
+    {
+      mode = "n";
+      key = "<C-w>V";
+      action = "<cmd> 80vnew | setlocal nonumber norelativenumber | term <cr>i";
+      options.desc = "Terminal vsplit";
+    }
+    {
+      mode = "n";
       key = "<leader>tt";
       action = "<cmd> ToggleTerm direction=tab <cr>";
       options.desc = "Terminal tab";
