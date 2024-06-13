@@ -90,7 +90,11 @@ _: {
           },
         },
         extensions_list = { "themes", "terms" },
-        pickers = { find_files = { hidden = true, }, },
+        pickers = { find_files = {
+            hidden = true,
+            find_command = {"rg", "--files", "--sortr=modified"};
+          },
+        },
       }
     '';
 
