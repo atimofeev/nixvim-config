@@ -8,6 +8,7 @@
       "docker-compose.yaml" = "yaml.docker-compose";
       "docker-compose.yml" = "yaml.docker-compose";
       "flake.lock" = "json";
+      "terraform.tfstate" = "json";
     };
 
     pattern = {
@@ -19,6 +20,7 @@
       ".*%.cfg" = "conf";
       ".*%.conf" = "conf";
       ".*%.service" = "conf";
+      ".*%.tf" = "terraform";
     };
 
   };
