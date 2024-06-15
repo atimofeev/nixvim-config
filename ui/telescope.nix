@@ -156,9 +156,27 @@ _: {
     }
     {
       mode = "n";
+      key = "<leader>fgC";
+      action = "<cmd> Telescope git_bcommits <cr>";
+      options.desc = "Find git buffer commits";
+    }
+    {
+      mode = "n";
       key = "<leader>fgs";
       action = "<cmd> Telescope git_status <cr>";
       options.desc = "Find git status";
+    }
+    {
+      mode = "n";
+      key = "<leader>fgS";
+      action = "<cmd> Telescope git_stash <cr>";
+      options.desc = "Find git stash";
+    }
+    {
+      mode = "n";
+      key = "<leader>fgb";
+      action = "<cmd> Telescope git_branches <cr>";
+      options.desc = "Find git branches";
     }
     {
       mode = "n";
