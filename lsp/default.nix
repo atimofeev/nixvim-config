@@ -29,6 +29,11 @@ _: {
       settings.use_diagnostic_signs = true;
     };
   };
+  autoCmd = [{
+    event = [ "BufEnter" ];
+    pattern = [ "Trouble" ];
+    command = "setlocal wrap";
+  }];
 
   keymaps = [
     {
