@@ -3,6 +3,7 @@ _: {
     ./dashboard.nix
     ./filetree.nix
     ./git.nix
+    ./oil.nix
     ./spectre.nix
     ./statusline.nix
     ./tabs.nix
