@@ -36,7 +36,7 @@
 
     indent-blankline = {
       enable = true;
-      settings.scope.show_start = false;
+      settings.scope.enabled = false;
     };
 
     rainbow-delimiters = {
