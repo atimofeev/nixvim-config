@@ -101,12 +101,6 @@ _: {
   keymaps = [
     {
       mode = "n";
-      key = "<leader>fe";
-      action = "<cmd> Telescope file_browser <cr>";
-      options.desc = "File browser";
-    }
-    {
-      mode = "n";
       key = "<leader>ff";
       action = "<cmd> Telescope find_files <cr>";
       options.desc = "Find files";
