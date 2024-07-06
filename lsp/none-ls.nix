@@ -15,7 +15,14 @@ _: {
         terraform_validate = {
           enable = true;
           package = null; # NOTE: use host tofu executable
-          withArgs = ''{command = "tofu"}'';
+          withArgs = # lua
+            ''
+              {
+                command = "tofu",
+                cwd = function(params) -- use project root
+                    return vim.fn.getcwd()
+                end,
+              }'';
         };
         tfsec.enable = true;
         # yaml
