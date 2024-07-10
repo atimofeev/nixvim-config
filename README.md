@@ -69,6 +69,7 @@
 
 - Learn best practices from [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file#%EF%B8%8F--features)
 - Create terraform template autodetect and syntax, base it on [jinja.nvim](https://github.com/HiPhish/jinja.vim).
+- Good nixvim [template](https://github.com/elythh/nixvim)
 
 ## Issues
 

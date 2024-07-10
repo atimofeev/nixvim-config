@@ -110,8 +110,8 @@
       src = pkgs.fetchFromGitHub {
         owner = "HiPhish";
         repo = "jinja.vim";
-        rev = "51b8a2a504416c4959127c82eac26f14f3508975";
-        hash = "sha256-9s0P1JxGZow/MpLorKeuLd2AE91XVow1Ufm3zMw+XZU=";
+        rev = "ca97dafc82c012b3a9005a12a673d2cfa854376d";
+        hash = "sha256-txhRGtriIHg8oTRIUpn37OVlZtBJwPeOJQoYBFIu6JE=";
       };
     };
   in [{ plugin = jinja.vim; }];
