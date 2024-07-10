@@ -68,6 +68,7 @@
 #### Misc
 
 - Learn best practices from [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file#%EF%B8%8F--features)
+- Create terraform template autodetect and syntax, base it on [jinja.nvim](https://github.com/HiPhish/jinja.vim).
 
 ## Issues
 
@@ -75,6 +76,8 @@
   All langs are installed anyway (at least according to :TSInstallInfo)
 - `terminal (builtin)` does not support reflow. [merged into 0.10](https://github.com/neovim/neovim/pull/21124)
 - `spider` is not working
+- Project root dir is not correctly detected by LSPs\
+  Actual at least with `terraformls`
 
 ## Notes
 
