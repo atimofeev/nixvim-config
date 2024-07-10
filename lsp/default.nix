@@ -71,6 +71,5 @@ _: {
       action = "<cmd> lua vim.lsp.buf.implementation() <cr>";
       options.desc = "LSP implementation";
     }
-    # Map("n", "K", ":lua vim.lsp.buf.hover()<CR>")
   ];
 }
