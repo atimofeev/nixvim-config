@@ -8,9 +8,11 @@ _: {
 
     flash = {
       enable = true;
-      modes = {
-        search.enabled = false;
-        # char.enabled = false;
+      settings = {
+        modes = {
+          search.enabled = false;
+          # char.enabled = false;
+        };
       };
     };
   };
