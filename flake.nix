@@ -4,7 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixvim.url = "github:nix-community/nixvim";
+    nixvim.url =
+      "github:nix-community/nixvim?rev=c0ea106b4bdf8707837bb0d80efd6affbc128bdf";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
