@@ -20,6 +20,7 @@ _: {
         helm-ls.enable = true;
         jsonls.enable = true;
         terraformls.enable = true;
+        tflint.enable = true;
         yamlls.enable = true;
       };
     };
