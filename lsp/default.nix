@@ -45,7 +45,7 @@ _: {
     {
       mode = "n";
       key = "<leader>ld";
-      action = "<cmd> TroubleToggle <cr>";
+      action = "<cmd> Trouble diagnostics toggle <cr>";
       options.desc = "LSP diagnostics";
     }
     {
