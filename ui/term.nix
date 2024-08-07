@@ -35,7 +35,7 @@
   keymaps = [
     {
       mode = "t";
-      key = "<C-x>";
+      key = "jk";
       action = "<C-\\><C-N>";
       options.desc = "Escape terminal mode";
     }
