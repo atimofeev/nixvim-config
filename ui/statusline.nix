@@ -14,6 +14,15 @@ _: {
       {
         name = "branch";
         icon = "";
+        fmt = # lua
+          ''
+            function(str)
+               if str:len() > 25 then
+                  return str:sub(1, 25) .. '>'
+               end
+               return str
+            end
+          '';
       }
       {
         name = "diff";
@@ -37,7 +46,6 @@ _: {
         };
       }
     ];
-    # git branch name limit = 25
   };
 
 }
