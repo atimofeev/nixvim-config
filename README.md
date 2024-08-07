@@ -76,9 +76,8 @@
 - `treesitter` ensureInstalled list has no effect\
   All langs are installed anyway (at least according to :TSInstallInfo)
 - `terminal (builtin)` does not support reflow. [merged into 0.10](https://github.com/neovim/neovim/pull/21124)
-- `spider` is not working
-- Project root dir is not correctly detected by LSPs\
-  Actual at least with `terraformls`
+- `terraformls` can't load completion schema from providers: \
+  `2024/08/01 22:35:09 module_ops.go:301: preloaded schema not available for registry.terraform.io/hashicorp/aws`
 
 ## Notes
 
@@ -109,4 +108,5 @@
 - `:%y` yank whole buffer
 - `gt` next tab
 - `gT` previous tab
-- `:e!` reload buffer from file
+- `:e` reload buffer from file
+- `:r file` or `:r !cmd` read and insert results into buffer
