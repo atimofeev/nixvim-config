@@ -6,13 +6,18 @@ _: {
     lsp = {
       enable = true;
       servers = {
+
         # langs
-        lua-ls.enable = true;
+        lua-ls = {
+          enable = true;
+          settings.diagnostics.globals = [ "vim" "require" ];
+        };
         pylsp.enable = true;
         ruff-lsp.enable = true;
         gopls.enable = true;
         bashls.enable = true;
         nixd.enable = true;
+
         # devops
         ansiblels.enable = true;
         dockerls.enable = true;
