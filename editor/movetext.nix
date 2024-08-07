@@ -15,25 +15,25 @@
       options.desc = "Indent lines";
     }
     {
-      mode = [ "n" "i" ];
+      mode = "i";
       key = "<M-j>";
       action = "<cmd> m +1 <cr>";
       options.desc = "Move line down";
     }
     {
-      mode = [ "n" "i" ];
+      mode = "i";
       key = "<M-k>";
       action = "<cmd> m -2 <cr>";
       options.desc = "Move line up";
     }
     {
-      mode = [ "v" ];
+      mode = "v";
       key = "<M-h>";
       action = "<gv";
       options.desc = "Move block left";
     }
     {
-      mode = [ "v" ];
+      mode = "v";
       key = "<M-l>";
       action = ">gv";
       options.desc = "Move block right";
