@@ -10,6 +10,12 @@ _: {
       options.desc = "Command mode";
     }
     {
+      mode = "n";
+      key = ":";
+      action = ";";
+      options.desc = "Next symbol match";
+    }
+    {
       mode = "x";
       key = "p";
       action = "P";
