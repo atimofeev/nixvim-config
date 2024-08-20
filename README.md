@@ -1,5 +1,7 @@
 # nixvim-config
 
+Coding is just an excuse to use Vim!
+
 ## Features
 
 ## TODOs
@@ -65,7 +67,7 @@
 - `better-escape` [Pull](https://github.com/max397574/better-escape.nvim/pull/59)
 - `cursorline` [Issue](https://github.com/yamatsum/nvim-cursorline/issues/10)
 
-#### Misc
+#### Etc
 
 - Learn best practices from [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file#%EF%B8%8F--features)
 - Create terraform template autodetect and syntax, base it on [jinja.nvim](https://github.com/HiPhish/jinja.vim).
@@ -83,30 +85,105 @@
 
 ### Movement
 
-- `C-d` move half page down
-- `C-u` move half page up
+#### Words
 
-### Rename word flow
+Move between words. Punctuation and other symbols are also considered words.\
+To move based on whitespace, use capital letters (WBE).
 
-- `*` select all matches in buffer
+- `w` start of next word
+- `b` start of prev word
+- `e` end of next word
+- `ge` end of prev word
+
+#### Lines
+
+- `12G` or `:12` go to line 12
+- `C-e` scroll one line down
+- `C-y` one line up
+
+#### Window
+
+- `C-d` scroll half screen down
+- `C-u` half screen up
+- `C-f` full screen down
+- `C-b` full screen up
+
+- `zz` center current line
+- `zt` scroll line to top of window
+- `zb` scroll line to bottom of window
+
+#### Other
+
+- `%` jump to matching ({[
+- `gt` next tab
+- `gT` previous tab
+- `gx` open link
+- `gf` open file
+
+### Selection
+
+- `*` search word under cursor
+- `gn` go to next search match and select it
+
+### Tricks
+
+#### Renaming things
+
+##### Method 1
+
+- `*` select all matches for a word under cursor
 - `cgn` change next match
 - `.` to repeat action
 
-### Replace
+##### Method 2
+
+- `* -> :%s//replacement/g` \*: select word and all matches in buffer
+
+##### Method 3
 
 - `:%s/foo/bar/gc` %: in whole buffer, s: replace foo with bar, g: global (several times per line), c: confirm
-- `* -> :%s//replacement/g` \*: select word and all matches in buffer
+
+##### Method 4
+
 - `Telescope results -> C-q -> :cdo {{cmd}} -> :wa` refactor via quickfix list and bulk actions
+
+#### Add opening and closing tags on multiple lines
+
+- `C-q -> I` insert opening tag
+- `gv` go to last visual selection
+- `$ -> A` append closing tag
 
 ### Macros
 
 - `qw -> {{do stuff}} -> q -> 4@w` q: start/stop macro record, w: in register w, 4@w: repeat 4 times the macro w
 - `:reg` show registers
 
+### Sessions
+
+- `:mksession file.vim` save current session
+- `:source file.vim` load saved session
+
+### Marks
+
+- `ma` create mark `a`
+- `'a` go to mark `a`
+
+Scope:
+
+- `lowercase` current buffer
+- `uppercase` session (move to any buffer)
+
 ### Misc
 
 - `:%y` yank whole buffer
-- `gt` next tab
-- `gT` previous tab
 - `:e` reload buffer from file
 - `:r file` or `:r !cmd` read and insert results into buffer
+- `ZZ` save and quit
+- `ZQ` quit without saving
+- `viB` select within ()
+- `viB` select within {}
+- `~` toggle case and move to next char
+- `g~w` toggle case of word
+- `gg=G` indent whole file
+- `J` join current and next lines (with space between)
+- `gJ` join without space
