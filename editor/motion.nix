@@ -11,7 +11,7 @@ _: {
       settings = {
         modes = {
           search.enabled = false;
-          # char.enabled = false;
+          char.enabled = false;
         };
       };
     };
