@@ -52,8 +52,6 @@ Coding is just an excuse to use Vim!
 - `dashboard` recent projects and files. [example](https://github.com/jakehamilton/neovim/blob/cdc0749394ed0645bd9516977514108c410cec15/modules/nixvim/dashboard/default.nix#L57)
 - `yaml-companion` KB to show current yaml schema
 - `yaml-companion` integrate [actual](https://github.com/yannh/kubernetes-json-schema) k8s schemas
-- `mini.surround` avoid additional spaces in new [] and () pairs
-- `nvim-autopairs` make two spaces in empty new [] and () pairs on single SPC press
 - `vim-move` figure out keymaps. [source code](https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim)
 
 #### Upgrade
@@ -117,6 +115,13 @@ To move based on whitespace, use capital letters (WBE).
 
 - `*` search word under cursor
 - `gn` go to next search match and select it
+
+### Editing
+
+#### Modify existing text
+
+- `C-a` increment number
+- `C-x` decrement number
 
 ### Tricks
 
