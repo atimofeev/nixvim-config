@@ -6,33 +6,6 @@ Coding is just an excuse to use Vim!
 
 ## TODOs
 
-### Nix
-
-- `nixpkgs-stable` Implement second nixpkgs channel\
-  Non-working example of my try:
-
-```nix
-{
-  inputs = {
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
-  }
-  outputs = {nixpkgs-stable, ... }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      perSystem = { pkgs-stable ... }:
-        let
-          nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
-            inherit pkgs-stable;
-          };
-        in {
-          _module.args.pkgs-stable = import nixpkgs-stable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        };
-    };
-}
-```
-
 ### Builtins
 
 - `smartindent` fix behavior with #\
