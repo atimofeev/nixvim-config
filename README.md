@@ -88,13 +88,27 @@ To move based on whitespace, use capital letters (WBE).
 
 - `*` search word under cursor
 - `gn` go to next search match and select it
+- `o` switch selection direction
+- `vib` select within ()
+- `viB` select within {}
 
 ### Editing
 
-#### Modify existing text
+- `cc` change whole line
+- On selection `:norm A test` will play entered keys, appending `test` to end of line
+
+#### Numbers
 
 - `C-a` increment number
 - `C-x` decrement number
+- On selection: `g C-a` create sequence of numbers
+
+#### Case
+
+- `~` toggle case
+- `g~w` toggle case of word
+- V: `u` lower case
+- V: `U` upper case
 
 ### Tricks
 
@@ -124,10 +138,16 @@ To move based on whitespace, use capital letters (WBE).
 - `gv` go to last visual selection
 - `$ -> A` append closing tag
 
+### Registers
+
+- `:reg` show registers
+- `"ay` copy to register `a`
+- `"ap` paste from register `a`
+- `"Ay` append to register `a`
+
 ### Macros
 
 - `qw -> {{do stuff}} -> q -> 4@w` q: start/stop macro record, w: in register w, 4@w: repeat 4 times the macro w
-- `:reg` show registers
 
 ### Sessions
 
@@ -137,12 +157,20 @@ To move based on whitespace, use capital letters (WBE).
 ### Marks
 
 - `ma` create mark `a`
-- `'a` go to mark `a`
+- `'a` or \`a go to mark `a`
 
 Scope:
 
 - `lowercase` current buffer
 - `uppercase` session (move to any buffer)
+
+### Folds
+
+- `zf` create fold
+- `za` toggle fold
+- `zc` close fold
+- `zo` open fold
+- `zd` delete fold
 
 ### Misc
 
@@ -151,10 +179,7 @@ Scope:
 - `:r file` or `:r !cmd` read and insert results into buffer
 - `ZZ` save and quit
 - `ZQ` quit without saving
-- `viB` select within ()
-- `viB` select within {}
-- `~` toggle case and move to next char
-- `g~w` toggle case of word
 - `gg=G` indent whole file
 - `J` join current and next lines (with space between)
 - `gJ` join without space
+- `!open %` open file in external app
