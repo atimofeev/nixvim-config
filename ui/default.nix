@@ -1,6 +1,5 @@
 _: {
   imports = [
-    ./dashboard.nix
     ./filetree.nix
     ./git.nix
     ./oil.nix
