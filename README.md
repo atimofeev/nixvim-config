@@ -16,16 +16,14 @@ Coding is just an excuse to use Vim!
 
 #### Configure
 
-- `harpoon` setup
 - `none-ls` migrate from unmaintained builtins. [issue](https://github.com/nvimtools/none-ls.nvim/issues/58)
 - `toggleterm` add keymap to kill term OR exit from :TermExec app
 - `toggleterm` more useful terminal name template (as seen in `:Telescope toggleterm`)
 - `telescope` check [Configuration-Recipes](https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes) for useful info
 - `treesitter-refactor` keymaps for actions
-- `dashboard` recent projects and files. [example](https://github.com/jakehamilton/neovim/blob/cdc0749394ed0645bd9516977514108c410cec15/modules/nixvim/dashboard/default.nix#L57)
 - `yaml-companion` KB to show current yaml schema
 - `yaml-companion` integrate [actual](https://github.com/yannh/kubernetes-json-schema) k8s schemas
-- `vim-move` figure out keymaps. [source code](https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim)
+- `vim-move` disable `M-h` `M-l` broken keymaps. [source code](https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim)
 
 #### Upgrade
 
@@ -110,34 +108,6 @@ To move based on whitespace, use capital letters (WBE).
 - V: `u` lower case
 - V: `U` upper case
 
-### Tricks
-
-#### Renaming things
-
-##### Method 1
-
-- `*` select all matches for a word under cursor
-- `cgn` change next match
-- `.` to repeat action
-
-##### Method 2
-
-- `* -> :%s//replacement/g` \*: select word and all matches in buffer
-
-##### Method 3
-
-- `:%s/foo/bar/gc` %: in whole buffer, s: replace foo with bar, g: global (several times per line), c: confirm
-
-##### Method 4
-
-- `Telescope results -> C-q -> :cdo {{cmd}} -> :wa` refactor via quickfix list and bulk actions
-
-#### Add opening and closing tags on multiple lines
-
-- `C-q -> I` insert opening tag
-- `gv` go to last visual selection
-- `$ -> A` append closing tag
-
 ### Registers
 
 - `:reg` show registers
@@ -172,6 +142,11 @@ Scope:
 - `zo` open fold
 - `zd` delete fold
 
+### Invoke command line
+
+- On selection: `:!sort` will sort lines
+- `:!open %` open file in external app
+
 ### Misc
 
 - `:%y` yank whole buffer
@@ -182,4 +157,31 @@ Scope:
 - `gg=G` indent whole file
 - `J` join current and next lines (with space between)
 - `gJ` join without space
-- `!open %` open file in external app
+
+### Tricks
+
+#### Renaming things
+
+##### Method 1
+
+- `*` select all matches for a word under cursor
+- `cgn` change next match
+- `.` to repeat action
+
+##### Method 2
+
+- `* -> :%s//replacement/g` \*: select word and all matches in buffer
+
+##### Method 3
+
+- `:%s/foo/bar/gc` %: in whole buffer, s: replace foo with bar, g: global (several times per line), c: confirm
+
+##### Method 4
+
+- `Telescope results -> C-q -> :cdo {{cmd}} -> :wa` refactor via quickfix list and bulk actions
+
+#### Add opening and closing tags on multiple lines
+
+- `C-q -> I` insert opening tag
+- `gv` go to last visual selection
+- `$ -> A` append closing tag
