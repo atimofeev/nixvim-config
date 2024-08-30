@@ -1,12 +1,25 @@
 _: {
-  imports = [ ./none-ls.nix ./yaml.nix ];
+  imports = [
+    ./fidget.nix
+    ./lspkind.nix
+    ./none-ls.nix
+    ./otter-nvim.nix
+    ./trouble.nix
+    ./yaml.nix
+  ];
+
+  highlightOverride = { # Remove BG from diagnostic inline messages
+    DiagnosticVirtualTextError.link = "DiagnosticError";
+    DiagnosticVirtualTextWarn.link = "DiagnosticWarn";
+    DiagnosticVirtualTextInfo.link = "DiagnosticInfo";
+    DiagnosticVirtualTextHint.link = "DiagnosticHint";
+  };
 
   plugins = {
 
     lsp = {
       enable = true;
       servers = {
-
         # langs
         lua-ls = {
           enable = true;
@@ -29,30 +42,25 @@ _: {
         yamlls.enable = true;
       };
     };
-
-    trouble = {
-      enable = true;
-      settings.use_diagnostic_signs = true;
-    };
   };
-  autoCmd = [{
-    event = [ "BufEnter" ];
-    pattern = [ "Trouble" ];
-    command = "setlocal wrap";
-  }];
 
   extraConfigLua = # lua
     ''
       vim.lsp.handlers["textDocument/hover"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "rounded" })
-      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })'';
+      vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
+      local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+      for type, icon in pairs(signs) do
+        local hl = "DiagnosticSign" .. type
+        vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+      end
+
+      vim.diagnostic.config({
+        virtual_text = { prefix = "", },
+      })
+    '';
 
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>ld";
-      action = "<cmd> Trouble diagnostics toggle <cr>";
-      options.desc = "LSP diagnostics";
-    }
     {
       mode = "n";
       key = "<leader>lr";

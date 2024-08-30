@@ -1,7 +1,8 @@
 _: {
+
   plugins.nvim-tree = {
     enable = true;
-    autoClose = true;
+    # autoClose = true;
     syncRootWithCwd = true;
     respectBufCwd = true;
     updateFocusedFile.enable = true;
@@ -22,4 +23,5 @@ _: {
     action = "<cmd> NvimTreeFocus <cr>";
     options.desc = "Focus nvimtree";
   }];
+
 }

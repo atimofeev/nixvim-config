@@ -41,4 +41,11 @@ _: {
     action = "<cmd> Neogit <cr>";
     options.desc = "Open Neogit";
   }];
+
+  autoCmd = [{
+    event = [ "BufEnter" ];
+    pattern = [ "Neogit*" ];
+    command = "setlocal foldcolumn=0";
+  }];
+
 }

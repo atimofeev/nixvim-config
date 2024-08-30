@@ -1,6 +1,4 @@
-{ pkgs, ... }: {
-  # NOTE: fix for yaml blocks
-  extraPlugins = with pkgs.vimPlugins; [{ plugin = vim-indent-object; }];
+_: {
 
   plugins.treesitter-textobjects = {
     enable = true;
@@ -54,4 +52,5 @@
       };
     };
   };
+
 }

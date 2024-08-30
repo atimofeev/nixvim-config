@@ -1,0 +1,10 @@
+_: {
+
+  colorschemes = {
+    catppuccin = {
+      enable = true;
+      settings.flavour = "macchiato";
+    };
+  };
+
+}

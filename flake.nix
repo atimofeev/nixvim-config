@@ -16,7 +16,7 @@
   };
 
   outputs = { nixpkgs, nixvim, flake-parts, ... }@inputs:
-    let config = import ./main.nix; # nixvim config file
+    let config = import ./nvim; # nixvim config file
     in flake-parts.lib.mkFlake { inherit inputs; } {
       systems =
         [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];

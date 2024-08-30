@@ -173,24 +173,6 @@ _: {
     }
     {
       mode = "n";
-      key = "<leader>fp";
-      action = "<cmd> Telescope projects <cr>";
-      options.desc = "Find projects";
-    }
-    {
-      mode = "n";
-      key = "<leader><leader>";
-      action = "<cmd> Telescope projects <cr>";
-      options.desc = "Find projects";
-    }
-    {
-      mode = "n";
-      key = "<leader>ft";
-      action = "<cmd> TodoTelescope <cr>";
-      options.desc = "Find TODOs";
-    }
-    {
-      mode = "n";
       key = "<leader>fk";
       action = "<cmd> Telescope keymaps <cr>";
       options.desc = "Find keymaps";
