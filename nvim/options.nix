@@ -43,7 +43,6 @@ _: {
       -- indenting
       o.smartindent = true
       o.autoindent = true
-      o.cindent = true
       o.breakindent = true
 
       -- tab
