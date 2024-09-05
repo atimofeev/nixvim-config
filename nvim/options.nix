@@ -6,7 +6,7 @@ _: {
 
       -- main
       o.shortmess:append "sI" -- disable nvim intro
-      o.mouse = "a"
+      o.mouse = ""  --fkin stop registering touchpad
       o.undofile = true
       o.termguicolors = true
       o.updatetime = 250
