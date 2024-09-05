@@ -27,8 +27,8 @@ _: {
       -- buffers & tabs
       map('n','<leader>b','<Cmd>enew<CR>',{desc = "New buffer"})
       map('n','<leader>x','<Cmd>confirm bdelete<CR>',{desc = "Close buffer"})
-      map('n','<Tab>','<Cmd>bnext<CR>',{desc = "Next buffer"})
-      map('n','<S-Tab>','<Cmd>bprev<CR>',{desc = "Prev buffer"})
+      -- map('n','<Tab>','<Cmd>bnext<CR>',{desc = "Next buffer"}) -- conflicts with barbar
+      -- map('n','<S-Tab>','<Cmd>bprev<CR>',{desc = "Prev buffer"})
       map('n','<leader>t','<Cmd>tabnew<CR>',{desc = "New tab"})
 
       -- terminal

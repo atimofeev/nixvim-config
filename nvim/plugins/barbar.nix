@@ -1,23 +1,8 @@
 _: {
 
-  plugins.barbar = {
-    enable = true;
-    settings.exclude_ft = [ "NeogitStatus" ];
-  };
+  plugins.barbar.enable = true;
 
   keymaps = [
-    {
-      mode = "n";
-      key = "<leader>b";
-      action = "<cmd> enew <cr>";
-      options.desc = "New buffer";
-    }
-    {
-      mode = "n";
-      key = "<leader>x";
-      action = "<cmd> confirm BufferClose <cr>";
-      options.desc = "Close buffer";
-    }
     {
       mode = "n";
       key = "<tab>";
@@ -30,18 +15,5 @@ _: {
       action = "<cmd> BufferPrevious <cr>";
       options.desc = "Previous buffer";
     }
-    {
-      mode = "n";
-      key = "<leader>Tp";
-      action = "<cmd> BufferPin <cr>";
-      options.desc = "Tab pin toggle";
-    }
-    {
-      mode = "n";
-      key = "<leader>Ts";
-      action = "<cmd> BufferPick <cr>";
-      options.desc = "Tab select";
-    }
   ];
-
 }
