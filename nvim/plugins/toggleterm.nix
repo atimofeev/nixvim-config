@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+
   plugins.toggleterm = {
     enable = true;
     settings = {
@@ -33,12 +34,6 @@
   extraConfigLua = ''require("telescope").load_extension("toggleterm")'';
 
   keymaps = [
-    {
-      mode = "t";
-      key = "jk";
-      action = "<C-\\><C-N>";
-      options.desc = "Escape terminal mode";
-    }
     {
       mode = "n";
       key = "<leader>v";

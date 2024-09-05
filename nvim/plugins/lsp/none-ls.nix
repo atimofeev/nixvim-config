@@ -1,4 +1,5 @@
 _: {
+
   plugins = {
 
     lsp-format.enable = true;
@@ -96,4 +97,5 @@ _: {
       };
     };
   };
+
 }

@@ -1,6 +1,6 @@
-{pkgs,...}:{
-  
-    extraPlugins = let
+{ pkgs, ... }: {
+
+  extraPlugins = let
     jinja.vim = pkgs.vimUtils.buildVimPlugin {
       name = "jinja.vim";
       src = pkgs.fetchFromGitHub {
@@ -10,13 +10,12 @@
         hash = "sha256-txhRGtriIHg8oTRIUpn37OVlZtBJwPeOJQoYBFIu6JE=";
       };
     };
-  in [ { plugin = jinja.vim; }  ];
-  autoCmd = [
-    {
-      event = [ "BufEnter" ];
-      pattern = [ "*.j2" "*.tmpl" ];
-      command = "TSBufDisable highlight | LspStop";
-    }
-  ];
+  in [{ plugin = jinja.vim; }];
 
-           }
+  autoCmd = [{
+    event = [ "BufEnter" ];
+    pattern = [ "*.j2" "*.tmpl" ];
+    command = "TSBufDisable highlight | LspStop";
+  }];
+
+}

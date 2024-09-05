@@ -1,4 +1,5 @@
 { pkgs, ... }: {
+
   extraPlugins = let
     yaml-companion = pkgs.vimUtils.buildVimPlugin {
       name = "yaml-companion.nvim";
@@ -10,9 +11,11 @@
       };
     };
   in [{ plugin = yaml-companion; }];
+
   extraConfigLua = # lua
     ''
       local cfg = require("yaml-companion").setup(opts)
       require("lspconfig")["yamlls"].setup(cfg)
       require("telescope").load_extension("yaml_schema")'';
+
 }

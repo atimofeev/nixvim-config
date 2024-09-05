@@ -17,4 +17,5 @@ _: {
     action = "<cmd> Trouble diagnostics toggle <cr>";
     options.desc = "LSP diagnostics";
   }];
+
 }

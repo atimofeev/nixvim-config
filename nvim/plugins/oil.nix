@@ -1,4 +1,5 @@
 _: {
+
   plugins = {
     oil = {
       enable = true;
@@ -17,13 +18,16 @@ _: {
             '';
         };
         win_options = { wrap = true; };
+        keymaps = { "<BS>" = "actions.parent"; };
       };
     };
   };
+
   keymaps = [{
     mode = "n";
     key = "<leader>o";
     action = "<cmd> Oil <cr>";
     options.desc = "Open Oil";
   }];
+
 }

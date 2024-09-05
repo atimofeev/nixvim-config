@@ -1,4 +1,5 @@
 _: {
+
   imports = [
     ./fidget.nix
     ./lspkind.nix
@@ -42,6 +43,7 @@ _: {
         yamlls.enable = true;
       };
     };
+
   };
 
   extraConfigLua = # lua
@@ -86,4 +88,5 @@ _: {
       options.desc = "LSP implementation";
     }
   ];
+
 }

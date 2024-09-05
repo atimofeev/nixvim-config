@@ -1,11 +1,14 @@
 { pkgs, ... }: {
+
   extraPlugins = with pkgs.vimPlugins; [{ plugin = nvim-spectre; }];
+
   keymaps = [{
     mode = "n";
     key = "<leader>S";
     action = "<cmd> lua require('spectre').toggle() <cr>";
     options.desc = "Spectre";
   }
+
   # {
   #   mode = "n";
   #   key = "<leader>sw";
@@ -24,5 +27,6 @@
   #   action = "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>";
   #   options.desc = "Search on current file";
   # }
+
     ];
 }
