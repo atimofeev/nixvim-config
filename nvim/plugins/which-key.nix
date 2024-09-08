@@ -9,6 +9,7 @@ _: {
       "<leader>t".name = "+term";
       "<leader>T".name = "+tabs";
       "<leader>h".name = "+harpoon";
+      "<leader>n".name = "+notes";
       "gz".name = "+surround";
     };
   };

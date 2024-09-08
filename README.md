@@ -17,6 +17,7 @@ Coding is just an excuse to use Vim!
 #### Configure
 
 - `none-ls` migrate from unmaintained builtins. [issue](https://github.com/nvimtools/none-ls.nvim/issues/58)
+- `obsidian.nvim` disable UI and use [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) instead
 - `toggleterm` add keymap to kill term OR exit from :TermExec app
 - `toggleterm` more useful terminal name template (as seen in `:Telescope toggleterm`)
 - `telescope` check [Configuration-Recipes](https://github.com/nvim-telescope/telescope.nvim/wiki/Configuration-Recipes) for useful info

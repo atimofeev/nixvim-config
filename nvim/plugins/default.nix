@@ -22,6 +22,7 @@ _: {
     ./nvim-comment.nix
     ./nvim-cursorline.nix
     ./nvim-tree.nix
+    ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
     ./spectre.nix
