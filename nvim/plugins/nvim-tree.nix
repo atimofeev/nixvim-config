@@ -15,6 +15,7 @@ _: {
       icons.gitPlacement = "after";
       icons.glyphs.git.unstaged = "•";
     };
+    notify.threshold = "warn";
   };
 
   keymaps = [{
