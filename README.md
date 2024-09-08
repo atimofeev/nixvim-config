@@ -23,7 +23,6 @@ Coding is just an excuse to use Vim!
 - `treesitter-refactor` keymaps for actions
 - `yaml-companion` KB to show current yaml schema
 - `yaml-companion` integrate [actual](https://github.com/yannh/kubernetes-json-schema) k8s schemas
-- `vim-move` disable `M-h` `M-l` broken keymaps. [source code](https://github.com/matze/vim-move/blob/516a47e8365a7664a8691d306d5ec91a6f5e5772/plugin/move.vim)
 
 #### Upgrade
 

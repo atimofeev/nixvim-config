@@ -15,6 +15,7 @@ _: {
     ./jinja-nvim.nix
     ./lualine.nix
     ./markdown-preview.nix
+    ./mini-move.nix
     ./mini-surround.nix
     ./nvim-autopairs.nix
     ./nvim-colorizer.nix
@@ -30,7 +31,6 @@ _: {
     ./toggleterm.nix
     ./undotree.nix
     ./vim-indent-object.nix
-    ./vim-move.nix
     ./which-key.nix
   ];
 
