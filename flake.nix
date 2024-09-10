@@ -6,7 +6,6 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -33,12 +32,6 @@
             overlays = [
               (final: _prev: {
                 stable = import inputs.nixpkgs-stable {
-                  inherit (final) system;
-                  config.allowUnfree = true;
-                };
-              })
-              (final: _prev: {
-                master = import inputs.nixpkgs-master {
                   inherit (final) system;
                   config.allowUnfree = true;
                 };
