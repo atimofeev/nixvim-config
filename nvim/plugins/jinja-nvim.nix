@@ -14,7 +14,7 @@
 
   autoCmd = [{
     event = [ "BufEnter" ];
-    pattern = [ "*.j2" "*.tmpl" ];
+    pattern = [ "*.j2" ];
     command = "TSBufDisable highlight | LspStop";
   }];
 
