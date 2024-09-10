@@ -6,11 +6,14 @@ Coding is just an excuse to use Vim!
 
 ## TODOs
 
+### Global
+
+- `config` move everything to `extraConfigLua` for easy portability
+
 ### Builtins
 
-- `smartindent` fix behavior with #\
-  In many occasions entering # (i) will reset current indent
-- `window` implement keybind for resize based on window position
+- `window` better resizing by moving splits. Example: [1](https://github.com/Akianonymus/dotfiles/blob/550a16d0e707f0803f079a8bdf6e5b9fdec3c436/src/.config/nvim/lua/utils.lua#L70)
+- `window` better movement. Currently moves active window to edges
 
 ### Plugins
 
@@ -28,11 +31,6 @@ Coding is just an excuse to use Vim!
 #### Upgrade
 
 - `cursorline` [Issue](https://github.com/yamatsum/nvim-cursorline/issues/10)
-
-#### Etc
-
-- Learn best practices from [hardtime.nvim](https://github.com/m4xshen/hardtime.nvim?tab=readme-ov-file#%EF%B8%8F--features)
-- Good nixvim [template](https://github.com/elythh/nixvim)
 
 ## Issues
 
