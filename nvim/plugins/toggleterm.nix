@@ -31,62 +31,15 @@
       };
     };
   in [{ plugin = telescope-toggleterm; }];
-  extraConfigLua = ''require("telescope").load_extension("toggleterm")'';
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>v";
-      action = "<cmd> ToggleTerm direction=vertical <cr>";
-      options.desc = "Terminal vertical";
-    }
-    {
-      mode = "n";
-      key = "<leader>s";
-      action = "<cmd> ToggleTerm direction=horizontal <cr>";
-      options.desc = "Terminal horizontal";
-    }
-    {
-      mode = "n";
-      key = "<leader>tt";
-      action = "<cmd> ToggleTerm direction=tab <cr>";
-      options.desc = "Terminal tab";
-    }
+  extraConfigLua = # lua
+    ''
+      require("telescope").load_extension("toggleterm")
 
-    # integration with Telescope
-    {
-      mode = "n";
-      key = "<leader>fT";
-      action = "<cmd> Telescope toggleterm <cr>";
-      options.desc = "Find terminals";
-    }
-
-    # naviagte windows in terminal mode
-    {
-      mode = "t";
-      key = "<C-h>";
-      action = "<cmd> wincmd h <cr>";
-      options.desc = "Window left";
-    }
-    {
-      mode = "t";
-      key = "<C-j>";
-      action = "<cmd> wincmd j <cr>";
-      options.desc = "Window down";
-    }
-    {
-      mode = "t";
-      key = "<C-k>";
-      action = "<cmd> wincmd k <cr>";
-      options.desc = "Window up";
-    }
-    # interference with <C-l> for `clear`
-    # {
-    #   mode = "t";
-    #   key = "<C-l>";
-    #   action = "<cmd> wincmd l <cr>";
-    #   options.desc = "Window right";
-    # }
-  ];
+      vim.keymap.set('n','<leader>fT','<Cmd>Telescope toggleterm<CR>',{noremap = true, silent = true, desc = 'Find terminals'})
+      vim.keymap.set('n','<leader>v','<Cmd>ToggleTerm direction=vertical<CR>',{noremap = true, silent = true, desc = 'Terminal vertical'})
+      vim.keymap.set('n','<leader>s','<Cmd>ToggleTerm direction=horizontal<CR>',{noremap = true, silent = true, desc = 'Terminal horizontal'})
+      vim.keymap.set('n','<leader>tt','<Cmd>ToggleTerm direction=tab<CR>',{noremap = true, silent = true, desc = 'Terminal tab'})
+    '';
 
 }

@@ -23,11 +23,9 @@ _: {
     };
   };
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>o";
-    action = "<cmd> Oil <cr>";
-    options.desc = "Open Oil";
-  }];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set('n','<leader>o','<Cmd>Oil<CR>',{noremap = true, silent = true, desc = 'Open Oil'})
+    '';
 
 }

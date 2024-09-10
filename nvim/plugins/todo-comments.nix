@@ -5,11 +5,9 @@ _: {
     settings.keywords.NOTE.icon = "";
   };
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>ft";
-    action = "<cmd> TodoTelescope <cr>";
-    options.desc = "Find TODOs";
-  }];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set('n','<leader>ft','<Cmd>TodoTelescope<CR>',{noremap = true, silent = true, desc = 'Find TODOs'})
+    '';
 
 }

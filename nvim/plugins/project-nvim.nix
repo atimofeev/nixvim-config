@@ -9,19 +9,12 @@ _: {
     };
   };
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>fp";
-      action = "<cmd> Telescope projects <cr>";
-      options.desc = "Find projects";
-    }
-    {
-      mode = "n";
-      key = "<leader><leader>";
-      action = "<cmd> Telescope projects <cr>";
-      options.desc = "Find projects";
-    }
-  ];
+  extraConfigLua = # lua
+    ''
+      require('telescope').load_extension('projects')
+
+      vim.keymap.set('n','<leader>fp','<Cmd>Telescope projects<CR>',{noremap = true, silent = true, desc = 'Find projects'})
+      vim.keymap.set('n','<leader><leader>','<Cmd>Telescope projects<CR>',{noremap = true, silent = true, desc = 'Find projects'})
+    '';
 
 }

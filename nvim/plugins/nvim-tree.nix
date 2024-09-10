@@ -18,11 +18,9 @@ _: {
     notify.threshold = "warn";
   };
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>e";
-    action = "<cmd> NvimTreeFocus <cr>";
-    options.desc = "Focus nvimtree";
-  }];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set('n','<leader>e','<Cmd>NvimTreeFocus<CR>',{noremap = true, silent = true, desc = 'Open NvimTree'})
+    '';
 
 }

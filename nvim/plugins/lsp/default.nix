@@ -60,33 +60,11 @@ _: {
       vim.diagnostic.config({
         virtual_text = { prefix = "", },
       })
-    '';
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>lr";
-      action = "<cmd> lua vim.lsp.buf.rename() <cr>";
-      options.desc = "LSP rename";
-    }
-    {
-      mode = "n";
-      key = "<leader>lR";
-      action = "<cmd> lua vim.lsp.buf.references() <cr>";
-      options.desc = "LSP references";
-    }
-    {
-      mode = "n";
-      key = "<leader>lD";
-      action = "<cmd> lua vim.lsp.buf.definition() <cr>";
-      options.desc = "LSP definition";
-    }
-    {
-      mode = "n";
-      key = "<leader>li";
-      action = "<cmd> lua vim.lsp.buf.implementation() <cr>";
-      options.desc = "LSP implementation";
-    }
-  ];
+      vim.keymap.set('n','<leader>lr','<Cmd>lua vim.lsp.buf.rename()<CR>',{noremap = true, silent = true, desc = 'LSP rename'})
+      vim.keymap.set('n','<leader>lR','<Cmd>lua vim.lsp.buf.references()<CR>',{noremap = true, silent = true, desc = 'LSP references'})
+      vim.keymap.set('n','<leader>lD','<Cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true, desc = 'LSP definition'})
+      vim.keymap.set('n','<leader>li','<Cmd>lua vim.lsp.buf.implementation()<CR>',{noremap = true, silent = true, desc = 'LSP implementation'})
+    '';
 
 }

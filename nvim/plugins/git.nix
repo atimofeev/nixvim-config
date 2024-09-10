@@ -36,12 +36,10 @@ _: {
 
   };
 
-  keymaps = [{
-    mode = "n";
-    key = "<leader>g";
-    action = "<cmd> Neogit <cr>";
-    options.desc = "Open Neogit";
-  }];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set('n','<leader>g','<Cmd>Neogit<CR>',{noremap = true, silent = true, desc = 'Open Neogit'})
+    '';
 
   autoCmd = [{
     event = [ "BufEnter" ];

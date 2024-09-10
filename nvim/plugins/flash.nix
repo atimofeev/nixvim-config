@@ -10,19 +10,10 @@ _: {
     };
   };
 
-  keymaps = [
-    {
-      mode = [ "n" "x" "o" ];
-      key = "s";
-      action = "<cmd>lua require('flash').jump()<cr>";
-      options.desc = "Flash jump";
-    }
-    {
-      mode = [ "n" "x" "o" ];
-      key = "S";
-      action = "<cmd>lua require('flash').treesitter()<cr>";
-      options.desc = "Flash treesitter";
-    }
-  ];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set({'n','x','o'},'s','<Cmd>lua require("flash").jump()<CR>',{noremap = true, silent = true, desc = 'Flash jump'})
+      vim.keymap.set({'n','x','o'},'S','<Cmd>lua require("flash").treesitter()<CR>',{noremap = true, silent = true, desc = 'Flash treesitter'})
+    '';
 
 }

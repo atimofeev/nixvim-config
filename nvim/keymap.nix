@@ -25,16 +25,16 @@ _: {
       map('v','<','<gv' ) -- redundant with mini.move?
 
       -- buffers & tabs
-      map('n','<leader>b','<Cmd>enew<CR>',{desc = "New buffer"})
-      map('n','<leader>x','<Cmd>confirm bdelete<CR>',{desc = "Close buffer"})
-      -- map('n','<Tab>','<Cmd>bnext<CR>',{desc = "Next buffer"}) -- conflicts with barbar
-      -- map('n','<S-Tab>','<Cmd>bprev<CR>',{desc = "Prev buffer"})
-      map('n','<leader>t','<Cmd>tabnew<CR>',{desc = "New tab"})
+      map('n','<leader>b','<Cmd>enew<CR>',{desc = 'New buffer'})
+      map('n','<leader>x','<Cmd>confirm bdelete<CR>',{desc = 'Close buffer'})
+      -- map('n','<Tab>','<Cmd>bnext<CR>',{desc = 'Next buffer'}) -- conflicts with barbar
+      -- map('n','<S-Tab>','<Cmd>bprev<CR>',{desc = 'Prev buffer'})
+      map('n','<leader>t','<Cmd>tabnew<CR>',{desc = 'New tab'})
 
       -- terminal
-      map('t','jk','<C-\\><C-n>') -- escape terminal mode
-      map('n','<leader>B','<Cmd>enew | setlocal nonumber norelativenumber | term<CR>i',{desc = "Term buffer"})
-      map('n','<leader>T','<Cmd>tabnew | setlocal nonumber norelativenumber | term<CR>i',{desc = "Term tab"})
+      -- map('t','jk','<C-\\><C-n>') -- escape terminal mode; now handled with new `better-escape`
+      map('n','<leader>B','<Cmd>enew | setlocal nonumber norelativenumber | term<CR>i',{desc = 'Term buffer'})
+      map('n','<leader>T','<Cmd>tabnew | setlocal nonumber norelativenumber | term<CR>i',{desc = 'Term tab'})
 
       -- navigate windows
       map('n','<C-h>','<C-w>h')
@@ -42,10 +42,22 @@ _: {
       map('n','<C-k>','<C-w>k')
       map('n','<C-l>','<C-w>l')
 
+      -- navigate out of terminal windows
+      map('t','<C-h>','<Cmd>wincmd h<CR>')
+      map('t','<C-j>','<Cmd>wincmd j<CR>')
+      map('t','<C-k>','<Cmd>wincmd k<CR>')
+      -- map('t','<C-l>','<Cmd>wincmd l<CR>') -- conflict with <C-l> for `clear`
+
       -- resize windows
       map('n','<C-Up>','<Cmd>resize -2<CR>')
       map('n','<C-Down>','<Cmd>resize +2<CR>')
       map('n','<C-Left>','<Cmd>vertical resize -2<CR>')
       map('n','<C-Right>','<Cmd>vertical resize +2<CR>')
+
+      -- move windows
+      map('n','<C-S-Up>','<Cmd>wincmd K<CR>')
+      map('n','<C-S-Down>','<Cmd>wincmd J<CR>')
+      map('n','<C-S-Left>','<Cmd>wincmd H<CR>')
+      map('n','<C-S-Right>','<Cmd>wincmd L<CR>')
     '';
 }

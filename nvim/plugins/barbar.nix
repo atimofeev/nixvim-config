@@ -2,18 +2,10 @@ _: {
 
   plugins.barbar.enable = true;
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<tab>";
-      action = "<cmd> BufferNext <cr>";
-      options.desc = "Next buffer";
-    }
-    {
-      mode = "n";
-      key = "<S-tab>";
-      action = "<cmd> BufferPrevious <cr>";
-      options.desc = "Previous buffer";
-    }
-  ];
+  extraConfigLua = # lua
+    ''
+      vim.keymap.set('n','<Tab>','<Cmd>BufferNext<CR>',{noremap = true, silent = true, desc = 'Next buffer'})
+      vim.keymap.set('n','<S-Tab>','<Cmd>BufferPrevious<CR>',{noremap = true, silent = true, desc = 'Previous buffer'})
+    '';
+
 }
