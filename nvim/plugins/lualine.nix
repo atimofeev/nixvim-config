@@ -1,52 +1,37 @@
 _: {
 
-  plugins.lualine = {
-    enable = true;
-    globalstatus = true;
-    componentSeparators = {
-      left = "󰿟";
-      right = "";
-    };
-    sectionSeparators = {
-      left = "";
-      right = "";
-    };
-    sections.lualine_b = [
-      {
-        name = "branch";
-        icon = "";
-        fmt = # lua
-          ''
-            function(str)
-               if str:len() > 25 then
-                  return str:sub(1, 25) .. '>'
-               end
-               return str
-            end
-          '';
-      }
-      {
-        name = "diff";
-        extraConfig = {
-          symbols = {
-            added = "";
-            modified = "󰟃";
-            removed = "";
-          };
-        };
-      }
-      {
-        name = "diagnostics";
-        extraConfig = {
-          symbols = {
-            error = "";
-            warn = "";
-            info = "";
-            hint = "";
-          };
-        };
-      }
-    ];
-  };
+  plugins.lualine.enable = true;
+  extraConfigLua = # lua
+    ''
+      require('lualine').setup({
+        options = {
+          globalstatus = true,
+          component_separators = { left = '󰿟', right = ''},
+          section_separators = { left = '', right = ''},
+        },
+        sections = {
+          lualine_b = {
+            {
+              "branch",
+              icon = "",
+              fmt = function(str)
+                 if str:len() > 25 then
+                    return str:sub(1, 25) .. '>'
+                 end
+                 return str
+              end,
+            },
+            {
+              "diff",
+              symbols = {added = '', modified = '󰟃', removed = ''},
+            },
+            {
+              "diagnostics",
+              symbols = {error = '', warn = '', info = '', hint = ''},
+            }
+          },
+        },
+      })
+    '';
 
 }

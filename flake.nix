@@ -9,8 +9,7 @@
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
 
     nixvim = {
-      url =
-        "github:nix-community/nixvim?rev=c0ea106b4bdf8707837bb0d80efd6affbc128bdf";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

@@ -2,16 +2,24 @@ _: {
 
   plugins.which-key = {
     enable = true;
-    registrations = {
-      "<leader>l".name = "+lsp";
-      "<leader>f".name = "+find";
-      "<leader>fg".name = "+git";
-      "<leader>t".name = "+term";
-      "<leader>T".name = "+tabs";
-      "<leader>h".name = "+harpoon";
-      "<leader>n".name = "+notes";
-      "gz".name = "+surround";
-    };
+    settings.icons.mappings = false;
   };
+
+  extraConfigLua = # lua
+    ''
+      -- require("which-key").setup({
+      --   icons = {mappings = false,},
+      -- })
+
+      require("which-key").add({
+        {"<leader>l", group = "+lsp"},
+        {"<leader>f", group = "+find"},
+        {"<leader>fg", group = "+git"},
+        {"<leader>t", group = "+term"},
+        {"<leader>h", group = "+harpoon"},
+        {"<leader>n", group = "+notes"},
+        {"gz", group = "+surround"},
+      })
+    '';
 
 }

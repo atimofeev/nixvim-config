@@ -14,46 +14,55 @@ _: {
         hcl = [ "terraform-vars" ];
         bash = [ "conf" ];
       };
-      incrementalSelection = {
-        enable = true;
-        keymaps = {
-          initSelection = "<C-space>";
-          nodeIncremental = "<C-space>";
-          nodeDecremental = "<bs>";
+
+      settings = {
+
+        highlight.enable = true;
+
+        incremental_selection = {
+          enable = true;
+          keymaps = {
+            init_selection = "<C-space>";
+            node_incremental = "<C-space>";
+            node_decremental = "<bs>";
+          };
         };
+
+        ensure_installed = [
+          "bash"
+          "c"
+          "commonlisp"
+          "cpp"
+          "css"
+          "diff"
+          "dockerfile"
+          "git_config"
+          "git_rebase"
+          "gitignore"
+          "gnuplot"
+          "go"
+          "groovy"
+          "hcl"
+          "html"
+          "ini"
+          "json"
+          "latex"
+          "lua"
+          "make"
+          "markdown"
+          "markdown_inline"
+          "org"
+          "python"
+          "terraform"
+          "toml"
+          "vim"
+          "vimdoc"
+          "xml"
+          "yaml"
+        ];
+
       };
-      ensureInstalled = [
-        "bash"
-        "c"
-        "commonlisp"
-        "cpp"
-        "css"
-        "diff"
-        "dockerfile"
-        "git_config"
-        "git_rebase"
-        "gitignore"
-        "gnuplot"
-        "go"
-        "groovy"
-        "hcl"
-        "html"
-        "ini"
-        "json"
-        "latex"
-        "lua"
-        "make"
-        "markdown"
-        "markdown_inline"
-        "org"
-        "python"
-        "terraform"
-        "toml"
-        "vim"
-        "vimdoc"
-        "xml"
-        "yaml"
-      ];
+
     };
   };
 

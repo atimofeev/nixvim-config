@@ -27,7 +27,6 @@ Coding is just an excuse to use Vim!
 
 #### Upgrade
 
-- `better-escape` [Pull](https://github.com/max397574/better-escape.nvim/pull/59)
 - `cursorline` [Issue](https://github.com/yamatsum/nvim-cursorline/issues/10)
 
 #### Etc

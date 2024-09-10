@@ -18,7 +18,7 @@ _: {
           terraform_validate = {
             enable = true;
             package = null; # NOTE: use host tofu executable
-            withArgs = ''
+            settings = ''
               {command = "tofu",
                cwd = function() -- use project root
                  return vim.fn.getcwd()
@@ -28,19 +28,19 @@ _: {
           # yaml
           actionlint = {
             enable = true;
-            withArgs = ''{filetypes = {"yaml.gh_actions"},}'';
+            settings = ''{filetypes = {"yaml.gh_actions"},}'';
           };
           ansiblelint.enable = true;
           yamllint = {
             enable = true;
-            withArgs = ''
+            settings = ''
               {extra_args = {"-d", "{extends: default, rules: {line-length: disable}}"},}'';
           };
           # markdown, etc
           markdownlint = {
             enable =
               true; # ignore no-multiple-blanks, line-length, no-inline-html, no-bare-urls, first-line-heading
-            withArgs = ''
+            settings = ''
               {extra_args = {"--disable", "MD012", "MD013", "MD033", "MD034", "MD041"},}
             '';
           };
@@ -51,7 +51,7 @@ _: {
           # lua
           stylua = {
             enable = true;
-            withArgs = ''
+            settings = ''
               {extra_args = {
                   "--column_width", "120", 
                   "--indent_type", "Spaces", 
@@ -69,12 +69,12 @@ _: {
           terraform_fmt = { # terraform
             enable = true;
             package = null; # NOTE: use host tofu executable
-            withArgs = ''{command = "tofu"}'';
+            settings = ''{command = "tofu"}'';
           };
           # yaml, json
           yamlfix = {
             enable = true;
-            withArgs = ''
+            settings = ''
               {env = {
                 YAMLFIX_COMMENTS_MIN_SPACES_FROM_CONTENT = "2", 
                 YAMLFIX_COMMENTS_REQUIRE_STARTING_SPACE="true",
@@ -90,7 +90,7 @@ _: {
           # markdown, etc
           prettier = {
             enable = true;
-            withArgs = ''{ filetypes = {"json", "markdown"},}'';
+            settings = ''{ filetypes = {"json", "markdown"},}'';
           };
         };
 

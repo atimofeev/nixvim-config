@@ -2,10 +2,11 @@ _: {
 
   plugins.project-nvim = {
     enable = true;
-    enableTelescope = true;
-    showHidden = true;
-    patterns = [ ".git" ];
-    ignoreLsp = [ "null-ls" "dockerls" ];
+    settings = {
+      patterns = [ ".git" ".obsidian" ];
+      ignore_lsp = [ "null-ls" "dockerls" ];
+      show_hidden = true;
+    };
   };
 
   keymaps = [

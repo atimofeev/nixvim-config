@@ -2,7 +2,7 @@ _: {
 
   plugins.todo-comments = {
     enable = true;
-    keywords.NOTE.icon = "";
+    settings.keywords.NOTE.icon = "";
   };
 
   keymaps = [{
