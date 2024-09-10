@@ -95,88 +95,29 @@ _: {
             find_command = {"rg", "--files", "--sortr=modified"};
           },
         },
-      }'';
+      }
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>ff";
-      action = "<cmd> Telescope find_files <cr>";
-      options.desc = "Find files";
-    }
-    {
-      mode = "n";
-      key = "<leader>fa";
-      action =
-        "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <cr>";
-      options.desc = "Find all files";
-    }
-    {
-      mode = "n";
-      key = "<leader>fw";
-      action = "<cmd> Telescope live_grep <cr>";
-      options.desc = "Find word";
-    }
-    {
-      mode = "n";
-      key = "<leader>fb";
-      action = "<cmd> Telescope buffers <cr>";
-      options.desc = "Find buffers";
-    }
-    {
-      mode = "n";
-      key = "<leader>fh";
-      action = "<cmd> Telescope help_tags <cr>";
-      options.desc = "Find help";
-    }
-    {
-      mode = "n";
-      key = "<leader>fr";
-      action = "<cmd> Telescope oldfiles <cr>";
-      options.desc = "Find recent";
-    }
-    {
-      mode = "n";
-      key = "<leader>fz";
-      action = "<cmd> Telescope current_buffer_fuzzy_find <cr>";
-      options.desc = "Find word (buffer)";
-    }
-    {
-      mode = "n";
-      key = "<leader>fgc";
-      action = "<cmd> Telescope git_commits <cr>";
-      options.desc = "Find git commits";
-    }
-    {
-      mode = "n";
-      key = "<leader>fgC";
-      action = "<cmd> Telescope git_bcommits <cr>";
-      options.desc = "Find git buffer commits";
-    }
-    {
-      mode = "n";
-      key = "<leader>fgs";
-      action = "<cmd> Telescope git_status <cr>";
-      options.desc = "Find git status";
-    }
-    {
-      mode = "n";
-      key = "<leader>fgS";
-      action = "<cmd> Telescope git_stash <cr>";
-      options.desc = "Find git stash";
-    }
-    {
-      mode = "n";
-      key = "<leader>fgb";
-      action = "<cmd> Telescope git_branches <cr>";
-      options.desc = "Find git branches";
-    }
-    {
-      mode = "n";
-      key = "<leader>fk";
-      action = "<cmd> Telescope keymaps <cr>";
-      options.desc = "Find keymaps";
-    }
-  ];
+      function map(mode, lhs, rhs, opts)
+        local options = {noremap = true, silent = true}
+        if opts then
+          options = vim.tbl_extend("force", options, opts)
+        end
+        vim.keymap.set(mode, lhs, rhs, options)
+      end
+
+      map('n','<leader>ff','<Cmd>Telescope find_files<CR>',{desc = 'Find files'})
+      map('n','<leader>fa','<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>',{desc = 'Find all files'})
+      map('n','<leader>fw','<Cmd>Telescope live_grep<CR>',{desc = 'Find word'})
+      map('n','<leader>fb','<Cmd>Telescope buffers<CR>',{desc = 'Find buffers'})
+      map('n','<leader>fh','<Cmd>Telescope help_tags<CR>',{desc = 'Find help'})
+      map('n','<leader>fr','<Cmd>Telescope oldfiles<CR>',{desc = 'Find recent'})
+      map('n','<leader>fz','<Cmd>Telescope current_buffer_fuzzy_find<CR>',{desc = 'Find word (buffer)'})
+      map('n','<leader>fgc','<Cmd>Telescope git_commits<CR>',{desc = 'Find git commits'})
+      map('n','<leader>fgC','<Cmd>Telescope git_bcommits<CR>',{desc = 'Find git buffer commits'})
+      map('n','<leader>fgs','<Cmd>Telescope git_status<CR>',{desc = 'Find git status'})
+      map('n','<leader>fgS','<Cmd>Telescope git_stash<CR>',{desc = 'Find git stash'})
+      map('n','<leader>fgb','<Cmd>Telescope git_branches<CR>',{desc = 'Find git branches'})
+      map('n','<leader>fk','<Cmd>Telescope keymaps<CR>',{desc = 'Find keymaps'})
+    '';
 
 }
