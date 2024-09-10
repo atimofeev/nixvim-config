@@ -8,7 +8,7 @@ _: {
 
     treesitter = {
       enable = true;
-      indent = true;
+      # indent = true;
       nixvimInjections = true;
       languageRegister = {
         hcl = [ "terraform-vars" ];
