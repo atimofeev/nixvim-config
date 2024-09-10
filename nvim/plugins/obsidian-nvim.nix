@@ -61,8 +61,6 @@ _: {
       };
     };
 
-    project-nvim.patterns = [ ".obsidian" ];
-
   };
 
   opts.conceallevel = 2;
@@ -83,12 +81,12 @@ _: {
         vim.keymap.set(mode, lhs, rhs, options)
       end
 
-      map('n','<leader>ns','<Cmd>ObsidianSearch<CR>',{desc = "Obsidian search"})
-      map('n','<leader>nl','<Cmd>ObsidianQuickSwitch<CR>',{desc = "Obsidian list"})
-      map('n','<leader>np','<Cmd>ObsidianPasteImg<CR>',{desc = "Obsidian paste IMG"})
-      map('n','<leader>nd','<Cmd>ObsidianDailies<CR>',{desc = "Obsidian daily"})
-      map('n','<leader>nn','<Cmd>ObsidianNew<CR>',{desc = "Obsidian new note"})
-      map('n','<leader>nb','<Cmd>ObsidianBacklinks<CR>',{desc = "Obsidian backlinks"})
-      map('n','<leader>nt','<Cmd>ObsidianTags<CR>',{desc = "Obsidian tags"})
+      map('n','<leader>ns','<Cmd>ObsidianSearch<CR>',{desc = 'Obsidian search'})
+      map('n','<leader>nl','<Cmd>ObsidianQuickSwitch<CR>',{desc = 'Obsidian list'})
+      map('n','<leader>np','<Cmd>ObsidianPasteImg<CR>',{desc = 'Obsidian paste IMG'})
+      map('n','<leader>nd','<Cmd>ObsidianDailies<CR>',{desc = 'Obsidian daily'})
+      map('n','<leader>nn','<Cmd>ObsidianNew<CR>',{desc = 'Obsidian new note'})
+      map('n','<leader>nb','<Cmd>ObsidianBacklinks<CR>',{desc = 'Obsidian backlinks'})
+      map('n','<leader>nt','<Cmd>ObsidianTags<CR>',{desc = 'Obsidian tags'})
     '';
 }
