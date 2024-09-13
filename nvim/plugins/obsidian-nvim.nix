@@ -46,10 +46,6 @@ _: {
               char = "";
               hl_group = "ObsidianDone";
             };
-            "!" = {
-              char = "";
-              hl_group = "ObsidianImportant";
-            };
           };
         };
 
