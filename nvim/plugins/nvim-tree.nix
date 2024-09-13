@@ -5,17 +5,31 @@ _: {
     # autoClose = true;
     syncRootWithCwd = true;
     respectBufCwd = true;
-    updateFocusedFile.enable = true;
-    updateFocusedFile.updateRoot = true;
     git.ignore = false;
-    filters.custom =
-      [ "^\\.git$" "^\\.mypy_cache$" "^\\.terraform$" "^\\.null-ls_" ];
+    notify.threshold = "warn";
+
+    updateFocusedFile = {
+      enable = true;
+      updateRoot = true;
+    };
+
+    filters.custom = [
+      "^\\.git$"
+      "^\\.mypy_cache$"
+      "^\\.terraform$"
+      "^\\.null-ls_"
+      "^\\.stfolder$"
+      "^\\.obsidian$"
+    ];
+
     renderer = {
       highlightGit = true;
-      icons.gitPlacement = "after";
-      icons.glyphs.git.unstaged = "•";
+      icons = {
+        gitPlacement = "after";
+        glyphs.git.unstaged = "•";
+      };
     };
-    notify.threshold = "warn";
+
   };
 
   extraConfigLua = # lua
