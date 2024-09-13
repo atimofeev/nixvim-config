@@ -31,6 +31,7 @@ _: {
     ./todo-comments.nix
     ./toggleterm.nix
     ./undotree.nix
+    ./vim-be-good.nix
     ./vim-indent-object.nix
     ./which-key.nix
   ];
