@@ -2,6 +2,7 @@ _: {
 
   imports = [
     ./cmp
+    ./git
     ./lsp
     ./treesitter
 
@@ -9,7 +10,6 @@ _: {
     ./better-escape.nix
     ./catppuccin.nix
     ./flash.nix
-    ./git.nix
     ./harpoon.nix
     ./indent-blankline.nix
     ./jinja-nvim.nix
