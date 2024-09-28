@@ -105,9 +105,9 @@ _: {
         vim.keymap.set(mode, lhs, rhs, options)
       end
 
-      map('n','<leader>ff','<Cmd>Telescope find_files<CR>',{desc = 'Find files'})
+      map('n','<leader>fl','<Cmd>Telescope find_files<CR>',{desc = 'List files'})
       map('n','<leader>fa','<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>',{desc = 'Find all files'})
-      map('n','<leader>fw','<Cmd>Telescope live_grep<CR>',{desc = 'Find word'})
+      map('n','<leader>fs','<Cmd>Telescope live_grep<CR>',{desc = 'Search word'})
       map('n','<leader>fb','<Cmd>Telescope buffers<CR>',{desc = 'Find buffers'})
       map('n','<leader>fh','<Cmd>Telescope help_tags<CR>',{desc = 'Find help'})
       map('n','<leader>fr','<Cmd>Telescope oldfiles<CR>',{desc = 'Find recent'})
