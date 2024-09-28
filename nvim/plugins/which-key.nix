@@ -7,10 +7,6 @@ _: {
 
   extraConfigLua = # lua
     ''
-      -- require("which-key").setup({
-      --   icons = {mappings = false,},
-      -- })
-
       require("which-key").add({
         {"<leader>l", group = "+lsp"},
         {"<leader>f", group = "+find"},
