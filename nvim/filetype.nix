@@ -17,6 +17,7 @@ _: {
       ".*/roles/.*%.ya?ml" = "yaml.ansible";
       ".*/group_vars/.*" = "yaml.ansible";
       ".*/host_vars/.*" = "yaml.ansible";
+      ".*/playbooks/inventories/.*%/hosts" = "conf";
 
       # conf
       ".*%.cfg" = "conf";
