@@ -3,6 +3,7 @@ _: {
   imports = [
     ./fidget.nix
     ./lspkind.nix
+    ./nixd.nix
     ./none-ls.nix
     ./otter-nvim.nix
     ./trouble.nix
@@ -30,7 +31,6 @@ _: {
         ruff-lsp.enable = true;
         gopls.enable = true;
         bashls.enable = true;
-        nixd.enable = true;
 
         # devops
         ansiblels.enable = true;
