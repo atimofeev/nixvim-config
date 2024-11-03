@@ -4,7 +4,7 @@ _: {
     enable = true;
     settings = {
       patterns = [ ".git" ".obsidian" ];
-      ignore_lsp = [ "null-ls" "dockerls" ];
+      ignore_lsp = [ "null-ls" "dockerls" "terraformls" ];
       show_hidden = true;
     };
   };
