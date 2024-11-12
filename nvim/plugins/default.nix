@@ -1,6 +1,7 @@
 _: {
 
   imports = [
+
     ./cmp
     ./git
     ./lsp
@@ -26,14 +27,16 @@ _: {
     ./oil.nix
     ./project-nvim.nix
     ./spectre.nix
-    ./telescope.nix
     ./telescope-manix.nix
+    ./telescope.nix
     ./todo-comments.nix
     ./toggleterm.nix
     ./undotree.nix
     ./vim-be-good.nix
     ./vim-indent-object.nix
+    ./web-devicons.nix
     ./which-key.nix
+
   ];
 
 }
