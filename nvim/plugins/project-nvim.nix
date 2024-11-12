@@ -3,8 +3,8 @@ _: {
   plugins.project-nvim = {
     enable = true;
     settings = {
-      patterns = [ ".git" ".obsidian" ];
-      ignore_lsp = [ "null-ls" "dockerls" "terraformls" ];
+      patterns = [ ".git" ".obsidian" ".terraform" ".terraform.lock.hcl" ];
+      ignore_lsp = [ "null-ls" "dockerls" "terraformls" "helm_ls" ];
       show_hidden = true;
     };
   };
