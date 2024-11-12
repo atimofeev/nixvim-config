@@ -43,6 +43,7 @@ _: {
           "go"
           "groovy"
           "hcl"
+          "helm"
           "html"
           "ini"
           "json"

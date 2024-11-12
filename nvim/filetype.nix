@@ -19,6 +19,9 @@ _: {
       ".*/host_vars/.*" = "yaml.ansible";
       ".*/playbooks/inventories/.*%/hosts" = "conf";
 
+      # k8s-helm
+      ".*/helm%-charts/.*%.ya?ml" = "helm";
+
       # conf
       ".*%.cfg" = "conf";
       ".*%.conf" = "conf";
