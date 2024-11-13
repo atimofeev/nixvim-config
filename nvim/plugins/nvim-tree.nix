@@ -6,7 +6,6 @@ _: {
     syncRootWithCwd = true;
     respectBufCwd = true;
     git.ignore = false;
-    notify.threshold = "warn";
 
     updateFocusedFile = {
       enable = true;
