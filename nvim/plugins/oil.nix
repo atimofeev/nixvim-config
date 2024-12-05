@@ -13,7 +13,7 @@ _: {
           is_always_hidden = # lua
             ''
               function(name, _)
-                return name == '..' or name == '.git'
+                return name == '..' or name == '.git' or name == '.mypy_cache'
               end
             '';
         };
