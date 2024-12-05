@@ -22,7 +22,7 @@ _: {
     ./nvim-colorizer.nix
     ./nvim-comment.nix
     ./nvim-cursorline.nix
-    ./nvim-tree.nix
+    # ./nvim-tree.nix
     ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
