@@ -1,15 +1,11 @@
-{ pkgs, ... }: {
+_: {
 
-  extraPlugins = [{ plugin = pkgs.vimPlugins.otter-nvim; }];
+  plugins.otter.enable = true;
   autoCmd = [{
     event = [ "BufEnter" ];
     pattern = [ "*.nix" ];
     command = ''
       lua require("otter").activate({"python", "lua", "bash"}, true, true, nil)'';
   }];
-
-  plugins.cmp.settings.sources = [{ name = "otter"; }];
-
-  # NOTE: otter.nvim: https://github.com/nix-community/nixvim/pull/1768
 
 }
