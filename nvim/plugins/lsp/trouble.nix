@@ -1,9 +1,6 @@
 _: {
 
-  plugins.trouble = {
-    enable = true;
-    settings.use_diagnostic_signs = true;
-  };
+  plugins.trouble.enable = true;
 
   extraConfigLua = # lua
     ''
