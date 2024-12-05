@@ -20,6 +20,7 @@
           enabled = true,
           timeout = 6000,
         },
+        words = {enabled = false},
       })
     '';
 
