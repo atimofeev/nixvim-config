@@ -17,6 +17,8 @@ _: {
       map('n',':',';',{silent = false}) -- next symbol match with :
       map('x','p','P') -- paste without yank
       map('x','P','p') -- paste and yank
+      map('n', 'yc', 'yy<cmd>normal gcc<CR>p') -- duplicate line, comment out original line
+      map('n','<leader>r',[[:%s/\<<C-r><C-w>\>//g<Left><Left>]],{desc = 'Rename word'})
       map({'n','v'},'j','gj') -- go through wrapped lines
       map({'n','v'},'k','gk')
       map({'n','v'},'<S-g>','<S-g>10<C-e>') -- scrolloff 10 lines after going to EOF
