@@ -7,7 +7,7 @@ _: {
 
         workspaces = [{
           name = "default";
-          path = "~/obsidian-vault";
+          path = "~/repos/obsidian-vault";
         }];
 
         daily_notes = {
