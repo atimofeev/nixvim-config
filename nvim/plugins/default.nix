@@ -16,12 +16,10 @@ _: {
     ./jinja-nvim.nix
     ./lualine.nix
     ./markdown-preview.nix
-    ./mini-move.nix
-    ./mini-surround.nix
+    ./mini-nvim.nix
     ./nvim-autopairs.nix
     ./nvim-colorizer.nix
     ./nvim-comment.nix
-    ./nvim-cursorline.nix
     # ./nvim-tree.nix
     ./obsidian-nvim.nix
     ./oil.nix
