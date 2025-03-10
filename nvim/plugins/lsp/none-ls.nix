@@ -38,10 +38,15 @@ _: {
           };
           # markdown, etc
           markdownlint = {
-            enable =
-              true; # ignore no-multiple-blanks, line-length, no-inline-html, no-bare-urls, first-line-heading
+            enable = true;
+            # MD012/no-multiple-blanks
+            # MD013/line-length
+            # MD024/no-duplicate-heading
+            # MD033/no-inline-html
+            # MD034/no-bare-urls
+            # MD041/first-line-heading
             settings = ''
-              {extra_args = {"--disable", "MD012", "MD013", "MD033", "MD034", "MD041"},}
+              {extra_args = {"--disable", "MD012", "MD013", "MD024", "MD033", "MD034", "MD041"},}
             '';
           };
         };
