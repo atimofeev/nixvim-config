@@ -24,7 +24,7 @@ _: {
     ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
-    ./snacks-nvim.nix
+    ./snacks.nix
     ./spectre.nix
     ./telescope-manix.nix
     ./telescope.nix
