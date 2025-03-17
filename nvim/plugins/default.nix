@@ -26,7 +26,6 @@ _: {
     ./project-nvim.nix
     ./snacks.nix
     ./spectre.nix
-    ./telescope-manix.nix
     ./telescope.nix
     ./todo-comments.nix
     ./toggleterm.nix
