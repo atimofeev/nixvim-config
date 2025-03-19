@@ -10,6 +10,7 @@ _: {
     ./barbar.nix
     ./better-escape.nix
     ./catppuccin.nix
+    ./colorizer.nix
     ./flash.nix
     ./harpoon.nix
     ./indent-blankline.nix
@@ -18,15 +19,13 @@ _: {
     ./markdown-preview.nix
     ./mini-nvim.nix
     ./nvim-autopairs.nix
-    ./nvim-colorizer.nix
     ./nvim-comment.nix
     # ./nvim-tree.nix
     ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
-    ./snacks-nvim.nix
+    ./snacks.nix
     ./spectre.nix
-    ./telescope-manix.nix
     ./telescope.nix
     ./todo-comments.nix
     ./toggleterm.nix

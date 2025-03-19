@@ -23,20 +23,20 @@ _: {
       enable = true;
       servers = {
         # langs
-        lua-ls = {
+        lua_ls = {
           enable = true;
           settings.diagnostics.globals = [ "vim" "require" ];
         };
         pylsp.enable = true;
-        ruff-lsp.enable = true;
+        ruff.enable = true;
         gopls.enable = true;
         bashls.enable = true;
 
         # devops
         ansiblels.enable = true;
         dockerls.enable = true;
-        docker-compose-language-service.enable = true;
-        helm-ls.enable = true;
+        docker_compose_language_service.enable = true;
+        helm_ls.enable = true;
         jsonls.enable = true;
         terraformls.enable = true;
         tflint.enable = true;

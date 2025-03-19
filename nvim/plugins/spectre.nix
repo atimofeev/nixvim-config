@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+_: {
 
-  extraPlugins = with pkgs.vimPlugins; [{ plugin = nvim-spectre; }];
+  plugins.spectre.enable = true;
 
   extraConfigLua = # lua
     ''
