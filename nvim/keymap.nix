@@ -25,6 +25,7 @@ _: {
       map('n','<Esc>','<Cmd>noh<CR>' ) -- clear highlight
       map('v','>','>gv' ) -- horizontally move lines; get back to `v` selection
       map('v','<','<gv' ) -- redundant with mini.move?
+      map('n','<leader>sw','<Cmd>set wrap!<CR>',{desc = 'wrap'} )
 
       -- buffers & tabs
       map('n','<leader>b','<Cmd>enew<CR>',{desc = 'New buffer'})
