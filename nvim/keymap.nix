@@ -34,10 +34,10 @@ _: {
       map({'n','v'},'j','gj') -- go through wrapped lines
       map({'n','v'},'k','gk')
       map({'n','v'},'<S-g>','<S-g>10<C-e>') -- scrolloff 10 lines after going to EOF
-      map('n','<Esc>','<Cmd>noh<CR>' ) -- clear highlight
-      map('v','>','>gv' ) -- horizontally move lines; get back to `v` selection
-      map('v','<','<gv' ) -- redundant with mini.move?
-      map('n','<leader>sw','<Cmd>set wrap!<CR>',{desc = 'wrap'} )
+      map('n','<Esc>','<Cmd>noh<CR>') -- clear highlight
+      map('v','>','>gv') -- horizontally move lines; get back to `v` selection
+      map('v','<','<gv') -- redundant with mini.move?
+      map('n','<leader>sw','<Cmd>set wrap!<CR>',{desc = 'wrap'})
       map('n','<leader>cp','<Cmd>CopyPath<CR>')
       map('n','<leader>cr','<Cmd>CopyRelPath<CR>')
 
