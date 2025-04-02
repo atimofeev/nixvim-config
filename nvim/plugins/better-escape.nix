@@ -3,7 +3,7 @@ _: {
   plugins.better-escape = {
     enable = true;
     settings = {
-      timeout = 200;
+      timeout = 300;
       mappings = {
         i = { j = { k = "<Esc>"; }; };
         v = { j = { k = "<Esc>"; }; };
