@@ -1,7 +1,7 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
-  nixos-flake = ''(builtins.getFlake "/home/atimofeev/repos/nixos-config")'';
-  nixvim-flake = ''(builtins.getFlake "/home/atimofeev/repos/nixvim-config")'';
+  nixos-flake = ''(builtins.getFlake "${inputs.nixos-config.outPath}")'';
+  nixvim-flake = ''(builtins.getFlake "${inputs.self.outPath}")'';
 in {
   plugins.lsp.servers.nixd = {
     enable = true;
