@@ -24,19 +24,19 @@ _: {
       enable = true;
       servers = {
         # langs
+        bashls.enable = true;
+        gopls.enable = true;
         lua_ls = {
           enable = true;
           settings.diagnostics.globals = [ "vim" "require" ];
         };
         pylsp.enable = true;
         ruff.enable = true;
-        gopls.enable = true;
-        bashls.enable = true;
 
         # devops
         ansiblels.enable = true;
-        dockerls.enable = true;
         docker_compose_language_service.enable = true;
+        dockerls.enable = true;
         jsonls.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
