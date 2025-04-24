@@ -8,6 +8,7 @@ _: {
     ./otter-nvim.nix
     ./trouble.nix
     ./yaml.nix
+    ./yaml-helm.nix
   ];
 
   highlightOverride = { # Remove BG from diagnostic inline messages
@@ -36,11 +37,9 @@ _: {
         ansiblels.enable = true;
         dockerls.enable = true;
         docker_compose_language_service.enable = true;
-        helm_ls.enable = true;
         jsonls.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
-        yamlls.enable = true;
       };
     };
 

@@ -1,5 +1,28 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
+
+  plugins = {
+    helm.enable = true;
+    lsp.servers = {
+      helm_ls = {
+        enable = true;
+        filetypes = [ "helm" ];
+        # settings = {
+        #   yamlls.path = "${pkgs.yaml-language-server}/bin/yaml-language-server";
+        # };
+      };
+      yamlls = {
+        enable = true;
+        filetypes = [ "yaml" ];
+      };
+    };
+  };
+
+  # NOTE: To ensure that `helm_ls` (and not `yamlls`) is used on helm files
+  autoCmd = [{
+    event = "FileType";
+    pattern = "helm";
+    command = "LspRestart";
+  }];
 
   # extraPlugins = let
   #   yaml-companion = pkgs.vimUtils.buildVimPlugin {
