@@ -7,7 +7,6 @@ _: {
     ./none-ls.nix
     ./otter-nvim.nix
     ./trouble.nix
-    ./yaml.nix
     ./yaml-helm.nix
   ];
 
