@@ -1,0 +1,24 @@
+{ lib, ... }: {
+
+  plugins.diffview = {
+    enable = true;
+    keymaps = let
+      closeDiffviewMap = [{
+        key = "q";
+        mode = "n";
+        action = "<cmd>DiffviewClose<cr>";
+        description = "Close Diffview";
+      }];
+      diffviewContexts = [
+        "diff1"
+        "diff2"
+        "diff3"
+        "diff4"
+        "view"
+        "filePanel"
+        "fileHistoryPanel"
+      ];
+    in lib.genAttrs diffviewContexts (_contextName: closeDiffviewMap);
+  };
+
+}

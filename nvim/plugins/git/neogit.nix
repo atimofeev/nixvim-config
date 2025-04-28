@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins.neogit = {
     enable = true;
@@ -7,6 +7,10 @@ _: {
       disable_hint = true;
       disable_signs = true;
       status.recent_commit_count = 30;
+      integrations = {
+        diffview = true;
+        telescope = true;
+      };
       mappings = {
         commit_editor = {
           q = "Close";
