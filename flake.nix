@@ -10,6 +10,9 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # used for nixd
+    nixos-config.url = "github:atimofeev/nixos-config";
   };
 
   outputs = { flake-parts, nixpkgs, nixvim, ... }@inputs:
@@ -21,12 +24,14 @@
         _module.args.pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = [ (import ./overlays) ];
         };
 
         packages.default =
           nixvim.legacyPackages.${system}.makeNixvimWithModule {
             inherit pkgs;
             module = import ./nvim;
+            extraSpecialArgs = { inherit inputs; };
           };
       };
     };

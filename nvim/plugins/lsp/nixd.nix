@@ -1,20 +1,17 @@
-_:
-let flake = ''(builtins.getFlake "/home/atimofeev/repos/nixos-config")'';
+{ inputs, pkgs, ... }:
+let
+  nixos-flake = ''(builtins.getFlake "${inputs.nixos-config.outPath}")'';
+  nixvim-flake = ''(builtins.getFlake "${inputs.self.outPath}")'';
 in {
   plugins.lsp.servers.nixd = {
     enable = true;
     settings = {
-      nixpkgs.expr = "import ${flake}.inputs.nixpkgs {}";
+      nixpkgs.expr = "import ${nixos-flake}.inputs.nixpkgs {}";
       options = rec {
-        nixos.expr = "${flake}.nixosConfigurations.default.options";
+        nixos.expr = "${nixos-flake}.nixosConfigurations.milaptop.options";
         home-manager.expr =
           "${nixos.expr}.home-manager.users.type.getSubOptions []";
-        # FIX:
-        # nixvim.expr =
-        #   ''"(${home-manager.expr}).programs.nixvim.type.getSubOptions []"'';
-        # nixvim.expr = ''
-        #   "((builtins.getFlake "/home/atimofeev/repos/nixos-config").nixosConfigurations.default.options.home-manager.users.type.getSubOptions []).programs.nixvim.type.getSubOptions []"
-        # '';
+        nixvim.expr = "${nixvim-flake}.packages.${pkgs.system}.default.options";
       };
     };
   };

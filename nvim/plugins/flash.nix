@@ -4,8 +4,8 @@ _: {
     enable = true;
     settings = {
       modes = {
-        search.enabled = false;
-        char.enabled = false;
+        search = { enabled = false; };
+        char = { enabled = false; };
       };
     };
   };

@@ -7,7 +7,7 @@ _: {
     ./none-ls.nix
     ./otter-nvim.nix
     ./trouble.nix
-    ./yaml.nix
+    ./yaml-helm.nix
   ];
 
   highlightOverride = { # Remove BG from diagnostic inline messages
@@ -23,24 +23,22 @@ _: {
       enable = true;
       servers = {
         # langs
-        lua-ls = {
+        bashls.enable = true;
+        gopls.enable = true;
+        lua_ls = {
           enable = true;
           settings.diagnostics.globals = [ "vim" "require" ];
         };
         pylsp.enable = true;
-        ruff-lsp.enable = true;
-        gopls.enable = true;
-        bashls.enable = true;
+        ruff.enable = true;
 
         # devops
         ansiblels.enable = true;
+        docker_compose_language_service.enable = true;
         dockerls.enable = true;
-        docker-compose-language-service.enable = true;
-        helm-ls.enable = true;
         jsonls.enable = true;
         terraformls.enable = true;
         tflint.enable = true;
-        yamlls.enable = true;
       };
     };
 

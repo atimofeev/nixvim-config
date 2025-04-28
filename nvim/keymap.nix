@@ -12,6 +12,18 @@ _: {
         vim.keymap.set(mode, lhs, rhs, options)
       end
 
+      vim.api.nvim_create_user_command("CopyPath", function()
+        local path = vim.fn.expand("%:p")
+        vim.fn.setreg("+", path)
+        vim.notify('Copied "' .. path .. '" to the clipboard!')
+      end, {})
+
+      vim.api.nvim_create_user_command("CopyRelPath", function()
+        local path = vim.fn.expand("%")
+        vim.fn.setreg("+", path)
+        vim.notify('Copied "' .. path .. '" to the clipboard!')
+      end, {})
+
       -- main
       map('n',';',':',{silent = false}) -- cmd mode with ;
       map('n',':',';',{silent = false}) -- next symbol match with :
@@ -22,9 +34,12 @@ _: {
       map({'n','v'},'j','gj') -- go through wrapped lines
       map({'n','v'},'k','gk')
       map({'n','v'},'<S-g>','<S-g>10<C-e>') -- scrolloff 10 lines after going to EOF
-      map('n','<Esc>','<Cmd>noh<CR>' ) -- clear highlight
-      map('v','>','>gv' ) -- horizontally move lines; get back to `v` selection
-      map('v','<','<gv' ) -- redundant with mini.move?
+      map('n','<Esc>','<Cmd>noh<CR>') -- clear highlight
+      map('v','>','>gv') -- horizontally move lines; get back to `v` selection
+      map('v','<','<gv') -- redundant with mini.move?
+      map('n','<leader>sw','<Cmd>set wrap!<CR>',{desc = 'wrap'})
+      map('n','<leader>cp','<Cmd>CopyPath<CR>')
+      map('n','<leader>cr','<Cmd>CopyRelPath<CR>')
 
       -- buffers & tabs
       map('n','<leader>b','<Cmd>enew<CR>',{desc = 'New buffer'})

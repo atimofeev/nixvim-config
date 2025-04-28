@@ -14,6 +14,8 @@ _: {
         {"<leader>t", group = "+term"},
         {"<leader>h", group = "+harpoon"},
         {"<leader>n", group = "+notes"},
+        {"<leader>s", group = "+set"},
+        {"<leader>c", group = "+copy"},
         {"gz", group = "+surround"},
       })
     '';
