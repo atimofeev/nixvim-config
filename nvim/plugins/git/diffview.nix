@@ -6,7 +6,7 @@
       closeDiffviewMap = [{
         key = "q";
         mode = "n";
-        action = "<cmd>DiffviewClose<cr>";
+        action = "<Cmd>DiffviewClose<CR>";
         description = "Close Diffview";
       }];
       diffviewContexts = [
