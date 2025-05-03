@@ -34,4 +34,16 @@ _: {
 
   };
 
+  extraFiles = {
+    "after/ftplugin/markdown.lua".text = # lua
+      ''
+        local o = vim.opt
+        o.expandtab = true
+        o.shiftwidth = 2
+        o.smarttab = true
+        o.softtabstop = 2
+        o.tabstop = 2
+      '';
+  };
+
 }
