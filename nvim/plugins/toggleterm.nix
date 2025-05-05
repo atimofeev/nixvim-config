@@ -3,6 +3,7 @@
   plugins.toggleterm = {
     enable = true;
     settings = {
+      autochdir = true;
       direction = "float";
       float_opts.border = "curved";
       open_mapping = "[[<c-\\>]]";
