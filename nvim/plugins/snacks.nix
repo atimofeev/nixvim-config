@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins.snacks = {
     enable = true;
@@ -8,6 +8,7 @@ _: {
         enabled = true;
         timeout = 6000;
       };
+      input = { enabled = true; };
       words = { enabled = false; };
     };
   };
