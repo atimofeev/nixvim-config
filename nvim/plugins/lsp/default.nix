@@ -1,7 +1,6 @@
 _: {
 
   imports = [
-    ./fidget.nix
     ./lspkind.nix
     ./nixd.nix
     ./none-ls.nix
