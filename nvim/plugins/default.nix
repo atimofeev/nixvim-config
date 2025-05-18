@@ -7,6 +7,7 @@ _: {
     ./lsp
     ./treesitter
 
+    # ./nvim-tree.nix
     ./barbar.nix
     ./better-escape.nix
     ./catppuccin.nix
@@ -18,9 +19,9 @@ _: {
     ./lualine.nix
     ./markdown-preview.nix
     ./mini-nvim.nix
+    ./noice.nix
     ./nvim-autopairs.nix
     ./nvim-comment.nix
-    # ./nvim-tree.nix
     ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
