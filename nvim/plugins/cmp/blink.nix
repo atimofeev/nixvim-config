@@ -1,6 +1,9 @@
-{
+{ pkgs, ... }: {
+
+  extraPackages = with pkgs; [ gh glab ];
 
   plugins = {
+    blink-cmp-git.enable = true;
     blink-compat.enable = true;
     blink-emoji.enable = true;
 
@@ -49,7 +52,7 @@
           };
         };
         sources = {
-          default = [ "buffer" "calc" "emoji" "lsp" "path" "snippets" ];
+          default = [ "buffer" "calc" "emoji" "git" "lsp" "path" "snippets" ];
           providers = {
             lsp.score_offset = 4;
             buffer = {
@@ -73,6 +76,26 @@
               name = "Emoji";
               module = "blink-emoji";
               score_offset = 1;
+            };
+            git = {
+              name = "Git";
+              module = "blink-cmp-git";
+              enabled = true;
+              score_offset = 100;
+              should_show_items.__raw = ''
+                function()
+                  return vim.o.filetype == 'gitcommit' or vim.o.filetype == 'markdown'
+                end
+              '';
+              opts = {
+                git_centers = {
+                  github = {
+                    issue = {
+                      on_error.__raw = "function(_,_) return true end";
+                    };
+                  };
+                };
+              };
             };
           };
         };
