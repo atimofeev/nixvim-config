@@ -28,7 +28,10 @@
         gopls.enable = true;
         lua_ls = {
           enable = true;
-          settings.diagnostics.globals = [ "vim" "require" ];
+          settings.diagnostics = {
+            disable = [ "miss-name" ];
+            globals = [ "vim" "require" ];
+          };
         };
         pylsp.enable = true;
         ruff.enable = true;
