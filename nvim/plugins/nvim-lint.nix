@@ -7,6 +7,7 @@
     hadolint
     markdownlint-cli
     mypy
+    shellcheck
     statix
     tflint
     tfsec
@@ -27,6 +28,7 @@
 
     lintersByFt = {
       "yaml.gh_actions" = [ "actionlint" ];
+      bash = [ "shellcheck" ];
       docker = [ "hadolint" ];
       fish = [ "fish" ];
       go = [ "golangcilint" ];
