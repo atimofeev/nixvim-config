@@ -9,47 +9,47 @@ _: {
       enableLspFormat = true;
       sources = {
 
-        diagnostics = {
-          statix.enable = true; # nix
-          mypy.enable = true; # python
-          golangci_lint.enable = true; # go
-          fish.enable = true;
-          hadolint.enable = true; # docker
-          terraform_validate = {
-            enable = true;
-            package = null; # NOTE: use host tofu executable
-            settings = ''
-              {command = "tofu",
-               cwd = function() -- use project root
-                 return vim.fn.getcwd()
-               end,}'';
-          };
-          # tfsec.enable = true;
-          # yaml
-          actionlint = {
-            enable = true;
-            settings = ''{filetypes = {"yaml.gh_actions"},}'';
-          };
-          ansiblelint.enable = true;
-          yamllint = {
-            enable = true;
-            settings = ''
-              {extra_args = {"-d", "{extends: default, rules: {line-length: disable}}"},}'';
-          };
-          # markdown, etc
-          markdownlint = {
-            enable = true;
-            # MD012/no-multiple-blanks
-            # MD013/line-length
-            # MD024/no-duplicate-heading
-            # MD033/no-inline-html
-            # MD034/no-bare-urls
-            # MD041/first-line-heading
-            settings = ''
-              {extra_args = {"--disable", "MD012", "MD013", "MD024", "MD033", "MD034", "MD041"},}
-            '';
-          };
-        };
+        # diagnostics = {
+        #   statix.enable = true; # nix
+        #   mypy.enable = true; # python
+        #   golangci_lint.enable = true; # go
+        #   fish.enable = true;
+        #   hadolint.enable = true; # docker
+        #   terraform_validate = {
+        #     enable = true;
+        #     package = null; # NOTE: use host tofu executable
+        #     settings = ''
+        #       {command = "tofu",
+        #        cwd = function() -- use project root
+        #          return vim.fn.getcwd()
+        #        end,}'';
+        #   };
+        #   # tfsec.enable = true;
+        #   # yaml
+        #   actionlint = {
+        #     enable = true;
+        #     settings = ''{filetypes = {"yaml.gh_actions"},}'';
+        #   };
+        #   ansiblelint.enable = true;
+        #   yamllint = {
+        #     enable = true;
+        #     settings = ''
+        #       {extra_args = {"-d", "{extends: default, rules: {line-length: disable}}"},}'';
+        #   };
+        #   # markdown, etc
+        #   markdownlint = {
+        #     enable = true;
+        #     # MD012/no-multiple-blanks
+        #     # MD013/line-length
+        #     # MD024/no-duplicate-heading
+        #     # MD033/no-inline-html
+        #     # MD034/no-bare-urls
+        #     # MD041/first-line-heading
+        #     settings = ''
+        #       {extra_args = {"--disable", "MD012", "MD013", "MD024", "MD033", "MD034", "MD041"},}
+        #     '';
+        #   };
+        # };
 
         formatting = {
           nixfmt.enable = true; # nix

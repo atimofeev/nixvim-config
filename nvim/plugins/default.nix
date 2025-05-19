@@ -22,6 +22,7 @@ _: {
     ./noice.nix
     ./nvim-autopairs.nix
     ./nvim-comment.nix
+    ./nvim-lint.nix
     ./obsidian-nvim.nix
     ./oil.nix
     ./project-nvim.nix
