@@ -2,7 +2,6 @@
 
   extraPackages = with pkgs; [
     actionlint
-    # ansible
     deadnix
     golangci-lint
     hadolint
@@ -27,7 +26,6 @@
     enable = true;
 
     lintersByFt = {
-      # "yaml.ansible" = [ "ansible_lint" ];
       "yaml.gh_actions" = [ "actionlint" ];
       docker = [ "hadolint" ];
       fish = [ "fish" ];

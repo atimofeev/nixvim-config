@@ -1,4 +1,4 @@
-_: {
+{ pkgs, ... }: {
 
   imports = [
     ./lspkind.nix
@@ -15,6 +15,8 @@ _: {
     DiagnosticVirtualTextInfo.link = "DiagnosticInfo";
     DiagnosticVirtualTextHint.link = "DiagnosticHint";
   };
+
+  extraPackages = with pkgs; [ ansible-lint ];
 
   plugins = {
 
