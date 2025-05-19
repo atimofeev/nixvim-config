@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
 
   extraPlugins = let
     jinja.vim = pkgs.vimUtils.buildVimPlugin {
@@ -13,9 +13,15 @@
   in [{ plugin = jinja.vim; }];
 
   autoCmd = [{
-    event = [ "BufEnter" ];
+    event = [ "BufEnter" "BufReadPost" ];
     pattern = [ "*.j2" ];
-    command = "TSBufDisable highlight | LspStop";
+    callback = lib.nixvim.mkRaw ''
+      function(args)
+        vim.cmd('TSBufDisable highlight')
+        vim.cmd('LspStop')
+        vim.diagnostic.reset(nil, args.buf)
+      end
+    '';
   }];
 
 }
