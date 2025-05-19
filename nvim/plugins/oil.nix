@@ -18,7 +18,16 @@ _: {
             '';
         };
         win_options = { wrap = true; };
-        keymaps = { "<BS>" = "actions.parent"; };
+        keymaps = {
+          "<BS>" = "actions.parent";
+          "<C-p>" = "actions.preview";
+          "<C-r>" = "actions.refresh";
+          "<CR>" = "actions.select";
+          "<g.>" = "actions.toggle_hidden";
+          "<g?>" = "actions.show_help";
+          "`" = "actions.cd";
+        };
+        use_default_keymaps = false;
       };
     };
   };
