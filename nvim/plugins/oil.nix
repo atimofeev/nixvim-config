@@ -10,12 +10,11 @@ _: {
         view_options = {
           show_hidden = true;
           natural_order = true;
-          is_always_hidden = # lua
-            ''
-              function(name, _)
-                return name == '..' or name == '.git' or name == '.mypy_cache' or name == '.null-ls_.*'
-              end
-            '';
+          is_always_hidden = ''
+            function(name, _)
+              return name == '..' or name == '.git' or name == '.mypy_cache' or name == '.null-ls_.*'
+            end
+          '';
         };
         win_options = { wrap = true; };
         keymaps = {
