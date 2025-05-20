@@ -9,11 +9,16 @@
     ./yaml-helm.nix
   ];
 
-  highlightOverride = { # Remove BG from diagnostic inline messages
+  highlightOverride = {
+    # NOTE: Remove BG from diagnostic inline messages
     DiagnosticVirtualTextError.link = "DiagnosticError";
     DiagnosticVirtualTextWarn.link = "DiagnosticWarn";
     DiagnosticVirtualTextInfo.link = "DiagnosticInfo";
     DiagnosticVirtualTextHint.link = "DiagnosticHint";
+
+    # NOTE: setup float window style
+    NormalFloat.link = "Normal";
+    FloatBorder.link = "Normal";
   };
 
   extraPackages = with pkgs; [ ansible-lint ];

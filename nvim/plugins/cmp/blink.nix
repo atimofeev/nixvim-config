@@ -22,11 +22,7 @@
           list.selection.preselect = false;
           documentation = {
             auto_show = true;
-            window = {
-              border = "rounded";
-              winhighlight =
-                "Normal:Normal,FloatBorder:Normal,EndOfBuffer:BlinkCmpDoc";
-            };
+            window.border = "rounded";
           };
           menu = {
             border = "rounded";
@@ -40,16 +36,12 @@
                 }
               ];
             };
-            winhighlight =
-              "Normal:Normal,FloatBorder:Normal,CursorLine:IncSearch,Search:None";
+            winhighlight = "CursorLine:IncSearch,Search:None";
           };
         };
         signature = {
           enabled = true;
-          window = {
-            border = "rounded";
-            winhighlight = "Normal:Normal,FloatBorder:Normal";
-          };
+          window.border = "rounded";
         };
         sources = {
           default = [ "buffer" "calc" "emoji" "git" "lsp" "path" "snippets" ];
