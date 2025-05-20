@@ -23,8 +23,8 @@ _: {
           "<C-p>" = "actions.preview";
           "<C-r>" = "actions.refresh";
           "<CR>" = "actions.select";
-          "<g.>" = "actions.toggle_hidden";
-          "<g?>" = "actions.show_help";
+          "g." = "actions.toggle_hidden";
+          "g?" = "actions.show_help";
           "`" = "actions.cd";
         };
         use_default_keymaps = false;
