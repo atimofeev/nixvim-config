@@ -16,7 +16,7 @@ _: {
         {"<leader>n", group = "+notes"},
         {"<leader>s", group = "+set"},
         {"<leader>c", group = "+copy"},
-        {"gz", group = "+surround"},
+        {"gz", group = "+flash"},
       })
     '';
 
