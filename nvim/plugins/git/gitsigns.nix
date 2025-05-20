@@ -1,5 +1,7 @@
 _: {
 
+  # TODO: setup keybinds
+
   plugins.gitsigns = {
     enable = true;
     settings = {
