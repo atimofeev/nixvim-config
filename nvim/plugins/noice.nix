@@ -21,6 +21,7 @@
               { find = "%d fewer lines"; }
               { find = "%d more lines"; }
               { find = "%d lines yanked"; }
+              { find = "--No lines in buffer--"; }
             ];
           };
           opts.skip = true;
