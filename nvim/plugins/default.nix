@@ -7,6 +7,7 @@ _: {
     ./lsp
     ./treesitter
 
+    ./conform.nix
     # ./nvim-tree.nix
     ./barbar.nix
     ./better-escape.nix
