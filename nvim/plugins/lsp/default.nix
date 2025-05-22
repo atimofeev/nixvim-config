@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   imports = [
     ./lspkind.nix
@@ -35,7 +36,10 @@
           enable = true;
           settings.diagnostics = {
             disable = [ "miss-name" ];
-            globals = [ "vim" "require" ];
+            globals = [
+              "vim"
+              "require"
+            ];
           };
         };
         pylsp.enable = true;

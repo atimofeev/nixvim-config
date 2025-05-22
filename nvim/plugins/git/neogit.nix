@@ -30,10 +30,12 @@
       vim.keymap.set('n','<leader>g','<Cmd>Neogit<CR>',{noremap = true, silent = true, desc = 'Open Neogit'})
     '';
 
-  autoCmd = [{
-    event = [ "BufEnter" ];
-    pattern = [ "Neogit*" ];
-    command = "setlocal foldcolumn=0";
-  }];
+  autoCmd = [
+    {
+      event = [ "BufEnter" ];
+      pattern = [ "Neogit*" ];
+      command = "setlocal foldcolumn=0";
+    }
+  ];
 
 }

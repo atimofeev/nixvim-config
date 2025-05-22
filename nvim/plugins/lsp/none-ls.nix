@@ -71,7 +71,8 @@ _: {
           golines.enable = true;
           shfmt.enable = true; # shell
           fish_indent.enable = true;
-          terraform_fmt = { # terraform
+          terraform_fmt = {
+            # terraform
             enable = true;
             package = null; # NOTE: use host tofu executable
             settings = ''{command = "tofu"}'';

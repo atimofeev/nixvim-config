@@ -1,4 +1,5 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, ... }:
+{
 
   extraPackages = with pkgs; [
     actionlint
@@ -15,12 +16,13 @@
   ];
 
   env = {
-    YAMLLINT_CONFIG_FILE = pkgs.writeText "yamllint-config.yaml" # yaml
-      ''
-        extends: default
-        rules:
-          line-length: disable
-      '';
+    YAMLLINT_CONFIG_FILE =
+      pkgs.writeText "yamllint-config.yaml" # yaml
+        ''
+          extends: default
+          rules:
+            line-length: disable
+        '';
   };
 
   plugins.lint = {
@@ -33,9 +35,16 @@
       fish = [ "fish" ];
       go = [ "golangcilint" ];
       markdown = [ "markdownlint" ];
-      nix = [ "deadnix" "statix" ];
+      nix = [
+        "deadnix"
+        "statix"
+      ];
       python = [ "mypy" ];
-      terraform = [ "terraform_validate" "tflint" "tfsec" ];
+      terraform = [
+        "terraform_validate"
+        "tflint"
+        "tfsec"
+      ];
       yaml = [ "yamllint" ];
     };
 
@@ -60,11 +69,11 @@
 
   extraConfigLua = # lua
     ''
-      vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave'  }, {
-        desc = 'Run linters',
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        desc = "Run linters",
         callback = function()
           require("lint").try_lint()
-        end
+        end,
       })
 
       -- HACK: workaround for issue above

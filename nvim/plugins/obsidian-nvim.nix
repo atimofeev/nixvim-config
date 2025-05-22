@@ -5,10 +5,12 @@ _: {
       enable = true;
       settings = {
 
-        workspaces = [{
-          name = "default";
-          path = "~/repos/obsidian-vault";
-        }];
+        workspaces = [
+          {
+            name = "default";
+            path = "~/repos/obsidian-vault";
+          }
+        ];
 
         daily_notes = {
           folder = "daily";
@@ -34,7 +36,9 @@ _: {
             end
           '';
 
-        templates = { folder = "assets/templates"; };
+        templates = {
+          folder = "assets/templates";
+        };
 
         ui = {
           checkboxes = {
@@ -61,11 +65,13 @@ _: {
 
   opts.conceallevel = 2;
 
-  autoCmd = [{
-    event = [ "BufEnter" ];
-    pattern = [ "*.md" ];
-    command = "TSBufDisable indent";
-  }];
+  autoCmd = [
+    {
+      event = [ "BufEnter" ];
+      pattern = [ "*.md" ];
+      command = "TSBufDisable indent";
+    }
+  ];
 
   extraConfigLua = # lua
     ''

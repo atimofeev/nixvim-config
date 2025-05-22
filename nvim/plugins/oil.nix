@@ -16,7 +16,9 @@ _: {
             end
           '';
         };
-        win_options = { wrap = true; };
+        win_options = {
+          wrap = true;
+        };
         keymaps = {
           "<BS>" = "actions.parent";
           "<C-p>" = "actions.preview";

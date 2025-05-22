@@ -1,6 +1,10 @@
 _: {
 
-  imports = [ ./nushell.nix ./rainbow-delimiters.nix ./textobjects.nix ];
+  imports = [
+    ./nushell.nix
+    ./rainbow-delimiters.nix
+    ./textobjects.nix
+  ];
 
   plugins = {
 

@@ -1,6 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
-  extraPackages = with pkgs; [ gh glab ];
+  extraPackages = with pkgs; [
+    gh
+    glab
+  ];
 
   plugins = {
     blink-cmp-git.enable = true;
@@ -12,11 +16,27 @@
       settings = {
         keymap = {
           preset = "enter";
-          "<C-space>" = [ "show" "hide" ];
-          "<Tab>" = [ "show" "select_next" "fallback" ];
-          "<S-Tab>" = [ "select_prev" "fallback" ];
-          "<C-n>" = [ "snippet_forward" "fallback" ];
-          "<C-p>" = [ "snippet_backward" "fallback" ];
+          "<C-space>" = [
+            "show"
+            "hide"
+          ];
+          "<Tab>" = [
+            "show"
+            "select_next"
+            "fallback"
+          ];
+          "<S-Tab>" = [
+            "select_prev"
+            "fallback"
+          ];
+          "<C-n>" = [
+            "snippet_forward"
+            "fallback"
+          ];
+          "<C-p>" = [
+            "snippet_backward"
+            "fallback"
+          ];
         };
         completion = {
           list.selection.preselect = false;
@@ -44,7 +64,15 @@
           window.border = "rounded";
         };
         sources = {
-          default = [ "buffer" "calc" "emoji" "git" "lsp" "path" "snippets" ];
+          default = [
+            "buffer"
+            "calc"
+            "emoji"
+            "git"
+            "lsp"
+            "path"
+            "snippets"
+          ];
           providers = {
             lsp.score_offset = 4;
             buffer = {

@@ -4,13 +4,20 @@
     enable = true;
     autoEnableSources = true;
     settings = {
-      snippet.expand =
-        "function(args) require('luasnip').lsp_expand(args.body) end";
+      snippet.expand = "function(args) require('luasnip').lsp_expand(args.body) end";
       window.completion = {
         scrollbar = false;
-        border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
-        winhighlight =
-          "Normal:Normal,FloatBorder:Normal,CursorLine:IncSearch,Search:None";
+        border = [
+          "╭"
+          "─"
+          "╮"
+          "│"
+          "╯"
+          "─"
+          "╰"
+          "│"
+        ];
+        winhighlight = "Normal:Normal,FloatBorder:Normal,CursorLine:IncSearch,Search:None";
       };
       sources = [
         { name = "nvim_lsp"; }

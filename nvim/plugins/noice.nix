@@ -3,14 +3,18 @@
   plugins.noice = {
     enable = true;
     settings = {
-      presets = { lsp_doc_border = true; };
+      presets = {
+        lsp_doc_border = true;
+      };
       routes = [
         # NOTE: show macro recording notification
         {
-          filter.any = [{
-            event = "msg_showmode";
-            find = "recording";
-          }];
+          filter.any = [
+            {
+              event = "msg_showmode";
+              find = "recording";
+            }
+          ];
           view = "notify";
         }
         # NOTE: hide useless notifications

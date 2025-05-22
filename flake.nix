@@ -15,24 +15,35 @@
     nixos-config.url = "github:atimofeev/nixos-config";
   };
 
-  outputs = { flake-parts, nixpkgs, nixvim, ... }@inputs:
+  outputs =
+    {
+      flake-parts,
+      nixpkgs,
+      nixvim,
+      ...
+    }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems =
-        [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
 
-      perSystem = { pkgs, system, ... }: {
-        _module.args.pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [ (import ./overlays) ];
-        };
+      perSystem =
+        { pkgs, system, ... }:
+        {
+          _module.args.pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = [ (import ./overlays) ];
+          };
 
-        packages.default =
-          nixvim.legacyPackages.${system}.makeNixvimWithModule {
+          packages.default = nixvim.legacyPackages.${system}.makeNixvimWithModule {
             inherit pkgs;
             module = import ./nvim;
             extraSpecialArgs = { inherit inputs; };
           };
-      };
+        };
     };
 }

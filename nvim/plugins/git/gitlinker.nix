@@ -1,16 +1,19 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
-  extraPlugins = let
-    gitlinker-nvim = pkgs.vimUtils.buildVimPlugin {
-      name = "gitlinker.nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "linrongbin16";
-        repo = "gitlinker.nvim";
-        rev = "542f51784f20107ef9ecdadc47825204837efed5";
-        hash = "sha256-OnlJf31dTzLOJ1tlDKH7slPnQGMZUloavEAtd/FxK0U=";
+  extraPlugins =
+    let
+      gitlinker-nvim = pkgs.vimUtils.buildVimPlugin {
+        name = "gitlinker.nvim";
+        src = pkgs.fetchFromGitHub {
+          owner = "linrongbin16";
+          repo = "gitlinker.nvim";
+          rev = "542f51784f20107ef9ecdadc47825204837efed5";
+          hash = "sha256-OnlJf31dTzLOJ1tlDKH7slPnQGMZUloavEAtd/FxK0U=";
+        };
       };
-    };
-  in [{ plugin = gitlinker-nvim; }];
+    in
+    [ { plugin = gitlinker-nvim; } ];
 
   extraConfigLua = # lua
     ''

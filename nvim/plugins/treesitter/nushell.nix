@@ -1,12 +1,13 @@
 { pkgs, ... }:
-let treesitter-nu-grammar = pkgs.tree-sitter-grammars.tree-sitter-nu;
-in {
+let
+  treesitter-nu-grammar = pkgs.tree-sitter-grammars.tree-sitter-nu;
+in
+{
 
   plugins.treesitter = {
     enable = true;
     settings.indent.enable = true;
-    grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars
-      ++ [ treesitter-nu-grammar ];
+    grammarPackages = pkgs.vimPlugins.nvim-treesitter.passthru.allGrammars ++ [ treesitter-nu-grammar ];
   };
 
   extraConfigLua = ''

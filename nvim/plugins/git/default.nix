@@ -1,1 +1,8 @@
-{ imports = [ ./diffview.nix ./gitlinker.nix ./gitsigns.nix ./neogit.nix ]; }
+{
+  imports = [
+    ./diffview.nix
+    ./gitlinker.nix
+    ./gitsigns.nix
+    ./neogit.nix
+  ];
+}

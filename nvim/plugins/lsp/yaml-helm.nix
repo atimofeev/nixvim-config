@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   # TODO: integrate common devops schemes
   # setup https://github.com/b0o/SchemaStore.nvim
@@ -65,11 +66,13 @@
   };
 
   # NOTE: To ensure that `helm_ls` (and not `yamlls`) is used on helm files
-  autoCmd = [{
-    event = "FileType";
-    pattern = "helm";
-    command = "LspRestart";
-  }];
+  autoCmd = [
+    {
+      event = "FileType";
+      pattern = "helm";
+      command = "LspRestart";
+    }
+  ];
 
   extraPlugins = [
 
