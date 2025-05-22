@@ -20,4 +20,9 @@ _: {
       }
     '';
 
+  highlightOverride.WhichKeyNormal = {
+    fg = "#cad3f5";
+    bg = "#1e2030";
+  };
+
 }
