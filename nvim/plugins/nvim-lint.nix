@@ -66,6 +66,14 @@
           require("lint").try_lint()
         end
       })
+
+      -- HACK: workaround for issue above
+      local original_tf_validate_func = require("lint").linters.terraform_validate
+      require("lint").linters.terraform_validate = function()
+        local linter_config = original_tf_validate_func()
+        linter_config.cmd = "${lib.getExe pkgs.opentofu}"
+        return linter_config
+      end
     '';
 
 }
