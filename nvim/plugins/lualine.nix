@@ -1,13 +1,13 @@
-_: {
+{
 
   plugins.lualine.enable = true;
   extraConfigLua = # lua
     ''
-      require('lualine').setup({
+      require("lualine").setup {
         options = {
           globalstatus = true,
-          component_separators = { left = '󰿟', right = ''},
-          section_separators = { left = '', right = ''},
+          component_separators = { left = "󰿟", right = "" },
+          section_separators = { left = "", right = "" },
         },
         sections = {
           lualine_b = {
@@ -15,23 +15,23 @@ _: {
               "branch",
               icon = "",
               fmt = function(str)
-                 if str:len() > 25 then
-                    return str:sub(1, 25) .. '>'
-                 end
-                 return str
+                if str:len() > 25 then
+                  return str:sub(1, 25) .. ">"
+                end
+                return str
               end,
             },
             {
               "diff",
-              symbols = {added = '', modified = '󰟃', removed = ''},
+              symbols = { added = "", modified = "", removed = "" },
             },
             {
               "diagnostics",
-              symbols = {error = '', warn = '', info = '', hint = ''},
-            }
+              symbols = { error = "", warn = "", info = "", hint = "" },
+            },
           },
         },
-      })
+      }
     '';
 
 }
