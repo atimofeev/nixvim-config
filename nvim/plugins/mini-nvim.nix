@@ -4,6 +4,8 @@ _: {
     enable = true;
     modules = {
 
+      ai = { };
+
       cursorword.delay = 0;
 
       move = { };
