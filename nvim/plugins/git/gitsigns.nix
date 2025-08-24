@@ -1,4 +1,4 @@
-_: {
+{
 
   # TODO: setup keybinds
 

@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins.better-escape = {
     enable = true;

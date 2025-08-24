@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins.project-nvim = {
     enable = true;

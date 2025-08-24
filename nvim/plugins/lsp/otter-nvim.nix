@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins.otter.enable = true;
   autoCmd = [
