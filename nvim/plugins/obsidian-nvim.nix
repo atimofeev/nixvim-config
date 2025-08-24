@@ -1,4 +1,4 @@
-_: {
+{
 
   plugins = {
     obsidian = {
@@ -52,11 +52,19 @@ _: {
             };
           };
         };
+        checkbox = {
+          order = [
+            " "
+            "x"
+          ];
+        };
 
         attachments = {
           img_folder = "assets/img";
           confirm_img_paste = false;
         };
+
+        legacy_commands = false;
 
       };
     };
@@ -76,19 +84,20 @@ _: {
   extraConfigLua = # lua
     ''
       function map(mode, lhs, rhs, opts)
-        local options = {noremap = true, silent = true}
+        local options = { noremap = true, silent = true }
         if opts then
           options = vim.tbl_extend("force", options, opts)
         end
         vim.keymap.set(mode, lhs, rhs, options)
       end
 
-      map('n','<leader>ns','<Cmd>ObsidianSearch<CR>',{desc = 'Obsidian search'})
-      map('n','<leader>nl','<Cmd>ObsidianQuickSwitch<CR>',{desc = 'Obsidian list'})
-      map('n','<leader>np','<Cmd>ObsidianPasteImg<CR>',{desc = 'Obsidian paste IMG'})
-      map('n','<leader>nd','<Cmd>ObsidianDailies<CR>',{desc = 'Obsidian daily'})
-      map('n','<leader>nn','<Cmd>ObsidianNew<CR>',{desc = 'Obsidian new note'})
-      map('n','<leader>nb','<Cmd>ObsidianBacklinks<CR>',{desc = 'Obsidian backlinks'})
-      map('n','<leader>nt','<Cmd>ObsidianTags<CR>',{desc = 'Obsidian tags'})
+      map("n", "<leader>ns", "<Cmd>Obsidian search<CR>", { desc = "Obsidian search" })
+      map("n", "<leader>nl", "<Cmd>Obsidian quick_switch<CR>", { desc = "Obsidian list" })
+      map("n", "<leader>np", "<Cmd>Obsidian paste_img<CR>", { desc = "Obsidian paste IMG" })
+      map("n", "<leader>nd", "<Cmd>Obsidian dailies<CR>", { desc = "Obsidian daily" })
+      map("n", "<leader>nn", "<Cmd>Obsidian new<CR>", { desc = "Obsidian new note" })
+      map("n", "<leader>nb", "<Cmd>Obsidian backlinks<CR>", { desc = "Obsidian backlinks" })
+      map("n", "<leader>nt", "<Cmd>Obsidian tags<CR>", { desc = "Obsidian tags" })
     '';
+
 }
