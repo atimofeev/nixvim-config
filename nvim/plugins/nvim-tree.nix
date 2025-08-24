@@ -33,7 +33,7 @@ _: {
 
   extraConfigLua = # lua
     ''
-      vim.keymap.set('n','<leader>e','<Cmd>NvimTreeFocus<CR>',{noremap = true, silent = true, desc = 'Open NvimTree'})
+      vim.keymap.set("n", "<leader>e", "<Cmd>NvimTreeFocus<CR>", { noremap = true, silent = true, desc = "Open NvimTree" })
     '';
 
 }

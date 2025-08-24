@@ -43,6 +43,7 @@
           };
         };
         pylsp.enable = true;
+        ruby_lsp.enable = true;
         ruff.enable = true;
 
         # devops
@@ -59,7 +60,7 @@
 
   extraConfigLua = # lua
     ''
-      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with( vim.lsp.handlers.hover, { border = "rounded" })
+      vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
       vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
       local signs = { Error = "", Warn = "", Hint = "", Info = "" }
@@ -68,14 +69,34 @@
         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
       end
 
-      vim.diagnostic.config({
-        virtual_text = { prefix = "", },
-      })
+      vim.diagnostic.config {
+        virtual_text = { prefix = "" },
+      }
 
-      vim.keymap.set('n','<leader>lr','<Cmd>lua vim.lsp.buf.rename()<CR>',{noremap = true, silent = true, desc = 'LSP rename'})
-      vim.keymap.set('n','<leader>lR','<Cmd>lua vim.lsp.buf.references()<CR>',{noremap = true, silent = true, desc = 'LSP references'})
-      vim.keymap.set('n','<leader>lD','<Cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true, desc = 'LSP definition'})
-      vim.keymap.set('n','<leader>li','<Cmd>lua vim.lsp.buf.implementation()<CR>',{noremap = true, silent = true, desc = 'LSP implementation'})
+      vim.keymap.set(
+        "n",
+        "<leader>lr",
+        "<Cmd>lua vim.lsp.buf.rename()<CR>",
+        { noremap = true, silent = true, desc = "LSP rename" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>lR",
+        "<Cmd>lua vim.lsp.buf.references()<CR>",
+        { noremap = true, silent = true, desc = "LSP references" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>lD",
+        "<Cmd>lua vim.lsp.buf.definition()<CR>",
+        { noremap = true, silent = true, desc = "LSP definition" }
+      )
+      vim.keymap.set(
+        "n",
+        "<leader>li",
+        "<Cmd>lua vim.lsp.buf.implementation()<CR>",
+        { noremap = true, silent = true, desc = "LSP implementation" }
+      )
     '';
 
 }

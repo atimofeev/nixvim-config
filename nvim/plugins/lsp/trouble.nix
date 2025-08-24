@@ -4,7 +4,12 @@ _: {
 
   extraConfigLua = # lua
     ''
-      vim.keymap.set('n','<leader>ld','<Cmd>Trouble diagnostics toggle<CR>',{noremap = true, silent = true, desc = 'LSP diagnostics'})
+      vim.keymap.set(
+        "n",
+        "<leader>ld",
+        "<Cmd>Trouble diagnostics toggle<CR>",
+        { noremap = true, silent = true, desc = "LSP diagnostics" }
+      )
     '';
 
   autoCmd = [

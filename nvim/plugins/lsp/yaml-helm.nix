@@ -34,7 +34,7 @@
             };
             schemas.__raw = # lua
               ''
-                require('schemastore').yaml.schemas{
+                require("schemastore").yaml.schemas {
                   -- extra = {
                   --   {
                   --     description = 'My custom JSON schema',

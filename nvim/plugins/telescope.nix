@@ -26,8 +26,8 @@ _: {
         vim.api.nvim_set_hl(0, hl, col)
       end
 
-      local telescope = require('telescope')
-      telescope.setup{
+      local telescope = require "telescope"
+      telescope.setup {
         defaults = {
           vimgrep_arguments = {
             "rg",
@@ -54,7 +54,7 @@ _: {
             },
             vertical = {
               prompt_position = "top",
-              mirror = true;
+              mirror = true,
             },
             width = 0.90,
           },
@@ -91,33 +91,37 @@ _: {
         },
         extensions_list = { "themes", "terms" },
         pickers = { find_files = {
-            hidden = true,
-            find_command = {"rg", "--files", "--sortr=modified"};
-          },
-        },
+          hidden = true,
+          find_command = { "rg", "--files", "--sortr=modified" },
+        } },
       }
 
       function map(mode, lhs, rhs, opts)
-        local options = {noremap = true, silent = true}
+        local options = { noremap = true, silent = true }
         if opts then
           options = vim.tbl_extend("force", options, opts)
         end
         vim.keymap.set(mode, lhs, rhs, options)
       end
 
-      map('n','<leader>fl','<Cmd>Telescope find_files<CR>',{desc = 'List files'})
-      map('n','<leader>fa','<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>',{desc = 'Find all files'})
-      map('n','<leader>fs','<Cmd>Telescope live_grep<CR>',{desc = 'Search word'})
-      map('n','<leader>fb','<Cmd>Telescope buffers<CR>',{desc = 'Find buffers'})
-      map('n','<leader>fh','<Cmd>Telescope help_tags<CR>',{desc = 'Find help'})
-      map('n','<leader>fr','<Cmd>Telescope oldfiles<CR>',{desc = 'Find recent'})
-      map('n','<leader>fz','<Cmd>Telescope current_buffer_fuzzy_find<CR>',{desc = 'Find word (buffer)'})
-      map('n','<leader>fgc','<Cmd>Telescope git_commits<CR>',{desc = 'Find git commits'})
-      map('n','<leader>fgC','<Cmd>Telescope git_bcommits<CR>',{desc = 'Find git buffer commits'})
-      map('n','<leader>fgs','<Cmd>Telescope git_status<CR>',{desc = 'Find git status'})
-      map('n','<leader>fgS','<Cmd>Telescope git_stash<CR>',{desc = 'Find git stash'})
-      map('n','<leader>fgb','<Cmd>Telescope git_branches<CR>',{desc = 'Find git branches'})
-      map('n','<leader>fk','<Cmd>Telescope keymaps<CR>',{desc = 'Find keymaps'})
+      map("n", "<leader>fl", "<Cmd>Telescope find_files<CR>", { desc = "List files" })
+      map(
+        "n",
+        "<leader>fa",
+        "<Cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+        { desc = "Find all files" }
+      )
+      map("n", "<leader>fs", "<Cmd>Telescope live_grep<CR>", { desc = "Search word" })
+      map("n", "<leader>fb", "<Cmd>Telescope buffers<CR>", { desc = "Find buffers" })
+      map("n", "<leader>fh", "<Cmd>Telescope help_tags<CR>", { desc = "Find help" })
+      map("n", "<leader>fr", "<Cmd>Telescope oldfiles<CR>", { desc = "Find recent" })
+      map("n", "<leader>fz", "<Cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Find word (buffer)" })
+      map("n", "<leader>fgc", "<Cmd>Telescope git_commits<CR>", { desc = "Find git commits" })
+      map("n", "<leader>fgC", "<Cmd>Telescope git_bcommits<CR>", { desc = "Find git buffer commits" })
+      map("n", "<leader>fgs", "<Cmd>Telescope git_status<CR>", { desc = "Find git status" })
+      map("n", "<leader>fgS", "<Cmd>Telescope git_stash<CR>", { desc = "Find git stash" })
+      map("n", "<leader>fgb", "<Cmd>Telescope git_branches<CR>", { desc = "Find git branches" })
+      map("n", "<leader>fk", "<Cmd>Telescope keymaps<CR>", { desc = "Find keymaps" })
     '';
 
 }

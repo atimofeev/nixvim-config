@@ -17,21 +17,21 @@
 
   extraConfigLua = # lua
     ''
-      require('gitlinker').setup({
+      require("gitlinker").setup {
         message = false,
         highlight_duration = 0,
         router = {
           browse = {
-            ["^git%..*%.com"] = require('gitlinker.routers').gitlab_browse,
+            ["^git%..*%.com"] = require("gitlinker.routers").gitlab_browse,
           },
           blame = {
-            ["^git%..*%.com"] = require('gitlinker.routers').gitlab_blame,
+            ["^git%..*%.com"] = require("gitlinker.routers").gitlab_blame,
           },
         },
-      })
+      }
 
-      vim.keymap.set({'n','v'},'gC','<Cmd>GitLink!browse<CR>',{noremap = true, silent = true, desc = 'Open git code'})
-      vim.keymap.set({'n','v'},'gB','<Cmd>GitLink!blame<CR>',{noremap = true, silent = true, desc = 'Open git blame'})
+      vim.keymap.set({ "n", "v" }, "gC", "<Cmd>GitLink!browse<CR>", { noremap = true, silent = true, desc = "Open git code" })
+      vim.keymap.set({ "n", "v" }, "gB", "<Cmd>GitLink!blame<CR>", { noremap = true, silent = true, desc = "Open git blame" })
     '';
 
 }
