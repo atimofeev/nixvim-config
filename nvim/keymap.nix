@@ -46,7 +46,8 @@
       map("n", "<leader>x", "<Cmd>confirm bdelete<CR>", { desc = "Close buffer" })
       -- map('n','<Tab>','<Cmd>bnext<CR>',{desc = 'Next buffer'}) -- conflicts with barbar
       -- map('n','<S-Tab>','<Cmd>bprev<CR>',{desc = 'Prev buffer'})
-      map("n", "<leader>t", "<Cmd>tabnew<CR>", { desc = "New tab" })
+
+      -- map("n", "<leader>t", "<Cmd>tabnew<CR>", { desc = "New tab" }) -- rarely used & conflicts with snacks.toggle
 
       -- terminal
       -- map('t','jk','<C-\\><C-n>') -- escape terminal mode; now handled with new `better-escape`
