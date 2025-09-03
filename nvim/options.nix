@@ -21,7 +21,7 @@
       -- cursor / line / gutter
       -- o.whichwrap:append "<>[]hl" -- change lines with h or l (at line end)
       o.cursorline = true
-      o.foldcolumn = "auto"
+      -- o.foldcolumn = "auto" -- gets triggered by obsidian.nvim
       o.number = true
       o.numberwidth = 2
       o.relativenumber = true
