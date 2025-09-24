@@ -56,7 +56,6 @@
           "make"
           "markdown"
           "markdown_inline"
-          "org"
           "python"
           "terraform"
           "toml"
