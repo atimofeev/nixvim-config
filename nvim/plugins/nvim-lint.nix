@@ -58,9 +58,6 @@
         "MD041"
       ];
 
-      # FIX: https://github.com/mfussenegger/nvim-lint/issues/792
-      # terraform_validate.cmd = lib.getExe pkgs.opentofu;
-
     };
 
   };
@@ -74,7 +71,7 @@
         end,
       })
 
-      -- HACK: workaround for issue above
+      -- NOTE: overrides terraform_validate.cmd
       local original_tf_validate_func = require("lint").linters.terraform_validate
       require("lint").linters.terraform_validate = function()
         local linter_config = original_tf_validate_func()
