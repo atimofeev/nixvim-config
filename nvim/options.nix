@@ -13,6 +13,7 @@
       o.confirm = true -- get confirmation prompt on exit
       o.mouse = "" -- fkin stop registering touchpad
       o.shortmess:append "sI" -- disable nvim intro
+      o.swapfile = false
       o.termguicolors = true
       o.timeoutlen = 400
       o.undofile = true
