@@ -1,9 +1,15 @@
+{ pkgs, ... }:
 {
 
   imports = [
     # ./nushell.nix
     ./rainbow-delimiters.nix
     ./textobjects.nix
+  ];
+
+  extraPackages = with pkgs; [
+    gcc
+    tree-sitter
   ];
 
   plugins = {

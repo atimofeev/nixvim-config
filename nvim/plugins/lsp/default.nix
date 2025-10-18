@@ -22,7 +22,10 @@
     FloatBorder.link = "Normal";
   };
 
-  extraPackages = with pkgs; [ ansible-lint ];
+  extraPackages = with pkgs; [
+    nodejs
+    ansible-lint
+  ];
 
   plugins = {
 

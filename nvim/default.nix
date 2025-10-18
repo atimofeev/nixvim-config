@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
 
   imports = [
@@ -7,6 +8,8 @@
     ./keymap.nix
     ./options.nix
   ];
+
+  extraPackages = with pkgs; [ xclip ];
 
   clipboard.register = "unnamedplus";
 
