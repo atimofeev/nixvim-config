@@ -24,6 +24,7 @@
 
       # conf
       ".*%.cfg" = "conf";
+      ".*%.cnf" = "conf";
       ".*%.conf" = "conf";
       ".*%.service" = "conf";
 
