@@ -22,6 +22,13 @@
           vim.cmd "wincmd ="
         end,
       })
+
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter", "BufWritePost" }, {
+        desc = "Update kitty tab title with current filename",
+        callback = function()
+          vim.fn.system { "kitty", "@", "set-tab-title", vim.fn.expand "%:t" }
+        end,
+      })
     '';
 
 }
