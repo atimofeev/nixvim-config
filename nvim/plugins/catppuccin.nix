@@ -3,7 +3,7 @@
   colorschemes = {
     catppuccin = {
       enable = true;
-      settings.flavour = "macchiato";
+      settings.flavour = "mocha";
     };
   };
 
