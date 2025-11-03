@@ -28,7 +28,7 @@ in
         options = rec {
           nixos.expr = "${nixos-flake}.nixosConfigurations.milaptop.options";
           home-manager.expr = "${nixos.expr}.home-manager.users.type.getSubOptions []";
-          nixvim.expr = "${nixvim-flake}.packages.${pkgs.system}.default.options";
+          nixvim.expr = "${nixvim-flake}.packages.${pkgs.stdenv.hostPlatform.system}.default.options";
         };
       };
     };
