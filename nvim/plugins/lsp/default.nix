@@ -53,7 +53,7 @@
         # devops
         ansiblels = {
           enable = true;
-          package = null;
+          package = pkgs.ansible-language-server;
         };
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
