@@ -3,7 +3,7 @@
 
   imports = [
     # ./lspkind.nix
-    ./nixd.nix
+    ./nix.nix
     # ./none-ls.nix
     ./otter-nvim.nix
     ./trouble.nix
