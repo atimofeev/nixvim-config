@@ -39,7 +39,7 @@
             overlays = [ (import ./overlays) ];
           };
 
-          packages.default = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+          packages.default = nixvim.legacyPackages.${pkgs.stdenv.hostPlatform.system}.makeNixvimWithModule {
             inherit pkgs;
             module = import ./nvim;
             extraSpecialArgs = { inherit inputs; };
