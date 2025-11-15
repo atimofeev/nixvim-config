@@ -13,6 +13,14 @@
           timeout = 6000;
         };
         input.enabled = true;
+        picker = {
+          enabled = true;
+          matcher = {
+            cwd_bonus = true;
+            frecency = true;
+            history_bonus = true;
+          };
+        };
         words.enabled = false;
         # TODO: propery integrate with which-key
         # https://github.com/folke/snacks.nvim/blob/main/docs/toggle.md
@@ -23,6 +31,29 @@
   };
 
   extraConfigLuaPost = ''
+    function map(mode, lhs, rhs, opts)
+      local options = { noremap = true, silent = true }
+      if opts then
+        options = vim.tbl_extend("force", options, opts)
+      end
+      vim.keymap.set(mode, lhs, rhs, options)
+    end
+
+    map("n", "<leader>fl", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "List files" })
+    map("n", "<leader>fs", "<Cmd>lua Snacks.picker.grep()<CR>", { desc = "Search word" })
+    map("n", "<leader>fb", "<Cmd>lua Snacks.picker.buffers()<CR>", { desc = "Find buffers" })
+    map("n", "<leader>fh", "<Cmd>lua Snacks.picker.help()<CR>", { desc = "Find help" })
+    map("n", "<leader>fr", "<Cmd>lua Snacks.picker.recent()<CR>", { desc = "Find recent" })
+    map("n", "<leader>fz", "<Cmd>lua Snacks.picker.lines()<CR>", { desc = "Find word (buffer)" })
+    map("n", "<leader>fgc", "<Cmd>lua Snacks.picker.git_log_file()<CR>", { desc = "Find git buffer commits" })
+    map("n", "<leader>fgC", "<Cmd>lua Snacks.picker.git_log()<CR>", { desc = "Find git commits" })
+    map("n", "<leader>fgs", "<Cmd>lua Snacks.picker.git_status()<CR>", { desc = "Find git status" })
+    map("n", "<leader>fgS", "<Cmd>lua Snacks.picker.git_stash()<CR>", { desc = "Find git stash" })
+    map("n", "<leader>fgb", "<Cmd>lua Snacks.picker.git_branches()<CR>", { desc = "Find git branches" })
+    map("n", "<leader>fk", "<Cmd>lua Snacks.picker.keymaps()<CR>", { desc = "Find keymaps" })
+    map("n", "<leader>ft", "<Cmd>lua Snacks.picker.todo_comments()<CR>", { desc = "Find TODOs" })
+    map("n", "<leader><leader>", "<Cmd>lua Snacks.picker.projects()<CR>", { desc = "Find projects" })
+
     Snacks.toggle.option("spell", { name = "Spelling" }):map "<leader>ts"
     Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>tw"
     Snacks.toggle.option("relativenumber", { name = "Relative Number" }):map "<leader>tL"
