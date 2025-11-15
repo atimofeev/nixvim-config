@@ -8,6 +8,7 @@
       enable = true;
       settings = {
         bigfile.enabled = true;
+        image.enabled = true;
         notifier = {
           enabled = true;
           timeout = 6000;
