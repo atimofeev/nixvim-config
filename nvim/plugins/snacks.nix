@@ -68,7 +68,7 @@
     Snacks.toggle.treesitter():map "<leader>tT"
     Snacks.toggle.dim():map "<leader>tD"
     Snacks.toggle.animate():map "<leader>ta"
-    -- Snacks.toggle.indent():map "<leader>tg"
+    Snacks.toggle.indent():map "<leader>ti"
     Snacks.toggle.scroll():map "<leader>tS"
     Snacks.toggle
       .new({
