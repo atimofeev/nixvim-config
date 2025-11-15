@@ -21,6 +21,7 @@
             history_bonus = true;
           };
         };
+        statuscolumn.enabled = true;
         words.enabled = false;
         # TODO: propery integrate with which-key
         # https://github.com/folke/snacks.nvim/blob/main/docs/toggle.md
