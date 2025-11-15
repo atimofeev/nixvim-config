@@ -9,11 +9,11 @@
       settings = {
         bigfile.enabled = true;
         image.enabled = true;
+        input.enabled = true;
         notifier = {
           enabled = true;
           timeout = 6000;
         };
-        input.enabled = true;
         picker = {
           enabled = true;
           matcher = {
@@ -23,10 +23,8 @@
           };
         };
         statuscolumn.enabled = true;
+        toggle.enable = true; # TODO: integrate with which-key https://github.com/folke/snacks.nvim/blob/main/docs/toggle.md
         words.enabled = false;
-        # TODO: propery integrate with which-key
-        # https://github.com/folke/snacks.nvim/blob/main/docs/toggle.md
-        toggle.enable = true;
       };
     };
 
