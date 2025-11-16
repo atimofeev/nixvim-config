@@ -34,6 +34,25 @@
   };
 
   extraConfigLuaPost = ''
+    local colors = require("catppuccin.palettes").get_palette()
+    local PickerColor = {
+      SnacksPickerBox = { bg = colors.mantle },
+      SnacksPickerBoxBorder = { bg = colors.mantle, fg = colors.mantle },
+      SnacksPickerBoxTitle = { bg = colors.pink, fg = colors.mantle },
+      SnacksPickerInput = { bg = colors.mantle },
+      SnacksPickerInputBorder = { bg = colors.mantle, fg = colors.surface0 },
+      SnacksPickerList = { bg = colors.mantle },
+      SnacksPickerListBorder = { bg = colors.mantle, fg = colors.mantle },
+      SnacksPickerListTitle = { fg = colors.mantle },
+      SnacksPickerPreview = { bg = colors.mantle },
+      SnacksPickerPreviewBorder = { bg = colors.mantle, fg = colors.mantle },
+      SnacksPickerPreviewTitle = { bg = colors.green, fg = colors.mantle },
+    }
+
+    for hl, col in pairs(PickerColor) do
+      vim.api.nvim_set_hl(0, hl, col)
+    end
+
     map("n", "<leader>fl", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "List files" })
     map("n", "<leader>fs", "<Cmd>lua Snacks.picker.grep()<CR>", { desc = "Search word" })
     map("n", "<leader>fb", "<Cmd>lua Snacks.picker.buffers()<CR>", { desc = "Find buffers" })
@@ -48,6 +67,7 @@
     map("n", "<leader>fk", "<Cmd>lua Snacks.picker.keymaps()<CR>", { desc = "Find keymaps" })
     map("n", "<leader>ft", "<Cmd>lua Snacks.picker.todo_comments()<CR>", { desc = "Find TODOs" })
     map("n", "<leader><leader>", "<Cmd>lua Snacks.picker.projects()<CR>", { desc = "Find projects" })
+    map("n", "<leader>fh", "<Cmd>lua Snacks.picker.highlights()<CR>", { desc = "Find highlights" })
 
     Snacks.toggle.option("spell", { name = "Spelling" }):map "<leader>ts"
     Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>tw"
