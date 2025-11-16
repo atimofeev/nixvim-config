@@ -18,6 +18,7 @@
           timeout = 6000;
         };
         picker = {
+          # TODO: configure projects picker https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#projects
           enabled = true;
           matcher = {
             cwd_bonus = true;
