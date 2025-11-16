@@ -26,7 +26,7 @@
 
   extraConfigLua = # lua
     ''
-      vim.keymap.set("n", "<leader>g", "<Cmd>Neogit<CR>", { noremap = true, silent = true, desc = "Open Neogit" })
+      map("n", "<leader>g", "<Cmd>Neogit<CR>", { desc = "Open Neogit" })
     '';
 
   autoCmd = [

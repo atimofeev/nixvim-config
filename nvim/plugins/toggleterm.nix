@@ -20,18 +20,8 @@
   };
 
   extraConfigLua = ''
-    vim.keymap.set(
-      "n",
-      "<leader>v",
-      "<Cmd>ToggleTerm direction=vertical<CR>",
-      { noremap = true, silent = true, desc = "Terminal vertical" }
-    )
-    vim.keymap.set(
-      "n",
-      "<leader>s",
-      "<Cmd>ToggleTerm direction=horizontal<CR>",
-      { noremap = true, silent = true, desc = "Terminal horizontal" }
-    )
+    map("n", "<leader>v", "<Cmd>ToggleTerm direction=vertical<CR>", { desc = "Terminal vertical" })
+    map("n", "<leader>s", "<Cmd>ToggleTerm direction=horizontal<CR>", { desc = "Terminal horizontal" })
   '';
 
 }

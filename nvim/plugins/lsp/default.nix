@@ -40,8 +40,9 @@
           settings.diagnostics = {
             disable = [ "miss-name" ];
             globals = [
-              "vim"
+              "map"
               "require"
+              "vim"
             ];
           };
         };
@@ -76,30 +77,10 @@
         virtual_text = { prefix = "" },
       }
 
-      vim.keymap.set(
-        "n",
-        "<leader>lr",
-        "<Cmd>lua vim.lsp.buf.rename()<CR>",
-        { noremap = true, silent = true, desc = "LSP rename" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>lR",
-        "<Cmd>lua vim.lsp.buf.references()<CR>",
-        { noremap = true, silent = true, desc = "LSP references" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>lD",
-        "<Cmd>lua vim.lsp.buf.definition()<CR>",
-        { noremap = true, silent = true, desc = "LSP definition" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>li",
-        "<Cmd>lua vim.lsp.buf.implementation()<CR>",
-        { noremap = true, silent = true, desc = "LSP implementation" }
-      )
+      map("n", "<leader>lr", "<Cmd>lua vim.lsp.buf.rename()<CR>", { desc = "LSP rename" })
+      map("n", "<leader>lR", "<Cmd>lua vim.lsp.buf.references()<CR>", { desc = "LSP references" })
+      map("n", "<leader>lD", "<Cmd>lua vim.lsp.buf.definition()<CR>", { desc = "LSP definition" })
+      map("n", "<leader>li", "<Cmd>lua vim.lsp.buf.implementation()<CR>", { desc = "LSP implementation" })
     '';
 
 }

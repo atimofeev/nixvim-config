@@ -4,30 +4,10 @@
 
   extraConfigLua = # lua
     ''
-      vim.keymap.set(
-        "n",
-        "<leader>hx",
-        '<Cmd>lua require("harpoon.mark").add_file()<CR>',
-        { noremap = true, silent = true, desc = "Harpoon Mark" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>hn",
-        '<Cmd>lua require("harpoon.ui").nav_next()<CR>',
-        { noremap = true, silent = true, desc = "Harpoon Next" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>hp",
-        '<Cmd>lua require("harpoon.ui").nav_prev()<CR>',
-        { noremap = true, silent = true, desc = "Harpoon Previous" }
-      )
-      vim.keymap.set(
-        "n",
-        "<leader>hl",
-        '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>',
-        { noremap = true, silent = true, desc = "Harpoon List" }
-      )
+      map("n", "<leader>hx", '<Cmd>lua require("harpoon.mark").add_file()<CR>', { desc = "Harpoon Mark" })
+      map("n", "<leader>hn", '<Cmd>lua require("harpoon.ui").nav_next()<CR>', { desc = "Harpoon Next" })
+      map("n", "<leader>hp", '<Cmd>lua require("harpoon.ui").nav_prev()<CR>', { desc = "Harpoon Previous" })
+      map("n", "<leader>hl", '<Cmd>lua require("harpoon.ui").toggle_quick_menu()<CR>', { desc = "Harpoon List" })
     '';
 
 }

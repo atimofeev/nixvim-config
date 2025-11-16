@@ -71,14 +71,6 @@
 
   extraConfigLua = # lua
     ''
-      function map(mode, lhs, rhs, opts)
-        local options = { noremap = true, silent = true }
-        if opts then
-          options = vim.tbl_extend("force", options, opts)
-        end
-        vim.keymap.set(mode, lhs, rhs, options)
-      end
-
       map("n", "<leader>ns", "<Cmd>Obsidian search<CR>", { desc = "Obsidian search" })
       map("n", "<leader>nl", "<Cmd>Obsidian quick_switch<CR>", { desc = "Obsidian list" })
       map("n", "<leader>np", "<Cmd>Obsidian paste_img<CR>", { desc = "Obsidian paste IMG" })

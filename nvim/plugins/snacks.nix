@@ -34,14 +34,6 @@
   };
 
   extraConfigLuaPost = ''
-    function map(mode, lhs, rhs, opts)
-      local options = { noremap = true, silent = true }
-      if opts then
-        options = vim.tbl_extend("force", options, opts)
-      end
-      vim.keymap.set(mode, lhs, rhs, options)
-    end
-
     map("n", "<leader>fl", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "List files" })
     map("n", "<leader>fs", "<Cmd>lua Snacks.picker.grep()<CR>", { desc = "Search word" })
     map("n", "<leader>fb", "<Cmd>lua Snacks.picker.buffers()<CR>", { desc = "Find buffers" })

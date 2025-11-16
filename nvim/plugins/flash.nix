@@ -16,18 +16,8 @@
 
   extraConfigLua = # lua
     ''
-      vim.keymap.set(
-        { "n", "x", "o" },
-        "gz",
-        '<Cmd>lua require("flash").jump()<CR>',
-        { noremap = true, silent = true, desc = "Flash jump" }
-      )
-      vim.keymap.set(
-        { "n", "x", "o" },
-        "gZ",
-        '<Cmd>lua require("flash").treesitter()<CR>',
-        { noremap = true, silent = true, desc = "Flash treesitter" }
-      )
+      map({ "n", "x", "o" }, "gz", '<Cmd>lua require("flash").jump()<CR>', { desc = "Flash jump" })
+      map({ "n", "x", "o" }, "gZ", '<Cmd>lua require("flash").treesitter()<CR>', { desc = "Flash treesitter" })
     '';
 
 }

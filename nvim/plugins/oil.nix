@@ -47,7 +47,7 @@
   };
 
   extraConfigLuaPost = ''
-    vim.keymap.set("n", "<leader>o", "<Cmd>Oil<CR>", { noremap = true, silent = true, desc = "Open Oil" })
+    map("n", "<leader>o", "<Cmd>Oil<CR>", { desc = "Open Oil" })
   '';
 
 }

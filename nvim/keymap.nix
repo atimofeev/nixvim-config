@@ -2,7 +2,7 @@
 
   globals.mapleader = " ";
 
-  extraConfigLua = # lua
+  extraConfigLuaPre = # lua
     ''
       function map(mode, lhs, rhs, opts)
         local options = { noremap = true, silent = true }
@@ -11,7 +11,10 @@
         end
         vim.keymap.set(mode, lhs, rhs, options)
       end
+    '';
 
+  extraConfigLua = # lua
+    ''
       vim.api.nvim_create_user_command("CopyPath", function()
         local path = vim.fn.expand "%:p"
         vim.fn.setreg("+", path)

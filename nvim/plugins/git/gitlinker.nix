@@ -30,8 +30,8 @@
         },
       }
 
-      vim.keymap.set({ "n", "v" }, "gC", "<Cmd>GitLink!browse<CR>", { noremap = true, silent = true, desc = "Open git code" })
-      vim.keymap.set({ "n", "v" }, "gB", "<Cmd>GitLink!blame<CR>", { noremap = true, silent = true, desc = "Open git blame" })
+      map({ "n", "v" }, "gC", "<Cmd>GitLink!browse<CR>", { desc = "Open git code" })
+      map({ "n", "v" }, "gB", "<Cmd>GitLink!blame<CR>", { desc = "Open git blame" })
     '';
 
 }
