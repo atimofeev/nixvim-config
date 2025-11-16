@@ -53,21 +53,31 @@
       vim.api.nvim_set_hl(0, hl, col)
     end
 
-    map("n", "<leader>fl", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "List files" })
-    map("n", "<leader>fs", "<Cmd>lua Snacks.picker.grep()<CR>", { desc = "Search word" })
-    map("n", "<leader>fb", "<Cmd>lua Snacks.picker.buffers()<CR>", { desc = "Find buffers" })
-    map("n", "<leader>fh", "<Cmd>lua Snacks.picker.help()<CR>", { desc = "Find help" })
-    map("n", "<leader>fr", "<Cmd>lua Snacks.picker.recent()<CR>", { desc = "Find recent" })
-    map("n", "<leader>fz", "<Cmd>lua Snacks.picker.lines()<CR>", { desc = "Find word (buffer)" })
-    map("n", "<leader>fgc", "<Cmd>lua Snacks.picker.git_log_file()<CR>", { desc = "Find git buffer commits" })
-    map("n", "<leader>fgC", "<Cmd>lua Snacks.picker.git_log()<CR>", { desc = "Find git commits" })
-    map("n", "<leader>fgs", "<Cmd>lua Snacks.picker.git_status()<CR>", { desc = "Find git status" })
-    map("n", "<leader>fgS", "<Cmd>lua Snacks.picker.git_stash()<CR>", { desc = "Find git stash" })
-    map("n", "<leader>fgb", "<Cmd>lua Snacks.picker.git_branches()<CR>", { desc = "Find git branches" })
-    map("n", "<leader>fk", "<Cmd>lua Snacks.picker.keymaps()<CR>", { desc = "Find keymaps" })
-    map("n", "<leader>ft", "<Cmd>lua Snacks.picker.todo_comments()<CR>", { desc = "Find TODOs" })
-    map("n", "<leader><leader>", "<Cmd>lua Snacks.picker.projects()<CR>", { desc = "Find projects" })
-    map("n", "<leader>fh", "<Cmd>lua Snacks.picker.highlights()<CR>", { desc = "Find highlights" })
+    -- find
+    map("n", "<leader><leader>", "<Cmd>lua Snacks.picker.projects()<CR>", { desc = "Projects" })
+    map("n", "<leader>fl", "<Cmd>lua Snacks.picker.smart()<CR>", { desc = "Files" })
+    map("n", "<leader>fr", "<Cmd>lua Snacks.picker.recent()<CR>", { desc = "Recent files" })
+    map("n", "<leader>fb", "<Cmd>lua Snacks.picker.buffers()<CR>", { desc = "Buffers" })
+
+    -- grep
+    map("n", "<leader>fs", "<Cmd>lua Snacks.picker.grep()<CR>", { desc = "Grep" })
+    map("n", "<leader>fS", "<Cmd>lua Snacks.picker.grep_buffers()<CR>", { desc = "Grep (open buffers)" })
+    map("n", "<leader>fz", "<Cmd>lua Snacks.picker.lines()<CR>", { desc = "Grep (buffer)" })
+    map("n", "<leader>ft", "<Cmd>lua Snacks.picker.todo_comments()<CR>", { desc = "TODOs" })
+
+    -- search
+    map("n", "<leader>fh", "<Cmd>lua Snacks.picker.help()<CR>", { desc = "Help" })
+    map("n", "<leader>fk", "<Cmd>lua Snacks.picker.keymaps()<CR>", { desc = "Keymaps" })
+    map("n", "<leader>fH", "<Cmd>lua Snacks.picker.highlights()<CR>", { desc = "Highlights" })
+    map("n", "<leader>fn", "<Cmd>lua Snacks.picker.notifications()<CR>", { desc = "Notifications" })
+    map("n", "<leader>fc", "<Cmd>lua Snacks.picker.command_history()<CR>", { desc = "Command history" })
+
+    -- git
+    map("n", "<leader>fgc", "<Cmd>lua Snacks.picker.git_log_file()<CR>", { desc = "Git commits (buffer)" })
+    map("n", "<leader>fgC", "<Cmd>lua Snacks.picker.git_log()<CR>", { desc = "Git commit" })
+    map("n", "<leader>fgs", "<Cmd>lua Snacks.picker.git_status()<CR>", { desc = "Git status" })
+    map("n", "<leader>fgS", "<Cmd>lua Snacks.picker.git_stash()<CR>", { desc = "Git stash" })
+    map("n", "<leader>fgb", "<Cmd>lua Snacks.picker.git_branches()<CR>", { desc = "Git branches" })
 
     Snacks.toggle.option("spell", { name = "Spelling" }):map "<leader>ts"
     Snacks.toggle.option("wrap", { name = "Wrap" }):map "<leader>tw"
