@@ -8,7 +8,6 @@
     ./treesitter
 
     ./conform.nix
-    # ./nvim-tree.nix
     ./barbar.nix
     ./better-escape.nix
     ./catppuccin.nix
