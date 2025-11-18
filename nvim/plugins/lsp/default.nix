@@ -51,7 +51,10 @@
         ruff.enable = true;
 
         # devops
-        ansiblels.enable = true;
+        ansiblels = {
+          enable = true;
+          package = pkgs.ansible-language-server;
+        };
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         jsonls.enable = true;

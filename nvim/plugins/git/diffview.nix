@@ -3,7 +3,8 @@
 
   plugins.diffview = {
     enable = true;
-    keymaps =
+
+    settings.keymaps =
       let
         closeDiffviewMap = [
           {
@@ -18,12 +19,13 @@
           "diff2"
           "diff3"
           "diff4"
+          "file_history_panel"
+          "file_panel"
           "view"
-          "filePanel"
-          "fileHistoryPanel"
         ];
       in
       lib.genAttrs diffviewContexts (_contextName: closeDiffviewMap);
+
   };
 
 }
