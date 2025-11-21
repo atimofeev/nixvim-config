@@ -28,8 +28,8 @@
       end, {})
 
       -- main
-      map("n", ";", ":", { silent = false }) -- cmd mode with ;
-      map("n", ":", ";", { silent = false }) -- next symbol match with :
+      map({ "n", "v" }, ";", ":", { silent = false }) -- cmd mode with ;
+      map({ "n", "v" }, ":", ";", { silent = false }) -- next symbol match with :
       map("x", "p", "P") -- paste without yank
       map("x", "P", "p") -- paste and yank
       map("n", "yc", "yy<cmd>normal gcc<CR>p") -- duplicate line, comment out original line
