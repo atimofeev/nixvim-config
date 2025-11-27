@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
 
   extraPackages = with pkgs; [ ghostscript_headless ]; # NOTE: pdf preview in picker
@@ -18,8 +18,12 @@
           timeout = 6000;
         };
         picker = {
-          # TODO: configure projects picker https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#projects
           enabled = true;
+          sources.projects = {
+            dev = [ "~/repos" ];
+            max_depth = 5;
+            inherit (config.plugins.project-nvim.settings) patterns;
+          };
           matcher = {
             cwd_bonus = true;
             frecency = true;
