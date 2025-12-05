@@ -19,10 +19,15 @@
         };
         picker = {
           enabled = true;
-          sources.projects = {
-            dev = [ "~/repos" ];
-            max_depth = 5;
-            inherit (config.plugins.project-nvim.settings) patterns;
+          sources = {
+            files = {
+              hidden = true;
+            };
+            projects = {
+              dev = [ "~/repos" ];
+              max_depth = 5;
+              inherit (config.plugins.project-nvim.settings) patterns;
+            };
           };
           matcher = {
             cwd_bonus = true;
