@@ -10,7 +10,6 @@
     mypy
     shellcheck
     statix
-    tfsec
     yamllint
   ];
 
@@ -41,7 +40,6 @@
       python = [ "mypy" ];
       terraform = [
         "terraform_validate"
-        "tfsec"
       ];
       yaml = [ "yamllint" ];
     };
