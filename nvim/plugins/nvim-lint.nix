@@ -62,7 +62,7 @@
 
   extraConfigLua = # lua
     ''
-      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+      vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
         desc = "Run linters",
         callback = function()
           require("lint").try_lint()
