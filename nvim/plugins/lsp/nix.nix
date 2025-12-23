@@ -16,6 +16,10 @@ in
         ''
           client.server_capabilities.semanticTokensProvider = nil
         '';
+      settings.nil.nix = {
+        # maxMemoryMB = 4096;
+        flake.autoEvalInputs = true;
+      };
     };
     nixd = {
       enable = true;
