@@ -21,21 +21,6 @@
         notes_subdir = "notes";
         new_notes_location = "notes_subdir";
 
-        note_id_func = # lua
-          ''
-            function(title)
-              if title then -- transform title into valid filename
-                return title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
-              else
-                local suffix = "" -- generate filename (timestamp-ABCD)
-                for _ = 1, 4 do
-                  suffix = suffix .. string.char(math.random(65, 90))
-                end
-                return os.time() .. "-" .. suffix
-              end
-            end
-          '';
-
         templates = {
           folder = "assets/templates";
         };
