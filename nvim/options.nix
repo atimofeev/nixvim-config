@@ -19,6 +19,13 @@
       o.undofile = true
       o.updatetime = 250
 
+      o.langmap = table.concat({
+        "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        "фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
+        "ёхъжэбю;\\`\\[\\]\\:'\\,\\.",
+        'ЁХЪЖЭБЮ;~{}:\\"<>',
+      }, ",")
+
       -- cursor / line / gutter
       -- o.whichwrap:append "<>[]hl" -- change lines with h or l (at line end)
       o.cursorline = true
