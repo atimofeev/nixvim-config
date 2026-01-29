@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 {
 
-  extraPackages = with pkgs; [ ghostscript_headless ]; # NOTE: pdf preview in picker
+  extraPackages = with pkgs; [
+    fd # file listing in picker
+    ghostscript_headless # pdf preview in picker
+  ];
 
   plugins = {
 
