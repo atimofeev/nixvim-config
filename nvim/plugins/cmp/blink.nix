@@ -2,7 +2,9 @@
 {
 
   extraPackages = with pkgs; [
+    curl
     gh
+    git
     glab
   ];
 
