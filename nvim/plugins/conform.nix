@@ -51,7 +51,7 @@
         };
         isort.command = lib.getExe pkgs.isort;
         nixfmt = {
-          command = lib.getExe pkgs.nixfmt-rfc-style;
+          command = lib.getExe pkgs.nixfmt;
           timeout_ms = 1000;
         };
         prettier.command = lib.getExe pkgs.nodePackages.prettier;

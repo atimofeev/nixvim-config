@@ -12,68 +12,63 @@
     tree-sitter
   ];
 
-  plugins = {
+  plugins.treesitter = {
+    enable = true;
+    # indent = true;
+    nixvimInjections = true;
+    languageRegister = {
+      hcl = [ "terraform-vars" ];
+      bash = [ "conf" ];
+    };
 
-    treesitter-refactor.enable = true;
+    settings = {
 
-    treesitter = {
-      enable = true;
-      # indent = true;
-      nixvimInjections = true;
-      languageRegister = {
-        hcl = [ "terraform-vars" ];
-        bash = [ "conf" ];
-      };
+      highlight.enable = true;
 
-      settings = {
-
-        highlight.enable = true;
-
-        incremental_selection = {
-          enable = true;
-          keymaps = {
-            init_selection = "<C-space>";
-            node_incremental = "<C-space>";
-            node_decremental = "<bs>";
-          };
+      incremental_selection = {
+        enable = true;
+        keymaps = {
+          init_selection = "<C-space>";
+          node_incremental = "<C-space>";
+          node_decremental = "<bs>";
         };
-
-        ensure_installed = [
-          "bash"
-          "c"
-          "commonlisp"
-          "cpp"
-          "css"
-          "diff"
-          "dockerfile"
-          "git_config"
-          "git_rebase"
-          "gitignore"
-          "gnuplot"
-          "go"
-          "groovy"
-          "hcl"
-          "helm"
-          "html"
-          "ini"
-          "json"
-          "latex"
-          "lua"
-          "make"
-          "markdown"
-          "markdown_inline"
-          "python"
-          "terraform"
-          "toml"
-          "vim"
-          "vimdoc"
-          "xml"
-          "yaml"
-        ];
-
       };
+
+      ensure_installed = [
+        "bash"
+        "c"
+        "commonlisp"
+        "cpp"
+        "css"
+        "diff"
+        "dockerfile"
+        "git_config"
+        "git_rebase"
+        "gitignore"
+        "gnuplot"
+        "go"
+        "groovy"
+        "hcl"
+        "helm"
+        "html"
+        "ini"
+        "json"
+        "latex"
+        "lua"
+        "make"
+        "markdown"
+        "markdown_inline"
+        "python"
+        "terraform"
+        "toml"
+        "vim"
+        "vimdoc"
+        "xml"
+        "yaml"
+      ];
 
     };
+
   };
 
 }

@@ -33,7 +33,7 @@
         };
 
         attachments = {
-          img_folder = "assets/img";
+          folder = "assets/img";
           confirm_img_paste = false;
         };
 
@@ -45,14 +45,6 @@
   };
 
   opts.conceallevel = 2;
-
-  autoCmd = [
-    {
-      event = [ "BufEnter" ];
-      pattern = [ "*.md" ];
-      command = "TSBufDisable indent";
-    }
-  ];
 
   extraConfigLua = # lua
     ''
