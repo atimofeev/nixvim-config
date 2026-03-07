@@ -19,6 +19,7 @@
       o.undofile = true
       o.updatetime = 250
 
+      o.langremap = true
       o.langmap = table.concat({
         "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         "фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz",
