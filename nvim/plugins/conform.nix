@@ -29,6 +29,7 @@
           "black"
         ];
         terraform = [ "tofu_fmt" ];
+        terraform-vars = [ "tofu_fmt" ];
         yaml = [ "yamlfix" ];
       };
       format_on_save.__raw = ''
