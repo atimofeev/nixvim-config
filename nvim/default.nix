@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
 
   imports = [
@@ -9,8 +8,9 @@
     ./options.nix
   ];
 
-  extraPackages = with pkgs; [ xclip ];
-
-  clipboard.register = "unnamedplus";
+  clipboard = {
+    providers.xclip.enable = true;
+    register = "unnamedplus";
+  };
 
 }
