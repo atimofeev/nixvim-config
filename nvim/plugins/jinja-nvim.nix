@@ -8,8 +8,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "HiPhish";
           repo = "jinja.vim";
-          rev = "ca97dafc82c012b3a9005a12a673d2cfa854376d";
-          hash = "sha256-txhRGtriIHg8oTRIUpn37OVlZtBJwPeOJQoYBFIu6JE=";
+          rev = "05373374a288b20845937cbc3a7abda23a2e65d2";
+          hash = "sha256-ubZo3TYi72WqcGoSoveYRYcwOYk4oNW28uAYw939u5M=";
         };
       };
     in
