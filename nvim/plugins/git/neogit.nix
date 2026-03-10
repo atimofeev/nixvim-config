@@ -29,12 +29,4 @@
       map("n", "<leader>g", "<Cmd>Neogit<CR>", { desc = "Open Neogit" })
     '';
 
-  autoCmd = [
-    {
-      event = [ "BufEnter" ];
-      pattern = [ "Neogit*" ];
-      command = "setlocal foldcolumn=0";
-    }
-  ];
-
 }
