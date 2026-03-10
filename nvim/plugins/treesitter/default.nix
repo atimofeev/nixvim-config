@@ -22,7 +22,12 @@
 
     settings = {
 
-      highlight.enable = true;
+      highlight = {
+        enable = true;
+        # BUG: not effective
+        # https://github.com/nix-community/nixvim/issues/4163
+        disable = [ "nginx" ];
+      };
 
       incremental_selection = {
         enable = true;
