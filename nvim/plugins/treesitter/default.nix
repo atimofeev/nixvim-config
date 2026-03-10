@@ -32,40 +32,6 @@
           node_decremental = "<bs>";
         };
       };
-
-      ensure_installed = [
-        "bash"
-        "c"
-        "commonlisp"
-        "cpp"
-        "css"
-        "diff"
-        "dockerfile"
-        "git_config"
-        "git_rebase"
-        "gitignore"
-        "gnuplot"
-        "go"
-        "groovy"
-        "hcl"
-        "helm"
-        "html"
-        "ini"
-        "json"
-        "latex"
-        "lua"
-        "make"
-        "markdown"
-        "markdown_inline"
-        "python"
-        "terraform"
-        "toml"
-        "vim"
-        "vimdoc"
-        "xml"
-        "yaml"
-      ];
-
     };
 
   };
