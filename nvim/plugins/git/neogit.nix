@@ -1,3 +1,4 @@
+{ config, ... }:
 {
 
   plugins.neogit = {
@@ -8,8 +9,12 @@
       disable_signs = true;
       status.recent_commit_count = 30;
       integrations = {
-        diffview = true;
-        snacks = true;
+        codediff = config.plugins.codediff.enable;
+        diffview = config.plugins.diffview.enable;
+        fzf_lua = config.plugins.fzf-lua.enable;
+        mini_pick = config.plugins.mini-pick.enable;
+        snacks = config.plugins.snacks.enable;
+        telescope = config.plugins.telescope.enable;
       };
       mappings = {
         commit_editor = {
