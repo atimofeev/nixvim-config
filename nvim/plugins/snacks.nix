@@ -103,7 +103,7 @@
     Snacks.toggle
       .option("showtabline", { off = 0, on = vim.o.showtabline > 0 and vim.o.showtabline or 2, name = "Tabline" })
       :map "<leader>tA"
-    Snacks.toggle.treesitter():map "<leader>tT"
+    Snacks.toggle.treesitter():map "<leader>tt"
     Snacks.toggle.dim():map "<leader>tD"
     Snacks.toggle.animate():map "<leader>ta"
     Snacks.toggle.indent():map "<leader>ti"
