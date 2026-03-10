@@ -28,7 +28,6 @@
     ./project-nvim.nix
     ./snacks.nix
     ./spectre.nix
-    # ./telescope.nix
     ./todo-comments.nix
     ./toggleterm.nix
     ./undotree.nix
