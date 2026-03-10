@@ -18,6 +18,7 @@
       ".*/group_vars/.*" = "yaml.ansible";
       ".*/host_vars/.*" = "yaml.ansible";
       ".*/playbooks/inventories/.*%/hosts" = "conf";
+      ".*/nginx/.*%/.*conf.*" = "nginx";
 
       # k8s-helm
       ".*/helm%-charts/.*%.ya?ml" = "helm";
