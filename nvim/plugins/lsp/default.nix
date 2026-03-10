@@ -2,7 +2,6 @@
 {
 
   imports = [
-    # ./lspkind.nix
     ./nix.nix
     ./otter-nvim.nix
     ./trouble.nix
