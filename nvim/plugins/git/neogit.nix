@@ -7,6 +7,7 @@
       auto_refresh = true;
       disable_hint = true;
       disable_signs = true;
+      graph_style = "kitty";
       status.recent_commit_count = 30;
       integrations = {
         codediff = config.plugins.codediff.enable;
