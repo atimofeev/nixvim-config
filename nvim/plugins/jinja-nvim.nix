@@ -24,7 +24,7 @@
       pattern = [ "*.j2" ];
       callback = lib.nixvim.mkRaw ''
         function(args)
-          vim.cmd('TSBufDisable highlight')
+          vim.cmd('lua vim.treesitter.stop()')
           vim.cmd('LspStop')
           vim.diagnostic.reset(nil, args.buf)
         end
