@@ -5,7 +5,8 @@
     ./nix.nix
     ./otter-nvim.nix
     ./trouble.nix
-    ./yaml-helm.nix
+    # ./yaml-helm.nix
+    ./yaml-helm-detect.nix
   ];
 
   highlightOverride = {
