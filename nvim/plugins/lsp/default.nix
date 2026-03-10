@@ -4,7 +4,6 @@
   imports = [
     # ./lspkind.nix
     ./nix.nix
-    # ./none-ls.nix
     ./otter-nvim.nix
     ./trouble.nix
     ./yaml-helm.nix
