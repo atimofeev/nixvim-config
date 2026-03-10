@@ -9,6 +9,7 @@
       status.recent_commit_count = 30;
       integrations = {
         diffview = true;
+        snacks = true;
       };
       mappings = {
         commit_editor = {
