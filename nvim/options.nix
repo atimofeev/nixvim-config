@@ -60,6 +60,10 @@
       -- split
       o.splitbelow = true
       o.splitright = true
+
+      -- title
+      o.title = true
+      o.titlestring = "%t"
     '';
 
 }
