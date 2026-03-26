@@ -3,8 +3,10 @@
   plugins.project-nvim = {
     enable = true;
     settings = {
-      detection_methods = [ "pattern" ];
-      # ignore_lsp = [ "null-ls" "dockerls" "terraformls" "helm_ls" ];
+      lsp = {
+        enabled = false;
+        use_pattern_matching = true;
+      };
       manual_mode = false;
       patterns = [
         ".git"
