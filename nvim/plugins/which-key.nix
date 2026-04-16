@@ -14,7 +14,6 @@
         { "<leader>h", group = "+harpoon" },
         { "<leader>l", group = "+lsp" },
         { "<leader>n", group = "+notes" },
-        { "<leader>s", group = "+set" },
         { "<leader>t", group = "+toggle" },
         { "gz", group = "+flash" },
       }
