@@ -40,7 +40,6 @@
       map("n", "<Esc>", "<Cmd>noh<CR>") -- clear highlight
       map("v", ">", ">gv") -- horizontally move lines; get back to `v` selection
       map("v", "<", "<gv") -- redundant with mini.move?
-      map("n", "<leader>sw", "<Cmd>set wrap!<CR>", { desc = "wrap" })
       map("n", "<leader>cp", "<Cmd>CopyPath<CR>")
       map("n", "<leader>cr", "<Cmd>CopyRelPath<CR>")
 
