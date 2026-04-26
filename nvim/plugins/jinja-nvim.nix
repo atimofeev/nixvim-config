@@ -24,11 +24,14 @@
       pattern = [ "*.j2" ];
       callback = lib.nixvim.mkRaw ''
         function(args)
-          vim.cmd('lua vim.treesitter.stop()')
-          vim.cmd('LspStop')
+          pcall(vim.treesitter.stop, args.buf)
+          local clients = vim.lsp.get_clients({ bufnr = args.buf })
+          for _, client in ipairs(clients) do
+            vim.lsp.stop_client(client.id)
+          end
           vim.diagnostic.reset(nil, args.buf)
-        end
-      '';
+        end'';
+
     }
   ];
 

@@ -20,23 +20,9 @@
       bash = [ "conf" ];
     };
 
-    settings = {
-
-      highlight = {
-        enable = true;
-        # BUG: not effective
-        # https://github.com/nix-community/nixvim/issues/4163
-        disable = [ "nginx" ];
-      };
-
-      incremental_selection = {
-        enable = true;
-        keymaps = {
-          init_selection = "<C-space>";
-          node_incremental = "<C-space>";
-          node_decremental = "<bs>";
-        };
-      };
+    highlight = {
+      enable = true;
+      disable = [ "nginx" ];
     };
 
   };

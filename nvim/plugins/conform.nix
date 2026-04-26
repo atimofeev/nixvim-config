@@ -55,7 +55,7 @@
           command = lib.getExe pkgs.nixfmt;
           timeout_ms = 1000;
         };
-        prettier.command = lib.getExe pkgs.nodePackages.prettier;
+        prettier.command = lib.getExe pkgs.prettier;
         shfmt.command = lib.getExe pkgs.shfmt;
         squeeze_blanks.command = lib.getExe' pkgs.coreutils "cat";
         stylua = {
