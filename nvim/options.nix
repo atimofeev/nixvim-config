@@ -36,7 +36,7 @@
       o.relativenumber = true
       o.ruler = false
       o.scrolloff = 5
-      o.signcolumn = "yes"
+      o.signcolumn = "auto"
 
       -- cmd / search / substitute
       o.hlsearch = true
