@@ -31,9 +31,11 @@ Add this to your `flake.nix`:
 {
   inputs.nixvim-config.url = "github:atimofeev/nixvim-config";
 
-  outputs = { self, nixvim-config, ... }: {
-    # Use nixvim-config.packages.${system}.default
-  };
+  outputs =
+    { self, nixvim-config, ... }:
+    {
+      # Use nixvim-config.packages.${system}.default
+    };
 }
 ```
 
