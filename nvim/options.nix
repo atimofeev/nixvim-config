@@ -6,7 +6,7 @@
 
       -- main
       -- o.autochdir = true -- breaks project-nvim
-      -- o.fillchars.eob = " "
+      o.fillchars:append { eob = " " }
       -- o.winborder = "rounded" -- conflicts with many plugins
       o.backspace = "indent,eol,start"
       o.backup = false
