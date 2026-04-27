@@ -1,11 +1,6 @@
 { pkgs, ... }:
 {
 
-  imports = [
-    ./rainbow-delimiters.nix
-    ./textobjects.nix
-  ];
-
   extraPackages = with pkgs; [
     gcc
     tree-sitter
