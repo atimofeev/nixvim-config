@@ -7,6 +7,8 @@
       direction = "float";
       float_opts.border = "curved";
       open_mapping = "[[<c-\\>]]";
+      auto_scroll = true;  # follow new output
+      conditional_auto_scroll = true;  # but pause when scrolled up (PR #670)
       size.__raw = ''
         function(term)
           if term.direction == "horizontal" then
