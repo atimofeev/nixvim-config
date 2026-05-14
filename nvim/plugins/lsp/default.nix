@@ -24,6 +24,7 @@
   extraPackages = with pkgs; [
     nodejs
     ansible-lint
+    opentofu
   ];
 
   plugins = {
@@ -57,8 +58,8 @@
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
         jsonls.enable = true;
-        terraformls.enable = true;
         tflint.enable = true;
+        tofu_ls.enable = true;
       };
     };
 
