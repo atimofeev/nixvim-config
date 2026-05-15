@@ -26,33 +26,9 @@
         src = final.fetchFromGitHub {
           owner = "Run1e";
           repo = "toggleterm.nvim";
-          rev = "6500760f45a617e08d0ad10b3bb7d5f9997b0944";
-          hash = "sha256-5jB/KAWe27UzMG9gzQV1fqbS5Xm7WHs5FLVDpIq3HTI=";
+          rev = "91564fbfd2eaf4f5f6f943fcb7edeb3e0df1aa5f";
+          hash = "sha256-LwyV54IUSwS15sFBIivKyi6trm+XDMDKjLLncXSQmQg=";
         };
-        patches = (old.patches or []) ++ [
-          # Fix: guard nvim_win_get_cursor against closed/missing window
-          # Prevents crash on close + chord keybind race
-          (final.writeText "toggleterm-conditional-autoscroll-fix.patch" ''
-            diff --git a/lua/toggleterm/terminal.lua b/lua/toggleterm/terminal.lua
-            index 55f1a1e..2f7d8cb 100644
-            --- a/lua/toggleterm/terminal.lua
-            +++ b/lua/toggleterm/terminal.lua
-            @@ -385,8 +385,11 @@ function Terminal:__make_output_handler(handler)
-                 return function(...)
-                   if self.auto_scroll then
-                     if self.conditional_auto_scroll then
-            -          local cursor = vim.api.nvim_win_get_cursor(self.window)
-            -          if cursor[1] == vim.api.nvim_buf_line_count(self.bufnr) then self:scroll_bottom() end
-            +          if self.window and vim.api.nvim_win_is_valid(self.window) then
-            +            local cursor = vim.api.nvim_win_get_cursor(self.window)
-            +            if cursor[1] == vim.api.nvim_buf_line_count(self.bufnr) then self:scroll_bottom() end
-            +          end
-            +          -- if window is invalid (closed), skip autoscroll
-                     else
-                       self:scroll_bottom()
-                     end
-          '')
-        ];
       });
     }
   );
