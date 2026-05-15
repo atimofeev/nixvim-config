@@ -36,7 +36,10 @@
           _module.args.pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
-            overlays = [ (import ./overlays) ];
+            overlays = [
+              (import ./overlays)
+              (import ./pkgs)
+            ];
           };
 
           packages.default = nixvim.legacyPackages.${pkgs.stdenv.hostPlatform.system}.makeNixvimWithModule {
