@@ -3,7 +3,7 @@
   plugins.project-nvim = {
     enable = true;
     settings = {
-      historysize = 0;
+      history.size = 0;
       lsp = {
         enabled = false;
         use_pattern_matching = true;
