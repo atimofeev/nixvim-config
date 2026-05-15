@@ -62,10 +62,23 @@
 
   extraConfigLua = # lua
     ''
-      vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+      local slow_linters = { "terraform_validate" } -- do not run these on BufEnter
+
+      local function get_linters_for_event(event)
+        if event == "BufEnter" then
+          local all = require("lint").linters_by_ft[vim.bo.filetype] or {}
+          return vim.tbl_filter(function(l)
+            return not vim.tbl_contains(slow_linters, l)
+          end, all)
+        end
+        return nil
+      end
+
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
         desc = "Run linters",
-        callback = function()
-          require("lint").try_lint()
+        callback = function(ev)
+          local linters = get_linters_for_event(ev.event)
+          require("lint").try_lint(linters)
         end,
       })
 
