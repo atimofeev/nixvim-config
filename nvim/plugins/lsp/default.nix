@@ -54,6 +54,15 @@
         ansiblels = {
           enable = true;
           package = pkgs.ansible-language-server;
+          settings = {
+            ansible = {
+              validation = {
+                lint = {
+                  arguments = "--nocolor --offline";
+                };
+              };
+            };
+          };
         };
         docker_compose_language_service.enable = true;
         dockerls.enable = true;
