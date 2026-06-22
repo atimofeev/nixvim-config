@@ -8,6 +8,7 @@
     };
     yaml-schema-detect = {
       enable = true;
+      lazyLoad.settings.ft = [ "yaml" "helm" ];
       settings.disable_keymap = true;
     };
   };

@@ -17,21 +17,26 @@
 
   extraConfigLua = # lua
     ''
-      require("gitlinker").setup {
-        message = false,
-        highlight_duration = 0,
-        router = {
-          browse = {
-            ["^git%..*%.com"] = require("gitlinker.routers").gitlab_browse,
-          },
-          blame = {
-            ["^git%..*%.com"] = require("gitlinker.routers").gitlab_blame,
-          },
-        },
-      }
+      function _G.gitlinker_action(op)
+        if not package.loaded["gitlinker"] then
+          require("gitlinker").setup {
+            message = false,
+            highlight_duration = 0,
+            router = {
+              browse = {
+                ["^git%..*%.com"] = require("gitlinker.routers").gitlab_browse,
+              },
+              blame = {
+                ["^git%..*%.com"] = require("gitlinker.routers").gitlab_blame,
+              },
+            },
+          }
+        end
+        vim.cmd("GitLink!" .. op)
+      end
 
-      map({ "n", "v" }, "gC", "<Cmd>GitLink!browse<CR>", { desc = "Open git code" })
-      map({ "n", "v" }, "gB", "<Cmd>GitLink!blame<CR>", { desc = "Open git blame" })
+      map({ "n", "v" }, "gC", '<Cmd>lua gitlinker_action("browse")<CR>', { desc = "Open git code" })
+      map({ "n", "v" }, "gB", '<Cmd>lua gitlinker_action("blame")<CR>', { desc = "Open git blame" })
     '';
 
 }
