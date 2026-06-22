@@ -2,6 +2,7 @@
 
   plugins.treesitter-textobjects = {
     enable = true;
+    lazyLoad.settings.event = "BufReadPost";
     settings = {
 
       select = {

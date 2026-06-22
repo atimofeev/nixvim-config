@@ -3,6 +3,7 @@
   plugins = {
     obsidian = {
       enable = true;
+      lazyLoad.settings.cmd = "Obsidian";
       settings = {
 
         workspaces = [

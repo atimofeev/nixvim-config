@@ -5,6 +5,7 @@
 
   plugins.codediff = {
     enable = true;
+    lazyLoad.settings.event = "BufReadPost";
     settings.keymaps = {
       explorer.refresh = "<C-r>";
       view = {

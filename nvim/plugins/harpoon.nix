@@ -1,6 +1,9 @@
 {
 
-  plugins.harpoon.enable = true;
+  plugins.harpoon = {
+    enable = true;
+    lazyLoad.settings.keys = [ "<leader>hx" "<leader>hn" "<leader>hp" "<leader>hl" ];
+  };
 
   extraConfigLua = # lua
     ''

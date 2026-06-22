@@ -8,6 +8,7 @@
 
   plugins.treesitter = {
     enable = true;
+    lazyLoad.settings.event = "BufReadPost";
     # indent = true;
     nixvimInjections = true;
     languageRegister = {

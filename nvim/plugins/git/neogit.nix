@@ -3,6 +3,7 @@
 
   plugins.neogit = {
     enable = true;
+    lazyLoad.settings.cmd = "Neogit";
     settings = {
       auto_refresh = true;
       disable_hint = true;

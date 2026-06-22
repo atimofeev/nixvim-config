@@ -3,6 +3,7 @@
 
   plugins.diffview = {
     enable = true;
+    lazyLoad.settings.cmd = "DiffviewOpen";
 
     settings.keymaps =
       let

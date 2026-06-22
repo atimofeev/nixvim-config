@@ -2,6 +2,10 @@
 
   plugins.toggleterm = {
     enable = true;
+    lazyLoad.settings = {
+      cmd = "ToggleTerm";
+      keys = [ "<C-\\>" "<leader>v" "<leader>s" ];
+    };
     settings = {
       autochdir = true;
       direction = "float";
