@@ -4,6 +4,7 @@
     ./codediff.nix
     ./gitlinker.nix
     ./gitsigns.nix
+    ./neojj.nix
     ./neogit.nix
   ];
 }
