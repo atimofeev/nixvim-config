@@ -4,6 +4,8 @@
   extraPackages = with pkgs; [
     fd # file listing in picker
     ghostscript_headless # pdf preview in picker
+    mermaid-cli # diagrams preview in image
+    tectonic # latex preview in image
   ];
 
   plugins = {
