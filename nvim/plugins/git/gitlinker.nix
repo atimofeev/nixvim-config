@@ -8,9 +8,10 @@
         src = pkgs.fetchFromGitHub {
           owner = "linrongbin16";
           repo = "gitlinker.nvim";
-          rev = "542f51784f20107ef9ecdadc47825204837efed5";
-          hash = "sha256-OnlJf31dTzLOJ1tlDKH7slPnQGMZUloavEAtd/FxK0U=";
+          rev = "a1b74070bbd5e50128190c85b09f1431ea5fbd83";
+          hash = "sha256-dzo+wrDuWxrv041wgxUZvBpZO4pWbZ/C8zlwEnssyGY=";
         };
+        nvimSkipModules = [ "spec_init" ];
       };
     in
     [ { plugin = gitlinker-nvim; } ];
