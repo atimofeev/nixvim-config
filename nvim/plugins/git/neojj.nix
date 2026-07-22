@@ -7,13 +7,12 @@
 let
   neojj = pkgs.vimUtils.buildVimPlugin {
     pname = "neojj";
-    version = "1.3.0-pr33";
+    version = "1.5.0";
     src = pkgs.fetchFromGitHub {
       owner = "NicholasZolton";
       repo = "neojj";
-      # PR #33: feat: improve file status highlighting
-      rev = "0471db1570958c5cf74636cc2ddb7238226ec2c2";
-      hash = "sha256-ulnqxV4UlLQXeDwhB2YHJPq152w1eSXAbq9ryLChTHo=";
+      rev = "v1.5.0";
+      hash = "sha256-GMrl1B+0/O/hknhvlfsZjyglYUFgAHrzJXAzNq8bbEk=";
     };
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
     nvimSkipModules = [ "neojj.integrations.diffview" ];
@@ -31,6 +30,7 @@ in
         disable_hint = true,
         disable_signs = true,
         graph_style = "ascii",
+        show_project_header = false,
         integrations = {
           codediff = ${lib.boolToString config.plugins.codediff.enable},
           diffview = ${lib.boolToString config.plugins.diffview.enable},
