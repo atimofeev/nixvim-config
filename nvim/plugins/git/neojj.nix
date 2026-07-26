@@ -11,8 +11,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "NicholasZolton";
       repo = "neojj";
-      rev = "v1.5.0";
-      hash = "sha256-GMrl1B+0/O/hknhvlfsZjyglYUFgAHrzJXAzNq8bbEk=";
+      rev = "v1.6.0";
+      hash = "sha256-89A0JZ/dzyaTTUF4eS7j1/c7Cq+UcyuQf7yEA28M2k4=";
     };
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
     nvimSkipModules = [ "neojj.integrations.diffview" ];
