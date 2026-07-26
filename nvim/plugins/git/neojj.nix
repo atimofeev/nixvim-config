@@ -31,6 +31,10 @@ in
         disable_signs = true,
         graph_style = "ascii",
         show_project_header = false,
+        sections = {
+          recent = { folded = false },
+          bookmarks = { folded = true }
+        },
         integrations = {
           codediff = ${lib.boolToString config.plugins.codediff.enable},
           diffview = ${lib.boolToString config.plugins.diffview.enable},
