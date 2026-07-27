@@ -9,8 +9,8 @@
     enable = true;
     settings = {
       formatters_by_ft = {
-        "*" = [ "injected" ];
-        "_" = [
+        "*" = [
+          "injected"
           "squeeze_blanks"
           "trim_whitespace"
           "trim_newlines"

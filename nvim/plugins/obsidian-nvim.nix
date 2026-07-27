@@ -6,6 +6,10 @@
       lazyLoad.settings.cmd = "Obsidian";
       settings = {
 
+        ui = {
+          enable = false;
+        };
+
         workspaces = [
           {
             name = "default";
