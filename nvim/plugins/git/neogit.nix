@@ -10,6 +10,7 @@
       disable_signs = true;
       graph_style = "kitty";
       status.recent_commit_count = 30;
+      sections.recent.folded = false;
       integrations = {
         codediff = config.plugins.codediff.enable;
         diffview = config.plugins.diffview.enable;
