@@ -2,6 +2,7 @@
 
   plugins.flash = {
     enable = true;
+    lazyLoad.settings.keys = [ "gz" "gZ" ];
     settings = {
       modes = {
         search = {

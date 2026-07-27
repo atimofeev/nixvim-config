@@ -3,6 +3,7 @@
   colorschemes = {
     catppuccin = {
       enable = true;
+      lazyLoad.enable = true;
       settings = {
         flavour = "mocha";
         custom_highlights.__raw = # lua

@@ -1,6 +1,9 @@
 {
 
-  plugins.spectre.enable = true;
+  plugins.spectre = {
+    enable = true;
+    lazyLoad.settings.cmd = "Spectre";
+  };
 
   extraConfigLua = # lua
     ''

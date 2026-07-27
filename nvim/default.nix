@@ -18,6 +18,8 @@
     ]
   ) [ ./plugins ];
 
+  plugins.lz-n.enable = true;
+
   clipboard = {
     providers.xclip.enable = true;
     register = "unnamedplus";

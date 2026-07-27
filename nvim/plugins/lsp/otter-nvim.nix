@@ -1,5 +1,8 @@
 {
 
-  plugins.otter.enable = true;
+  plugins.otter = {
+    enable = true;
+    lazyLoad.settings.ft = [ "quarto" "markdown" "nix" ];
+  };
 
 }

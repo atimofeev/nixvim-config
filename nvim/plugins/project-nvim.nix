@@ -2,6 +2,7 @@
 
   plugins.project-nvim = {
     enable = true;
+    lazyLoad.settings.event = "VimEnter";
     settings = {
       history.size = 0;
       lsp = {

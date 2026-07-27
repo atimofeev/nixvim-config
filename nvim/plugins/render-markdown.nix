@@ -1,3 +1,6 @@
 {
-  plugins.render-markdown.enable = true;
+  plugins.render-markdown = {
+    enable = true;
+    lazyLoad.settings.ft = "markdown";
+  };
 }
