@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
 
+  extraConfigLuaPre = # lua
+    ''
+      vim.g.loaded_gitlinker = 1
+    '';
+
   extraPlugins =
     let
       gitlinker-nvim = pkgs.vimUtils.buildVimPlugin {
@@ -18,21 +23,20 @@
 
   extraConfigLua = # lua
     ''
+      require("gitlinker").setup {
+        message = false,
+        highlight_duration = 0,
+        router = {
+          browse = {
+            ["^git%.[^/:%s]+%.com$"] = require("gitlinker.routers").gitlab_browse,
+          },
+          blame = {
+            ["^git%.[^/:%s]+%.com$"] = require("gitlinker.routers").gitlab_blame,
+          },
+        },
+      }
+
       function _G.gitlinker_action(op)
-        if not package.loaded["gitlinker"] then
-          require("gitlinker").setup {
-            message = false,
-            highlight_duration = 0,
-            router = {
-              browse = {
-                ["^git%..*%.com"] = require("gitlinker.routers").gitlab_browse,
-              },
-              blame = {
-                ["^git%..*%.com"] = require("gitlinker.routers").gitlab_blame,
-              },
-            },
-          }
-        end
         vim.cmd("GitLink!" .. op)
       end
 
