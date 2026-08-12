@@ -4,7 +4,16 @@
     enable = true;
     lazyLoad.settings.event = "VimEnter";
     settings = {
-      history.size = 0;
+      history = {
+        save_dir.__raw = ''
+          (function()
+            local dir = vim.fn.tempname()
+            vim.fn.mkdir(dir, "p")
+            return dir
+          end)()
+        '';
+        size = 1;
+      };
       lsp = {
         enabled = false;
         use_pattern_matching = true;
