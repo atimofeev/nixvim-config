@@ -7,7 +7,7 @@
 let
   neojj = pkgs.vimUtils.buildVimPlugin {
     pname = "neojj";
-    version = "1.5.0";
+    version = "1.6.0";
     src = pkgs.fetchFromGitHub {
       owner = "NicholasZolton";
       repo = "neojj";
