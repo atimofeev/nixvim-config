@@ -13,7 +13,7 @@
           natural_order = true;
           is_always_hidden = ''
             function(name, _)
-              return name == '..' or name == '.git' or name == '.mypy_cache' or name == '.null-ls_.*'
+              return vim.list_contains({ '..', '.git', '.jj', '.mypy_cache' }, name)
             end
           '';
         };
