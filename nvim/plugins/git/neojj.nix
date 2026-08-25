@@ -7,11 +7,11 @@
 let
   neojj = pkgs.vimUtils.buildVimPlugin {
     pname = "neojj";
-    version = "1.6.1";
+    version = "1.8.0";
     src = pkgs.fetchFromGitHub {
       owner = "NicholasZolton";
       repo = "neojj";
-      rev = "v1.6.1";
+      rev = "v1.8.0";
       hash = "sha256-CbbcHsNnGx1nyL55BJxWxf3l5Z0ih+Ig8dLzrPwg0uw=";
     };
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
