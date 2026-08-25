@@ -7,12 +7,12 @@
 let
   neojj = pkgs.vimUtils.buildVimPlugin {
     pname = "neojj";
-    version = "1.6.0";
+    version = "1.6.1";
     src = pkgs.fetchFromGitHub {
       owner = "NicholasZolton";
       repo = "neojj";
-      rev = "v1.6.0";
-      hash = "sha256-89A0JZ/dzyaTTUF4eS7j1/c7Cq+UcyuQf7yEA28M2k4=";
+      rev = "v1.6.1";
+      hash = "sha256-CbbcHsNnGx1nyL55BJxWxf3l5Z0ih+Ig8dLzrPwg0uw=";
     };
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
     nvimSkipModules = [ "neojj.integrations.diffview" ];
