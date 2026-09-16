@@ -77,6 +77,7 @@
           ];
           providers = {
             lsp.score_offset = 4;
+            snippets.opts.extended_filetypes.jjdescription = [ "gitcommit" ];
             buffer = {
               opts = {
                 # Get suggestions from all "normal" open buffers
