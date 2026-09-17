@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
 
   extraPackages = with pkgs; [
@@ -32,6 +32,17 @@
               dev = [ "~/repos" ];
               max_depth = 5;
               inherit (config.plugins.project-nvim.settings) patterns;
+              confirm = lib.nixvim.mkRaw ''
+                function(picker, item)
+                  picker:close()
+                  if not item then
+                    return
+                  end
+
+                  vim.fn.chdir(item.file)
+                  Snacks.picker.smart({ cwd = item.file })
+                end
+              '';
             };
           };
           matcher = {
