@@ -36,9 +36,17 @@
                   bg = utils.darken(colors.red, 0.095, colors.base),
                   fg = utils.darken(colors.red, 0.8, colors.base),
                 },
+                NeojjDiffDeleteInline = {
+                  bg = utils.darken(colors.red, 0.5, colors.base),
+                  style = { "bold" },
+                },
                 NeojjDiffAdd = {
                   bg = utils.darken(colors.green, 0.095, colors.base),
                   fg = utils.darken(colors.green, 0.8, colors.base),
+                },
+                NeojjDiffAddInline = {
+                  bg = utils.darken(colors.green, 0.5, colors.base),
+                  style = { "bold" },
                 },
                 NeojjCommitViewHeader = {
                   bg = utils.darken(colors.blue, 0.3, colors.base),
