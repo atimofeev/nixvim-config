@@ -12,7 +12,7 @@ let
       owner = "NicholasZolton";
       repo = "neojj";
       rev = "v1.8.0";
-      hash = "sha256-CbbcHsNnGx1nyL55BJxWxf3l5Z0ih+Ig8dLzrPwg0uw=";
+      hash = "sha256-9gMM55aeHYfEkEEU3gFq9XqZG3sIMoL4zkDb71eRquE=";
     };
     dependencies = with pkgs.vimPlugins; [ plenary-nvim ];
     nvimSkipModules = [ "neojj.integrations.diffview" ];
